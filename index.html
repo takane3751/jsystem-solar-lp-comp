@@ -1,0 +1,1710 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>産業用太陽光 包括支援 ｜ J・システム株式会社</title>
+<meta name="description" content="太陽光導入を「環境対策」から「利益を生む経営戦略」へ。補助金・税制・J-クレジット・余剰電力活用まで、設計から運用・収益化までJ・システムが一気通貫で伴走します。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   J・システム 産業用太陽光LP — デザイン案
+   デザイントークンは調整後カンプから継承
+   ============================================================ */
+:root{
+  --navy-900:#021420; --navy-800:#052235; --navy-700:#07253a; --navy-600:#0d3149;
+  --lime:#a7f36b; --lime-dark:#8cec67;
+  --green:#3edc7f; --green-600:#20b56d; --green-700:#16925a; --green-800:#0e7d58;
+  --orange:#ff8a2a; --orange-dark:#f07825;
+  --white:#ffffff; --gray-50:#f5f8f6; --gray-100:#f3f6f4; --mint-50:#edf6f1; --mint-100:#e2f0e8;
+  --border:#cbd7d2; --muted:#b9cac1; --ink:#0b1b26; --ink-soft:#40555f;
+
+  /* PC可読性：クライアント指摘を受け全体を1段階大きく */
+  --fs-body:17px; --fs-lead:19px; --fs-small:15px;
+  --maxw:1180px;
+  --radius:14px; --radius-lg:22px;
+  --shadow:0 18px 50px rgba(2,20,32,.14);
+  --shadow-soft:0 8px 24px rgba(2,20,32,.08);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:84px}
+body{
+  margin:0; font-family:"Noto Sans JP","Yu Gothic","Hiragino Kaku Gothic ProN",sans-serif;
+  font-size:var(--fs-body); line-height:1.9; color:var(--ink);
+  background:var(--white); -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit}
+button{font-family:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+
+/* ---------- 共通パーツ ---------- */
+.eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:13px;font-weight:700;letter-spacing:.18em;
+  color:var(--green-700);text-transform:uppercase;margin:0 0 18px;
+}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--green);display:block}
+.on-dark .eyebrow{color:var(--lime)}
+.on-dark .eyebrow::before{background:var(--lime)}
+
+h2.sec-title{
+  font-size:clamp(27px,3.3vw,44px); line-height:1.45; font-weight:900;
+  letter-spacing:.01em; margin:0 0 22px;
+}
+.sec-lead{font-size:var(--fs-lead);line-height:2;color:var(--ink-soft);margin:0 0 44px;max-width:74ch}
+.on-dark{color:#eaf3ee}
+.on-dark h2.sec-title{color:#fff}
+.on-dark .sec-lead{color:#a9c3b6}
+
+section{padding:104px 0}
+.sec-dark{background:var(--navy-900);position:relative;overflow:hidden}
+.sec-dark::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(900px 420px at 12% -10%,rgba(62,220,127,.12),transparent 60%);
+}
+.sec-dark > .wrap{position:relative;z-index:1}
+.sec-tint{background:linear-gradient(180deg,var(--mint-50),var(--white))}
+.sec-gray{background:var(--gray-50)}
+
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  padding:19px 36px;border-radius:999px;font-weight:700;font-size:17px;
+  text-decoration:none;border:0;cursor:pointer;transition:.22s;white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg,var(--lime),var(--green));color:#04261a;box-shadow:0 10px 30px rgba(62,220,127,.32)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(62,220,127,.42)}
+.btn-ghost{background:transparent;color:#eaf3ee;border:1.5px solid rgba(234,243,238,.4)}
+.btn-ghost:hover{background:rgba(234,243,238,.1)}
+.btn-outline{background:#fff;color:var(--green-800);border:1.5px solid var(--green-700)}
+.btn-outline:hover{background:var(--mint-50)}
+.btn-sm{padding:13px 24px;font-size:15px}
+
+/* セクション末の軽量CTA */
+.mini-cta{
+  margin-top:52px;display:flex;flex-wrap:wrap;align-items:center;gap:20px;
+  padding:26px 32px;border-radius:var(--radius-lg);
+  background:var(--mint-50);border:1px solid var(--mint-100);
+}
+.mini-cta p{margin:0;font-weight:700;font-size:17px}
+.on-dark .mini-cta{background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.14)}
+
+/* ---------- ヘッダー ---------- */
+header{
+  position:sticky;top:0;z-index:900;
+  background:rgba(2,20,32,.9);backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(255,255,255,.1);
+}
+.hd{display:flex;align-items:center;gap:32px;height:72px}
+.logo{display:flex;align-items:baseline;gap:3px;font-weight:900;font-size:22px;color:#fff;text-decoration:none;letter-spacing:.02em}
+.logo span{color:var(--lime)}
+.hd nav{margin-left:auto;display:flex;gap:26px}
+.hd nav a{color:#cfe0d7;text-decoration:none;font-size:14.5px;font-weight:500;transition:.2s}
+.hd nav a:hover{color:var(--lime)}
+.hd .btn{padding:12px 24px;font-size:15px}
+.burger{display:none;margin-left:auto;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;padding:6px}
+
+/* ---------- ヒーロー ---------- */
+.hero{
+  background:
+    radial-gradient(1000px 520px at 80% -5%,rgba(62,220,127,.2),transparent 62%),
+    radial-gradient(700px 420px at 5% 100%,rgba(167,243,107,.1),transparent 60%),
+    linear-gradient(160deg,var(--navy-900),var(--navy-700));
+  color:#fff;padding:96px 0 0;position:relative;overflow:hidden;
+}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(32px,4.3vw,56px);line-height:1.4;font-weight:900;margin:0 0 26px;letter-spacing:.005em}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero .lead{font-size:var(--fs-lead);line-height:2;color:#bcd6c8;margin:0 0 34px;max-width:56ch}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:16px}
+.hero-note{font-size:var(--fs-small);color:#8fb3a1;margin:0 0 40px}
+.hero-note strong{color:var(--lime);font-weight:700}
+
+.badges{display:flex;flex-wrap:wrap;gap:12px}
+.badge{
+  display:flex;align-items:center;gap:9px;padding:11px 20px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16);
+  font-size:14.5px;font-weight:500;
+}
+.badge b{color:var(--lime);font-size:16px}
+
+/* 信頼バー */
+.trust{
+  margin-top:64px;border-top:1px solid rgba(255,255,255,.14);
+  display:grid;grid-template-columns:repeat(4,1fr);
+}
+.trust div{padding:26px 20px;border-right:1px solid rgba(255,255,255,.14)}
+.trust div:last-child{border-right:0}
+.trust dt{font-size:12.5px;letter-spacing:.14em;color:#8fb3a1;margin:0 0 6px;font-weight:700}
+.trust dd{margin:0;font-size:23px;font-weight:900;color:#fff}
+.trust dd small{font-size:14px;font-weight:500;color:#bcd6c8;margin-left:3px}
+
+/* ワンストップ図 */
+.onestop{
+  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);
+  border-radius:var(--radius-lg);padding:34px;
+}
+.onestop-h{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:24px}
+.onestop-h b{font-size:12.5px;letter-spacing:.18em;color:var(--lime)}
+.onestop-h span{font-size:13.5px;color:#8fb3a1}
+.steps3{display:grid;gap:12px}
+.step3{
+  display:grid;grid-template-columns:56px 1fr;gap:18px;align-items:center;
+  padding:20px 22px;border-radius:var(--radius);
+  background:linear-gradient(100deg,rgba(62,220,127,.14),rgba(255,255,255,.03));
+  border:1px solid rgba(62,220,127,.24);
+}
+.step3 i{
+  font-style:normal;font-weight:900;font-size:12px;letter-spacing:.1em;
+  color:#04261a;background:var(--lime);border-radius:8px;padding:7px 0;text-align:center;
+}
+.step3 b{display:block;font-size:16.5px;font-weight:700;color:#fff}
+.step3 small{color:#a9c3b6;font-size:14px}
+
+/* ---------- チェックリスト ---------- */
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.check-item{
+  display:grid;grid-template-columns:34px 1fr;gap:16px;align-items:start;
+  padding:24px 26px;background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius);font-size:16.5px;font-weight:500;line-height:1.8;
+  transition:.2s;
+}
+.check-item:hover{border-color:var(--green);box-shadow:var(--shadow-soft);transform:translateY(-2px)}
+.check-item i{
+  font-style:normal;width:34px;height:34px;border-radius:50%;
+  background:var(--green-700);color:#fff;display:grid;place-items:center;
+  font-size:17px;font-weight:900;
+}
+
+/* ---------- 2026年の変化 ---------- */
+.risk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.risk{
+  padding:32px 30px;border-radius:var(--radius-lg);text-align:left;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+  color:#eaf3ee;cursor:pointer;transition:.22s;font-family:inherit;width:100%;
+}
+.risk:hover{background:rgba(255,255,255,.11);border-color:var(--lime);transform:translateY(-3px)}
+.risk b{display:block;font-size:20px;font-weight:900;color:#fff;margin-bottom:10px}
+.risk small{display:block;font-size:12px;letter-spacing:.16em;color:var(--orange);font-weight:700;margin-bottom:14px}
+.risk p{margin:0 0 18px;font-size:15.5px;line-height:1.85;color:#a9c3b6}
+.risk .more{color:var(--lime);font-weight:700;font-size:14.5px}
+
+/* ---------- 4つの支援 ---------- */
+.support-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.sup{
+  padding:38px 36px;background:#fff;border:1px solid var(--border);
+  border-radius:var(--radius-lg);position:relative;overflow:hidden;transition:.22s;
+  display:flex;flex-direction:column;
+}
+.sup::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:linear-gradient(180deg,var(--lime),var(--green-700))}
+.sup:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.sup-no{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.sup-no b{font-size:40px;font-weight:900;color:var(--green-700);line-height:1;letter-spacing:-.02em}
+.sup-no small{font-size:11.5px;letter-spacing:.18em;color:var(--ink-soft);font-weight:700}
+.sup h3{font-size:22px;font-weight:900;margin:0 0 14px;line-height:1.5}
+.sup p{margin:0 0 26px;font-size:16px;line-height:1.95;color:var(--ink-soft);flex:1}
+.link-more{
+  background:none;border:0;padding:0;cursor:pointer;color:var(--green-800);
+  font-weight:700;font-size:15.5px;display:inline-flex;align-items:center;gap:8px;
+  align-self:flex-start;transition:.2s;
+}
+.link-more:hover{gap:13px;color:var(--green-600)}
+
+/* ---------- モデルケース ---------- */
+.case-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.case{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;display:flex;flex-direction:column;
+}
+.case-h{padding:24px 28px;background:var(--navy-800);color:#fff}
+.case-h small{display:block;font-size:11.5px;letter-spacing:.18em;color:var(--lime);font-weight:700;margin-bottom:6px}
+.case-h b{font-size:21px;font-weight:900}
+.case dl{margin:0;padding:8px 28px 26px}
+.case dl > div{display:flex;justify-content:space-between;align-items:baseline;gap:14px;padding:14px 0;border-bottom:1px dashed var(--border)}
+.case dl > div:last-child{border-bottom:0}
+.case dt{font-size:14.5px;color:var(--ink-soft);font-weight:500;flex-shrink:0}
+.case dd{margin:0;font-size:19px;font-weight:900;text-align:right}
+.case dd.hl{color:var(--green-700);font-size:23px}
+.ph{color:var(--orange-dark);background:rgba(255,138,42,.12);padding:1px 9px;border-radius:6px;font-size:16px}
+.disclaim{
+  margin-top:26px;padding:20px 24px;border-radius:var(--radius);
+  background:var(--gray-50);border:1px solid var(--border);
+  font-size:14px;line-height:1.85;color:var(--ink-soft);
+}
+
+/* ---------- 収益化サイクル ---------- */
+.cycle-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;counter-reset:cy}
+.cy{
+  position:relative;padding:34px 28px;border-radius:var(--radius-lg);
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+}
+.cy::after{
+  content:"→";position:absolute;right:-19px;top:50%;transform:translateY(-50%);
+  color:var(--lime);font-size:22px;font-weight:900;z-index:2;
+}
+.cy:last-child::after{content:"↺";right:-16px;color:var(--green)}
+.cy b{display:block;font-size:24px;font-weight:900;color:var(--lime);margin-bottom:12px}
+.cy strong{display:block;font-size:16.5px;color:#fff;margin-bottom:8px;font-weight:700}
+.cy p{margin:0;font-size:14.5px;line-height:1.85;color:#a9c3b6}
+
+/* ---------- 独自技術 ---------- */
+.arch{
+  position:relative;border-radius:var(--radius-lg);overflow:hidden;
+  background:var(--navy-900);margin-bottom:44px;box-shadow:var(--shadow);
+}
+.arch img{width:100%;display:block}
+.arch-cap{
+  position:absolute;left:0;right:0;bottom:0;padding:44px 40px 30px;
+  background:linear-gradient(to top,rgba(2,20,32,.94) 30%,transparent);
+  color:#fff;
+}
+.arch-cap b{display:block;font-size:12.5px;letter-spacing:.18em;color:var(--lime);margin-bottom:10px}
+.arch-cap p{margin:0;font-size:20px;font-weight:700;line-height:1.6}
+.arch-tags{position:absolute;top:26px;left:26px;display:flex;flex-wrap:wrap;gap:9px}
+.arch-tags span{
+  background:rgba(2,20,32,.72);backdrop-filter:blur(8px);color:#eaf3ee;
+  border:1px solid rgba(167,243,107,.42);border-radius:999px;
+  padding:8px 17px;font-size:13.5px;font-weight:700;
+}
+
+.tech-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.tech{
+  background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;display:flex;flex-direction:column;transition:.22s;
+}
+.tech:hover{box-shadow:var(--shadow);transform:translateY(-3px)}
+.tech-img{aspect-ratio:16/9;overflow:hidden;background:var(--navy-800)}
+.tech-img img{width:100%;height:100%;object-fit:cover}
+.tech-body{padding:30px 30px 32px;display:flex;flex-direction:column;flex:1}
+.own{
+  display:inline-flex;align-items:center;gap:7px;align-self:flex-start;
+  background:linear-gradient(135deg,var(--lime),var(--green));color:#04261a;
+  font-size:12.5px;font-weight:900;letter-spacing:.08em;
+  padding:6px 15px;border-radius:999px;margin-bottom:14px;
+}
+.tech h3{margin:0 0 6px;font-size:22px;font-weight:900;line-height:1.45}
+.tech .sub{margin:0 0 16px;font-size:14.5px;color:var(--green-700);font-weight:700}
+.tech p{margin:0 0 24px;font-size:15.5px;line-height:1.95;color:var(--ink-soft);flex:1}
+
+/* ---------- 施工実績 ---------- */
+.works-sum{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  overflow:hidden;background:#fff;margin-bottom:34px;
+}
+.works-sum div{padding:32px 28px;text-align:center;border-right:1px solid var(--border)}
+.works-sum div:last-child{border-right:0}
+.works-sum dt{font-size:13px;letter-spacing:.14em;color:var(--ink-soft);font-weight:700;margin-bottom:10px}
+.works-sum dd{margin:0;font-size:32px;font-weight:900;color:var(--green-800)}
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.work-img{aspect-ratio:4/3;background:var(--gray-50);display:grid;place-items:center;color:var(--muted);font-size:14px;text-align:center;padding:20px;border-bottom:1px solid var(--border)}
+.work-img img{width:100%;height:100%;object-fit:cover}
+.work-body{padding:22px 24px 26px}
+.work-body b{display:block;font-size:17.5px;font-weight:900;margin-bottom:12px}
+.work-body dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:14.5px}
+.work-body dt{color:var(--ink-soft)}
+.work-body dd{margin:0;font-weight:700}
+
+/* ---------- 導入の流れ ---------- */
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.fl{
+  padding:32px 26px;border-radius:var(--radius-lg);
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+  position:relative;
+}
+.fl i{
+  font-style:normal;display:inline-grid;place-items:center;width:40px;height:40px;
+  border-radius:50%;background:var(--lime);color:#04261a;font-weight:900;font-size:16px;margin-bottom:18px;
+}
+.fl b{display:block;font-size:19px;font-weight:900;color:#fff;margin-bottom:12px}
+.fl p{margin:0 0 20px;font-size:15px;line-height:1.85;color:#a9c3b6}
+.fl dl{margin:0;padding-top:18px;border-top:1px solid rgba(255,255,255,.14);display:grid;gap:10px}
+.fl dl > div{display:grid;grid-template-columns:auto 1fr;gap:10px;font-size:13.5px;align-items:baseline}
+.fl dt{color:var(--lime);font-weight:700;white-space:nowrap}
+.fl dd{margin:0;color:#cfe0d7}
+.no-prep{
+  margin-top:34px;padding:26px 32px;border-radius:var(--radius-lg);
+  background:linear-gradient(100deg,rgba(167,243,107,.16),rgba(62,220,127,.06));
+  border:1px solid rgba(167,243,107,.34);
+  font-size:17px;font-weight:700;color:#fff;display:flex;align-items:center;gap:16px;
+}
+.no-prep span{font-size:26px}
+
+/* ---------- FAQ ---------- */
+.faq-list{display:grid;gap:12px;max-width:960px}
+.faq details{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.faq details[open]{border-color:var(--green);box-shadow:var(--shadow-soft)}
+.faq summary{
+  padding:24px 30px;cursor:pointer;font-weight:700;font-size:17.5px;line-height:1.65;
+  display:grid;grid-template-columns:30px 1fr 26px;gap:16px;align-items:start;list-style:none;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"＋";color:var(--green-700);font-weight:900;font-size:20px;text-align:center}
+.faq details[open] summary::after{content:"－"}
+.faq summary i{font-style:normal;color:var(--green-700);font-weight:900;font-size:19px}
+.faq .ans{padding:0 30px 28px 76px;font-size:16px;line-height:2;color:var(--ink-soft)}
+
+/* ---------- 会社情報 ---------- */
+.company-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:44px;align-items:start}
+.company table{width:100%;border-collapse:collapse;font-size:16px}
+.company th,.company td{padding:18px 4px;border-bottom:1px solid var(--border);text-align:left;vertical-align:top}
+.company th{width:34%;color:var(--ink-soft);font-weight:700}
+.company td{font-weight:500}
+.cert{background:var(--navy-800);color:#fff;border-radius:var(--radius-lg);padding:36px 34px}
+.cert b{display:block;font-size:12.5px;letter-spacing:.18em;color:var(--lime);margin-bottom:20px}
+.cert ul{margin:0;padding:0;list-style:none;display:grid;gap:14px}
+.cert li{display:grid;grid-template-columns:22px 1fr;gap:12px;font-size:15.5px;line-height:1.8;color:#cfe0d7}
+.cert li::before{content:"✓";color:var(--lime);font-weight:900}
+
+/* ---------- 補足資料 ---------- */
+.guide-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.gd{
+  text-align:left;padding:36px 34px;border-radius:var(--radius-lg);cursor:pointer;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);
+  color:#eaf3ee;transition:.22s;font-family:inherit;width:100%;
+  display:flex;flex-direction:column;gap:14px;
+}
+.gd:hover{background:rgba(255,255,255,.11);border-color:var(--lime);transform:translateY(-3px)}
+.gd small{font-size:11.5px;letter-spacing:.2em;color:var(--lime);font-weight:900}
+.gd b{font-size:21px;font-weight:900;color:#fff;line-height:1.5}
+.gd p{margin:0;font-size:15px;line-height:1.85;color:#a9c3b6}
+.gd .meta{
+  margin-top:6px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14);
+  display:flex;justify-content:space-between;align-items:center;font-size:14px;
+}
+.gd .meta em{font-style:normal;color:#8fb3a1}
+.gd .meta span{color:var(--lime);font-weight:700}
+
+/* ---------- 最終CTA ---------- */
+.contact-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:start}
+.promise{display:grid;gap:14px;margin:34px 0 0}
+.pr{
+  display:grid;grid-template-columns:52px 1fr;gap:18px;align-items:center;
+  padding:22px 26px;background:#fff;border:1px solid var(--border);border-radius:var(--radius);
+}
+.pr i{
+  font-style:normal;width:52px;height:52px;border-radius:50%;
+  background:var(--mint-50);color:var(--green-800);display:grid;place-items:center;
+  font-size:22px;font-weight:900;
+}
+.pr b{display:block;font-size:17px;font-weight:900;margin-bottom:3px}
+.pr small{color:var(--ink-soft);font-size:14.5px}
+
+form{background:#fff;border:1px solid var(--border);border-radius:var(--radius-lg);padding:42px 40px;box-shadow:var(--shadow-soft)}
+.fld{margin-bottom:24px}
+.fld label{display:flex;align-items:center;gap:10px;font-weight:700;font-size:15.5px;margin-bottom:10px}
+.req,.opt{font-size:11.5px;font-weight:900;padding:3px 9px;border-radius:5px;letter-spacing:.06em}
+.req{background:var(--green-700);color:#fff}
+.opt{background:var(--gray-50);color:var(--ink-soft);border:1px solid var(--border)}
+.fld input,.fld select,.fld textarea{
+  width:100%;padding:16px 18px;border:1.5px solid var(--border);border-radius:10px;
+  font-size:16.5px;font-family:inherit;background:#fff;color:var(--ink);transition:.2s;
+}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:0;border-color:var(--green);box-shadow:0 0 0 4px rgba(62,220,127,.16)}
+.fld textarea{min-height:120px;resize:vertical;line-height:1.8}
+.fld .hint{margin:8px 0 0;font-size:13.5px;color:var(--ink-soft)}
+form .btn{width:100%;margin-top:8px;padding:22px;font-size:19px}
+.form-foot{margin:20px 0 0;font-size:14px;color:var(--ink-soft);text-align:center;line-height:1.85}
+.tel-alt{
+  margin-top:22px;padding:22px;border-radius:var(--radius);background:var(--gray-50);
+  border:1px solid var(--border);text-align:center;
+}
+.tel-alt small{display:block;font-size:14px;color:var(--ink-soft);margin-bottom:6px}
+.tel-alt b{font-size:26px;font-weight:900;color:var(--navy-800);letter-spacing:.02em}
+
+/* ---------- フッター ---------- */
+footer{background:var(--navy-900);color:#8fb3a1;padding:64px 0 120px;font-size:14.5px}
+.ft{display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-start}
+.ft .logo{margin-bottom:14px}
+.ft p{margin:0;line-height:1.9;max-width:44ch}
+.ft nav{display:flex;gap:24px;flex-wrap:wrap}
+.ft nav a{text-decoration:none;transition:.2s}
+.ft nav a:hover{color:var(--lime)}
+.copy{margin-top:44px;padding-top:26px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;letter-spacing:.06em}
+
+/* ---------- SP固定CTAバー ---------- */
+.spbar{
+  position:fixed;left:0;right:0;bottom:0;z-index:880;display:none;gap:10px;padding:12px 14px;
+  background:rgba(2,20,32,.96);backdrop-filter:blur(12px);
+  border-top:1px solid rgba(255,255,255,.14);
+  transform:translateY(110%);transition:transform .3s;
+}
+.spbar.on{transform:translateY(0)}
+.spbar a{flex:1;justify-content:center;padding:16px 10px;font-size:15.5px}
+.spbar .btn-ghost{flex:0 0 34%}
+
+/* ============================================================
+   モーダル（補足資料をLP内に内包）
+   ============================================================ */
+.mask{
+  position:fixed;inset:0;z-index:1000;background:rgba(2,20,32,.72);
+  backdrop-filter:blur(6px);display:none;padding:40px 24px;overflow:auto;
+}
+.mask.on{display:block}
+.modal{
+  max-width:1080px;margin:0 auto;background:#fff;border-radius:var(--radius-lg);
+  overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.5);
+  display:grid;grid-template-rows:auto 1fr auto;max-height:calc(100vh - 80px);
+}
+.m-head{
+  padding:26px 34px;background:var(--navy-900);color:#fff;
+  display:flex;align-items:center;gap:20px;flex-shrink:0;
+}
+.m-head small{display:block;font-size:11.5px;letter-spacing:.2em;color:var(--lime);font-weight:900;margin-bottom:5px}
+.m-head b{font-size:22px;font-weight:900}
+.m-close{
+  margin-left:auto;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+  color:#fff;width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;
+  flex-shrink:0;transition:.2s;
+}
+.m-close:hover{background:rgba(255,255,255,.2)}
+
+.m-body{display:grid;grid-template-columns:224px 1fr;overflow:hidden;min-height:0}
+.m-toc{
+  background:var(--gray-50);border-right:1px solid var(--border);
+  padding:26px 20px;overflow-y:auto;
+}
+.m-toc b{display:block;font-size:11.5px;letter-spacing:.16em;color:var(--ink-soft);margin-bottom:14px;font-weight:900}
+.m-toc a{
+  display:block;padding:11px 14px;border-radius:9px;text-decoration:none;
+  font-size:14.5px;font-weight:500;color:var(--ink-soft);line-height:1.6;transition:.18s;
+}
+.m-toc a:hover{background:var(--mint-50);color:var(--green-800)}
+.m-toc a.cur{background:var(--green-700);color:#fff;font-weight:700}
+
+.m-main{padding:38px 42px 46px;overflow-y:auto;scroll-behavior:smooth}
+.m-sec{padding-bottom:44px;margin-bottom:44px;border-bottom:1px solid var(--border)}
+.m-sec:last-of-type{border-bottom:0;margin-bottom:0}
+.m-sec > h3{
+  font-size:25px;font-weight:900;line-height:1.55;margin:0 0 8px;scroll-margin-top:20px;
+}
+.m-sec > .kicker{font-size:12px;letter-spacing:.16em;color:var(--green-700);font-weight:900;margin:0 0 12px}
+.m-sec > .desc{font-size:16.5px;line-height:2;color:var(--ink-soft);margin:0 0 26px}
+.m-sec p{font-size:16px;line-height:2;margin:0 0 18px}
+
+figure{margin:0 0 26px;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:var(--gray-50)}
+figure img{width:100%}
+figcaption{padding:13px 18px;font-size:13.5px;color:var(--ink-soft);background:#fff;border-top:1px solid var(--border);line-height:1.7}
+
+.m-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:0 0 26px}
+.m-card{padding:24px 26px;background:var(--gray-50);border:1px solid var(--border);border-radius:var(--radius)}
+.m-card b{display:block;font-size:17px;font-weight:900;margin-bottom:9px;color:var(--green-800)}
+.m-card p{margin:0;font-size:15px;line-height:1.9;color:var(--ink-soft)}
+.m-card.one{grid-column:1/-1}
+
+.m-table-wrap{overflow-x:auto;margin:0 0 26px}
+.m-table{width:100%;border-collapse:collapse;font-size:15px;min-width:600px}
+.m-table thead th{background:var(--navy-800);color:#fff;font-weight:700;padding:14px 16px;text-align:left;font-size:14.5px}
+.m-table th,.m-table td{border:1px solid var(--border);padding:14px 16px;vertical-align:top}
+.m-table tbody th{background:var(--gray-50);font-weight:700;text-align:left}
+.m-table td{background:#fff}
+.m-table .best{background:rgba(62,220,127,.1)}
+.m-table .best-h{background:var(--green-700)}
+
+.m-flow{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin:0 0 26px}
+.m-flow span{
+  padding:13px 20px;background:var(--mint-50);border:1px solid var(--mint-100);
+  border-radius:10px;font-size:15px;font-weight:700;color:var(--green-800);
+}
+.m-flow i{font-style:normal;color:var(--green-700);font-weight:900;font-size:17px}
+
+.note{
+  padding:16px 20px;border-radius:10px;background:#fffaf3;border:1px solid #ffd9ac;
+  font-size:14px;line-height:1.85;color:#8a5416;margin:0 0 18px;
+}
+.own-inline{
+  display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,var(--lime),var(--green));
+  color:#04261a;font-size:11.5px;font-weight:900;padding:4px 12px;border-radius:999px;
+  vertical-align:middle;margin-left:8px;
+}
+.src{font-size:13px;color:var(--muted);margin:26px 0 0;line-height:1.8}
+
+.m-foot{
+  padding:22px 34px;background:var(--gray-50);border-top:1px solid var(--border);
+  display:flex;flex-wrap:wrap;align-items:center;gap:18px;flex-shrink:0;
+}
+.m-foot p{margin:0;font-size:15px;font-weight:700;flex:1;min-width:220px}
+.m-foot .btn{padding:15px 28px;font-size:16px}
+.m-print{
+  background:none;border:1.5px solid var(--border);border-radius:999px;
+  padding:14px 24px;font-size:15px;font-weight:700;cursor:pointer;color:var(--ink-soft);transition:.2s;
+}
+.m-print:hover{border-color:var(--green-700);color:var(--green-800)}
+
+/* ---------- レスポンシブ ---------- */
+@media(max-width:1080px){
+  .hero-grid,.company-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+  .risk-grid,.tech-grid,.case-grid,.works-grid,.works-sum{grid-template-columns:1fr}
+  .cycle-grid,.flow-grid{grid-template-columns:repeat(2,1fr)}
+  .cy:nth-child(2)::after{content:"↓";right:50%;top:auto;bottom:-30px;transform:translateX(50%)}
+  .trust{grid-template-columns:repeat(2,1fr)}
+  .trust div:nth-child(2){border-right:0}
+  .works-sum div{border-right:0;border-bottom:1px solid var(--border)}
+  .m-body{grid-template-columns:1fr}
+  .m-toc{display:none}
+}
+@media(max-width:760px){
+  :root{--fs-body:16px;--fs-lead:17px}
+  section{padding:72px 0}
+  .wrap{padding:0 20px}
+  .hd nav{display:none}
+  .hd .btn{display:none}
+  .burger{display:block}
+  .hd nav.open{
+    display:flex;flex-direction:column;position:absolute;top:72px;left:0;right:0;
+    background:var(--navy-900);padding:22px 24px;gap:4px;border-bottom:1px solid rgba(255,255,255,.14);
+  }
+  .hd nav.open a{padding:13px 0;font-size:16px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .check-grid,.support-grid,.guide-grid,.cycle-grid,.flow-grid,.m-cards{grid-template-columns:1fr}
+  .cy::after{content:"↓";right:50%;top:auto;bottom:-30px;transform:translateX(50%)}
+  .cy:last-child::after{content:""}
+  .trust{grid-template-columns:1fr}
+  .trust div{border-right:0;border-bottom:1px solid rgba(255,255,255,.14);padding:20px}
+  .spbar{display:flex}
+  footer{padding-bottom:130px}
+  .mask{padding:0}
+  .modal{max-height:100vh;border-radius:0;min-height:100vh}
+  .m-main{padding:26px 22px 40px}
+  .m-head{padding:20px 22px}
+  .m-head b{font-size:18px}
+  .m-foot{padding:18px 22px}
+  .m-foot .btn,.m-print{width:100%}
+  .arch-cap{padding:30px 22px 22px;position:static;background:var(--navy-900)}
+  .arch-tags{position:static;padding:18px 18px 0}
+  form{padding:30px 24px}
+  .mini-cta{flex-direction:column;align-items:stretch;text-align:center}
+  .faq summary{padding:20px 22px;font-size:16.5px;grid-template-columns:26px 1fr 22px;gap:12px}
+  .faq .ans{padding:0 22px 24px 60px}
+}
+@media print{
+  header,.spbar,.m-foot,.m-close,.m-toc,.mini-cta{display:none!important}
+  .mask{position:static;background:#fff;padding:0;display:block}
+  .modal{max-height:none;box-shadow:none;max-width:100%}
+  .m-body{grid-template-columns:1fr}
+  .m-main{overflow:visible;padding:0}
+  body > section,body > footer,body > header{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ 01 ヘッダー ============ -->
+<header>
+  <div class="wrap hd">
+    <a href="#" class="logo">J<span>・system</span></a>
+    <button class="burger" id="burger" aria-label="メニュー">☰</button>
+    <nav id="nav">
+      <a href="#support">支援内容</a>
+      <a href="#why2026">2026年の変化</a>
+      <a href="#technology">独自技術</a>
+      <a href="#works">導入事例</a>
+      <a href="#flow">導入の流れ</a>
+      <a href="#faq">よくある質問</a>
+    </nav>
+    <a href="#contact" class="btn btn-primary">無料で相談する</a>
+  </div>
+</header>
+
+<!-- ============ 02 ヒーロー ============ -->
+<div class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">2026 Solar Profit Strategy</p>
+        <h1>太陽光導入を、<br>「環境対策」から<br><em>「利益を生む<br>経営戦略」</em>へ。</h1>
+        <p class="lead">補助金・税制・J-クレジット・余剰電力活用まで。J・システムが、設計から運用・収益化まで一気通貫で伴走します。</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">無料シミュレーションを相談する →</a>
+          <a href="#support" class="btn btn-ghost">包括支援の内容を見る ↓</a>
+        </div>
+        <p class="hero-note">専門知識は不要です。<strong>電気料金の検針票だけでも、おおよその試算ができます。</strong><span style="color:#5d7f6d">※要確認</span></p>
+        <div class="badges">
+          <span class="badge"><b>01</b>初期費用を最小化</span>
+          <span class="badge"><b>02</b>専門手続きも支援</span>
+          <span class="badge"><b>03</b>導入後も収益化</span>
+        </div>
+      </div>
+
+      <div class="onestop">
+        <div class="onestop-h">
+          <b>ONE STOP SUPPORT</b>
+          <span>導入から収益化まで伴走支援</span>
+        </div>
+        <div class="steps3">
+          <div class="step3"><i>PLAN</i><div><b>導入準備</b><small>制度・投資計画</small></div></div>
+          <div class="step3"><i>BUILD</i><div><b>設計・導入</b><small>設備の最適化</small></div></div>
+          <div class="step3"><i>GROW</i><div><b>運用・収益化</b><small>価値を最大化</small></div></div>
+        </div>
+      </div>
+    </div>
+
+    <dl class="trust">
+      <div><dt>創業</dt><dd class="ph">◯◯</dd></div>
+      <div><dt>累計施工実績</dt><dd><span class="ph">◯◯</span><small>件</small></dd></div>
+      <div><dt>累計設置容量</dt><dd><span class="ph">◯◯</span><small>MW</small></dd></div>
+      <div><dt>対応エリア</dt><dd class="ph">◯◯</dd></div>
+    </dl>
+  </div>
+</div>
+
+<!-- ============ 03 自分ごと化チェック ============ -->
+<section id="check" class="sec-tint">
+  <div class="wrap">
+    <p class="eyebrow">Check List</p>
+    <h2 class="sec-title">ひとつでも当てはまれば、<br>検討を始めるタイミングです。</h2>
+    <p class="sec-lead">必要な情報がまだ揃っていなくても、現状の確認からご相談いただけます。</p>
+
+    <div class="check-grid">
+      <div class="check-item"><i>✓</i><span>電気代の上昇や契約電力の見直しが経営課題になっている</span></div>
+      <div class="check-item"><i>✓</i><span>工場・倉庫・事業所に活用できる屋根がある</span></div>
+      <div class="check-item"><i>✓</i><span>補助金や税制の対象になるか分からない</span></div>
+      <div class="check-item"><i>✓</i><span>太陽光だけでなく蓄電池・空調も検討したい</span></div>
+      <div class="check-item"><i>✓</i><span>取引先から排出量や再エネ利用の説明を求められている</span></div>
+      <div class="check-item"><i>✓</i><span>J-クレジットや余剰電力の活用まで考えたい</span></div>
+    </div>
+
+    <div class="mini-cta">
+      <p>1つでも当てはまる方は、まず現状の整理からご相談ください。</p>
+      <a href="#contact" class="btn btn-primary btn-sm">無料で相談する →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 2026年の変化 ============ -->
+<section id="why2026" class="sec-dark on-dark">
+  <div class="wrap">
+    <p class="eyebrow">Why Now / 2026</p>
+    <h2 class="sec-title">「設備を入れる」だけでは、<br>変化する制度に対応できません。</h2>
+    <p class="sec-lead">排出量取引制度の本格始動、GHGプロトコルの改訂、CBAMなど、CO₂は環境課題から財務課題へ。これからは、つくった電気と環境価値をどう運用するかが、企業競争力を左右します。</p>
+
+    <div class="risk-grid">
+      <button class="risk" data-modal="g1" data-anchor="g1-gxets">
+        <small>Domestic / Cost Risk</small>
+        <b>排出量取引制度</b>
+        <p>2026年度から本格稼働。対象企業には、排出目標や実績、排出枠の適切な管理が求められます。</p>
+        <span class="more">詳しく見る ＋</span>
+      </button>
+      <button class="risk" data-modal="g1" data-anchor="g1-ghg">
+        <small>Global / Supply Chain Risk</small>
+        <b>GHGプロトコル改訂</b>
+        <p>Scope 2を含む基準の見直しが進行中。再エネ調達の証拠やデータの信頼性が重視されています。</p>
+        <span class="more">詳しく見る ＋</span>
+      </button>
+      <button class="risk" data-modal="g1" data-anchor="g1-cbam">
+        <small>Border / Export Risk</small>
+        <b>炭素コストへの備え</b>
+        <p>CBAMが2026年から本格適用。EU向け対象製品では、排出量データの提示が必要になります。</p>
+        <span class="more">詳しく見る ＋</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 4つの支援（主役・据え置き） ============ -->
+<section id="support">
+  <div class="wrap">
+    <p class="eyebrow">Total Support</p>
+    <h2 class="sec-title">面倒な手続きも、導入後の運用も。<br>4つの支援を、ひとつの窓口で。</h2>
+    <p class="sec-lead">J・システムは、設備販売だけで終わりません。企業ごとの状況に合わせ、導入ハードルを下げ、太陽光の価値を最大限に引き出します。</p>
+
+    <div class="support-grid">
+      <div class="sup">
+        <div class="sup-no"><b>01</b><small>INITIAL COST</small></div>
+        <h3>設備導入・補助金申請</h3>
+        <p>複雑な補助金制度や、初期投資ゼロのPPAモデルを調査。書類作成まで支援し、導入時の負担を最小限に抑えます。</p>
+        <button class="link-more" data-modal="g4" data-anchor="g4-seido">相談内容を見る ↗</button>
+      </div>
+      <div class="sup">
+        <div class="sup-no"><b>02</b><small>TAX SUPPORT</small></div>
+        <h3>税優遇の獲得</h3>
+        <p>中小企業経営強化税制などの適用要件を確認し、申請書類の作成まで支援。税務手続きの負担を軽減します。</p>
+        <button class="link-more" data-modal="g4" data-anchor="g4-seido">相談内容を見る ↗</button>
+      </div>
+      <div class="sup">
+        <div class="sup-no"><b>03</b><small>CREDIT VALUE</small></div>
+        <h3>J-クレジット創出・販売</h3>
+        <p>削減したCO₂をJ-クレジットとして価値化。創出から市場での販売まで一貫支援し、新たな収益につなげます。</p>
+        <button class="link-more" data-modal="g4" data-anchor="g4-credit">相談内容を見る ↗</button>
+      </div>
+      <div class="sup">
+        <div class="sup-no"><b>04</b><small>ENERGY OPTIMIZE</small></div>
+        <h3>発電電力の最適利用</h3>
+        <p>余剰電力の高値買取事業者とのマッチングや、特定施設への電力融通など、最適な運用プランを提案します。</p>
+        <button class="link-more" data-modal="g4" data-anchor="g4-denryoku">相談内容を見る ↗</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 モデルケース（新規） ============ -->
+<section id="case" class="sec-tint">
+  <div class="wrap">
+    <p class="eyebrow">Model Case</p>
+    <h2 class="sec-title">たとえば、このくらいの規模から。</h2>
+    <p class="sec-lead">屋根の面積、電力の使い方、業種によって効果は変わります。代表的なケースで、どの程度の規模感になるかをご覧ください。</p>
+
+    <div class="case-grid">
+      <div class="case">
+        <div class="case-h"><small>CASE A</small><b>製造工場</b></div>
+        <dl>
+          <div><dt>屋根面積</dt><dd><span class="ph">◯,◯◯◯</span>㎡</dd></div>
+          <div><dt>設置容量</dt><dd><span class="ph">◯◯◯</span>kW</dd></div>
+          <div><dt>導入前の年間電気代</dt><dd><span class="ph">◯,◯◯◯</span>万円</dd></div>
+          <div><dt>年間削減額の目安</dt><dd class="hl"><span class="ph">◯◯◯</span>万円</dd></div>
+          <div><dt>自家消費率</dt><dd><span class="ph">◯◯</span>%</dd></div>
+          <div><dt>投資回収の目安</dt><dd class="hl"><span class="ph">◯〜◯</span>年</dd></div>
+          <div><dt>CO₂削減量</dt><dd><span class="ph">◯◯◯</span>t/年</dd></div>
+        </dl>
+      </div>
+      <div class="case">
+        <div class="case-h"><small>CASE B</small><b>物流倉庫</b></div>
+        <dl>
+          <div><dt>屋根面積</dt><dd><span class="ph">◯,◯◯◯</span>㎡</dd></div>
+          <div><dt>設置容量</dt><dd><span class="ph">◯◯◯</span>kW</dd></div>
+          <div><dt>導入前の年間電気代</dt><dd><span class="ph">◯,◯◯◯</span>万円</dd></div>
+          <div><dt>年間削減額の目安</dt><dd class="hl"><span class="ph">◯◯◯</span>万円</dd></div>
+          <div><dt>自家消費率</dt><dd><span class="ph">◯◯</span>%</dd></div>
+          <div><dt>投資回収の目安</dt><dd class="hl"><span class="ph">◯〜◯</span>年</dd></div>
+          <div><dt>CO₂削減量</dt><dd><span class="ph">◯◯◯</span>t/年</dd></div>
+        </dl>
+      </div>
+      <div class="case">
+        <div class="case-h"><small>CASE C</small><b>事業所・社屋</b></div>
+        <dl>
+          <div><dt>屋根面積</dt><dd><span class="ph">◯◯◯</span>㎡</dd></div>
+          <div><dt>設置容量</dt><dd><span class="ph">◯◯</span>kW</dd></div>
+          <div><dt>導入前の年間電気代</dt><dd><span class="ph">◯◯◯</span>万円</dd></div>
+          <div><dt>年間削減額の目安</dt><dd class="hl"><span class="ph">◯◯</span>万円</dd></div>
+          <div><dt>自家消費率</dt><dd><span class="ph">◯◯</span>%</dd></div>
+          <div><dt>投資回収の目安</dt><dd class="hl"><span class="ph">◯〜◯</span>年</dd></div>
+          <div><dt>CO₂削減量</dt><dd><span class="ph">◯◯</span>t/年</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <p class="disclaim">※ 上記は一定の前提条件に基づく試算例です。実際の効果は屋根条件、電力契約、稼働状況、適用制度により異なります。<br>
+    <span style="color:#f07825;font-weight:700">【制作メモ】数値はJ・システム様よりご提供ください。実案件ベース／標準前提の試算例のいずれかを選択いただきます。</span></p>
+
+    <div class="mini-cta">
+      <p>御社の場合はどうなるか、実データをもとに試算します。</p>
+      <a href="#contact" class="btn btn-primary btn-sm">無料シミュレーションを依頼する →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 収益化サイクル ============ -->
+<section id="cycle" class="sec-dark on-dark">
+  <div class="wrap">
+    <p class="eyebrow">From Cost to Profit</p>
+    <h2 class="sec-title">屋根を、電気代を減らす設備から<br>利益を循環させる資産へ。</h2>
+    <p class="sec-lead">つくる、最適に使う、環境価値に変える、収益化する。導入後まで見据えた運用設計で、太陽光の価値を一度きりのコスト削減で終わらせません。</p>
+
+    <div class="cycle-grid">
+      <div class="cy"><b>つくる</b><strong>発電・自家消費</strong><p>購入する電力を直接削減します。</p></div>
+      <div class="cy"><b>活かす</b><strong>最適利用</strong><p>蓄電池や設備と組み合わせ、余剰電力を有効活用。</p></div>
+      <div class="cy"><b>変える</b><strong>J-クレジット創出</strong><p>削減したCO₂を証書として資産化します。</p></div>
+      <div class="cy"><b>稼ぐ</b><strong>高値での販売</strong><p>創出したクレジットを取引し、収益を最大化。</p></div>
+    </div>
+
+    <div class="mini-cta">
+      <p>自社での収益化まで含めて、運用設計をご提案します。</p>
+      <a href="#contact" class="btn btn-primary btn-sm">自社での収益化を相談する →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 独自技術（大幅変更） ============ -->
+<section id="technology">
+  <div class="wrap">
+    <p class="eyebrow">J-System Original Technology</p>
+    <h2 class="sec-title">太陽光を「載せる」だけの会社とは、<br>設計が違います。</h2>
+    <p class="sec-lead">太陽光だけを導入して終わらせない。蓄電・建物保全・空調制御までを一体で考え、長く価値を生むエネルギー基盤をつくります。</p>
+
+    <div class="arch">
+      <img src="assets/jsystem-architecture.png" alt="発電・蓄電・空調制御・建物保全を一体で設計するJ・システムのエネルギーシステム構成図">
+      <div class="arch-tags">
+        <span>オンサイト自家消費</span>
+        <span>蓄電池＋EMS</span>
+        <span>Ai-Glies 空調制御</span>
+        <span>ポリウレア一体施工</span>
+      </div>
+      <div class="arch-cap">
+        <b>INTEGRATED ENERGY SYSTEM</b>
+        <p>発電・蓄電・省エネ・建物保全を、ひとつの設計に。</p>
+      </div>
+    </div>
+
+    <div class="tech-grid">
+      <div class="tech">
+        <div class="tech-body">
+          <h3>オンサイト自家消費<br>＋蓄電池</h3>
+          <p class="sub">ENERGY CONTROL</p>
+          <p>発電と消費の物理的な関係を明確に。時間単位の電力運用にも対応しやすい構成へ。夜間の需要は蓄電池とEMSでカバーします。</p>
+          <button class="link-more" data-modal="g3" data-anchor="g3-integrated">仕組みを詳しく見る ＋</button>
+        </div>
+      </div>
+
+      <div class="tech">
+        <div class="tech-body">
+          <span class="own">J・システム独自技術</span>
+          <h3>Ai-Glies</h3>
+          <p class="sub">アイグリーズ ／ 空調制御によるダブル省エネ</p>
+          <p>発電量を増やすのではなく、空調のピーク電力と使用電力量の両方を抑える独自の制御技術。基本料金と従量料金を同時に下げます。</p>
+          <button class="link-more" data-modal="g3" data-anchor="g3-aiglies">仕組みを詳しく見る ＋</button>
+        </div>
+      </div>
+
+      <div class="tech">
+        <div class="tech-img"><img src="assets/polyurea-photo.png" alt="ポリウレア樹脂で屋根防水と太陽光架台を一体化した施工の様子"></div>
+        <div class="tech-body">
+          <span class="own">J・システム独自施工</span>
+          <h3>ポリウレア一体施工</h3>
+          <p class="sub">屋根と設備の「寿命ギャップ」を埋める</p>
+          <p>パネルは20年、屋根は10年。運用途中の屋根改修はパネル脱着の追加費用に直結します。ポリウレア樹脂で屋根防水と架台を一体化し、漏水リスクを抑えます。</p>
+          <button class="link-more" data-modal="g3" data-anchor="g3-polyurea">仕組みを詳しく見る ＋</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 施工実績（新規） ============ -->
+<section id="works" class="sec-gray">
+  <div class="wrap">
+    <p class="eyebrow">Works</p>
+    <h2 class="sec-title">これまでの施工実績。</h2>
+    <p class="sec-lead">工場・倉庫・事業所を中心に、屋根の状態と電力の使い方に合わせた設計・施工を行ってきました。</p>
+
+    <dl class="works-sum">
+      <div><dt>累計施工件数</dt><dd class="ph">◯◯件</dd></div>
+      <div><dt>累計設置容量</dt><dd class="ph">◯◯MW</dd></div>
+      <div><dt>対応エリア</dt><dd class="ph">◯◯</dd></div>
+    </dl>
+
+    <div class="works-grid">
+      <div class="work">
+        <div class="work-img">施工写真<br><small>※ご提供をお願いします</small></div>
+        <div class="work-body">
+          <b>製造業 A社様</b>
+          <dl>
+            <dt>所在地</dt><dd class="ph">◯◯県</dd>
+            <dt>設置容量</dt><dd class="ph">◯◯◯kW</dd>
+            <dt>屋根形状</dt><dd class="ph">折板屋根</dd>
+            <dt>工期</dt><dd class="ph">約◯ヶ月</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="work">
+        <div class="work-img">施工写真<br><small>※ご提供をお願いします</small></div>
+        <div class="work-body">
+          <b>物流業 B社様</b>
+          <dl>
+            <dt>所在地</dt><dd class="ph">◯◯県</dd>
+            <dt>設置容量</dt><dd class="ph">◯◯◯kW</dd>
+            <dt>屋根形状</dt><dd class="ph">陸屋根</dd>
+            <dt>工期</dt><dd class="ph">約◯ヶ月</dd>
+          </dl>
+        </div>
+      </div>
+      <div class="work">
+        <div class="work-img"><img src="assets/polyurea-photo.png" alt="ポリウレア一体施工の実績写真"></div>
+        <div class="work-body">
+          <b>ポリウレア一体施工</b>
+          <dl>
+            <dt>所在地</dt><dd class="ph">◯◯県</dd>
+            <dt>施工内容</dt><dd>屋根防水＋架台一体化</dd>
+            <dt>屋根形状</dt><dd class="ph">陸屋根</dd>
+            <dt>工期</dt><dd class="ph">約◯週間</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <p class="disclaim"><span style="color:#f07825;font-weight:700">【制作メモ】</span>写真・実績データのご提供をお願いします。本セクションは今後のCMS（施工実績の自社更新機能）の出力先として設計しており、CMS実装時にそのまま差し替え可能な構造です。</p>
+  </div>
+</section>
+
+<!-- ============ 10 導入の流れ ============ -->
+<section id="flow" class="sec-dark on-dark">
+  <div class="wrap">
+    <p class="eyebrow">Support Flow</p>
+    <h2 class="sec-title">状況を知り、最適解を描き、<br>数字で判断できる状態へ。</h2>
+    <p class="sec-lead">まずは現状を整理する無料シミュレーションから。専門的な判断や手続きは、J・システムが伴走します。</p>
+
+    <div class="flow-grid">
+      <div class="fl">
+        <i>01</i><b>調べる</b>
+        <p>現場・デマンド調査。屋根形状、設備状況、時間帯別の電力データを確認します。</p>
+        <dl>
+          <div><dt>目安</dt><dd><span class="ph">約◯週間</span></dd></div>
+          <div><dt>お願い</dt><dd>現地確認のお立ち会い</dd></div>
+        </dl>
+      </div>
+      <div class="fl">
+        <i>02</i><b>描く</b>
+        <p>最適システム提案。自家消費率や設備構成を設計し、投資効果を試算します。</p>
+        <dl>
+          <div><dt>目安</dt><dd><span class="ph">約◯週間</span></dd></div>
+          <div><dt>お願い</dt><dd>ご要望のヒアリング</dd></div>
+        </dl>
+      </div>
+      <div class="fl">
+        <i>03</i><b>整える</b>
+        <p>財務計画・制度適用。補助金、税制、PPAを含めた導入計画を具体化します。</p>
+        <dl>
+          <div><dt>目安</dt><dd><span class="ph">約◯週間</span></dd></div>
+          <div><dt>お願い</dt><dd>社内でのご検討・ご判断</dd></div>
+        </dl>
+      </div>
+      <div class="fl">
+        <i>04</i><b>育てる</b>
+        <p>運用・収益化支援。余剰電力と環境価値を活かし、導入後も伴走します。</p>
+        <dl>
+          <div><dt>目安</dt><dd>導入後も継続</dd></div>
+          <div><dt>お願い</dt><dd>—</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="no-prep">
+      <span>📋</span>
+      <div>詳しい試算に必要な資料は、ご相談後にこちらから個別にご案内します。<br>
+      <span style="font-weight:500;color:#a9c3b6;font-size:15px">事前のご準備は不要です。まずは現状のご相談からお気軽にどうぞ。</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11 FAQ（新規） ============ -->
+<section id="faq">
+  <div class="wrap">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="sec-title">よくあるご質問。</h2>
+    <p class="sec-lead">ご相談前に多くいただく質問をまとめました。ここにない内容も、お気軽にお問い合わせください。</p>
+
+    <div class="faq faq-list">
+      <details>
+        <summary><i>Q</i><span>相談したら、しつこく営業されませんか？</span></summary>
+        <div class="ans">情報提供を目的としたご相談窓口です。ご検討の状況に合わせて対応いたしますので、「まず情報だけ知りたい」「社内で検討する材料が欲しい」といった段階でもご遠慮なくお声がけください。ご希望があれば、以降のご連絡を控えることも可能です。</div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>まだ何も資料が揃っていません。それでも相談できますか？</span></summary>
+        <div class="ans">問題ありません。<span class="ph">電気料金の検針票程度</span>があれば、おおよその規模感はご案内できます。詳しい試算に必要な資料（電力使用量データ、図面など）は、ご相談後にこちらから個別にご案内し、取得方法もサポートいたします。<span style="color:#f07825">※文言は要確認</span></div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>初期費用はどのくらいかかりますか？</span></summary>
+        <div class="ans">設置規模や設備構成により大きく異なります。初期費用ゼロのPPAモデル、リース、補助金・税制の組み合わせなど、初期負担を抑える方法が複数あります。<button class="link-more" data-modal="g4" data-anchor="g4-seido" style="font-size:15px">資金計画の選択肢を見る ＋</button></div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>屋根に穴を開けたり、傷んだりしませんか？</span></summary>
+        <div class="ans">屋根の状態は事前診断で確認したうえで工法を決定します。J・システムでは<strong>ポリウレア一体施工</strong>により屋根防水と架台を一体化し、漏水リスクを抑える施工が可能です。<button class="link-more" data-modal="g3" data-anchor="g3-polyurea" style="font-size:15px">ポリウレア一体施工を見る ＋</button></div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>築年数が古い建物でも設置できますか？</span></summary>
+        <div class="ans">耐荷重・防水状態の事前診断を実施し、その結果に基づいて設置可否と必要な補強・防水対策を判断します。屋根の更新時期が近い場合は、太陽光の設置とあわせて計画することで、将来のパネル脱着費用を避けられるケースもあります。</div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>補助金や税制は、うちも対象になりますか？</span></summary>
+        <div class="ans">対象可否の調査から代行いたします。中小企業経営強化税制などは、企業要件・計画認定・設備の取得時期によって適用可否が変わるため、事前の確認が重要です。適用要件の確認から申請書類の作成まで支援します。</div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>導入までどのくらいの期間がかかりますか？</span></summary>
+        <div class="ans">規模や制度申請の有無により変動しますが、目安として<span class="ph">◯〜◯ヶ月</span>程度です。補助金を活用する場合は公募期間に合わせた進行が必要になるため、早めのご相談をおすすめしています。</div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>対応エリアはどこまでですか？</span></summary>
+        <div class="ans"><span class="ph">◯◯</span>を中心に対応しております。エリア外の場合もご相談ください。<span style="color:#f07825">※要確認</span></div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>制度が今後変わったらどうなりますか？</span></summary>
+        <div class="ans">導入して終わりではなく、発電・消費実績の計測と記録の管理まで伴走します。制度変更時にも説明できるデータを整えておくことで、対応の選択肢を確保します。<button class="link-more" data-modal="g1" data-anchor="g1-data" style="font-size:15px">データと記録の整理について ＋</button></div>
+      </details>
+      <details>
+        <summary><i>Q</i><span>見積もりだけでもお願いできますか？</span></summary>
+        <div class="ans">もちろん可能です。「まず数字だけ知りたい」というご相談を多くいただいています。試算結果をご覧いただいたうえで、社内でご検討ください。試算・ご相談に費用はかかりません。</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12 会社情報（新規） ============ -->
+<section id="company" class="sec-gray">
+  <div class="wrap">
+    <p class="eyebrow">Company</p>
+    <h2 class="sec-title">J・システム株式会社について。</h2>
+
+    <div class="company-grid">
+      <div class="company">
+        <table>
+          <tr><th>会社名</th><td>J・システム株式会社</td></tr>
+          <tr><th>所在地</th><td class="ph">◯◯◯◯◯◯</td></tr>
+          <tr><th>創業</th><td class="ph">◯◯◯◯年</td></tr>
+          <tr><th>代表者</th><td class="ph">◯◯ ◯◯</td></tr>
+          <tr><th>事業内容</th><td>産業用・住宅用太陽光発電システムの設計・施工／蓄電池・EMS導入／空調制御システム「Ai-Glies」／屋根防水・ポリウレア施工／補助金・税制申請支援／J-クレジット創出支援</td></tr>
+          <tr><th>従業員数</th><td class="ph">◯◯名</td></tr>
+          <tr><th>対応エリア</th><td class="ph">◯◯</td></tr>
+        </table>
+      </div>
+
+      <div class="cert">
+        <b>LICENSE &amp; CAPABILITY</b>
+        <ul>
+          <li><span class="ph">電気工事業登録 ◯◯◯◯</span></li>
+          <li><span class="ph">建設業許可 ◯◯◯◯</span></li>
+          <li><span class="ph">保有資格・認定 ◯◯◯◯</span></li>
+          <li>自社施工体制による一貫対応</li>
+          <li>導入後の運用・記録管理まで継続支援</li>
+        </ul>
+        <p style="margin:24px 0 0;font-size:13.5px;color:#8fb3a1;line-height:1.8">※ 記載事項はJ・システム様よりご提供いただき確定します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 13 補足資料（モーダル内包） ============ -->
+<section id="guide" class="sec-dark on-dark">
+  <div class="wrap">
+    <p class="eyebrow">Supplementary Guide</p>
+    <h2 class="sec-title">もっと詳しく知りたい方へ。<br>制度・技術の解説を、この場でどうぞ。</h2>
+    <p class="sec-lead">申し込みもダウンロードも不要です。気になる章をクリックすると、その場で全文をお読みいただけます。印刷して社内資料としてお使いいただくこともできます。</p>
+
+    <div class="guide-grid">
+      <button class="gd" data-modal="g1">
+        <small>CHAPTER 01 ／ RULES</small>
+        <b>2026年、脱炭素ルールはどう変わるのか</b>
+        <p>GX-ETS、CBAM、GHGプロトコルScope 2改定。制度上の義務だけでなく、取引先からの情報要請や調達条件、投資判断への影響まで整理します。</p>
+        <span class="meta"><em>5トピック ／ 図解3点</em><span>その場で読む ＋</span></span>
+      </button>
+
+      <button class="gd" data-modal="g2">
+        <small>CHAPTER 02 ／ CHOICE</small>
+        <b>自家消費型太陽光が選ばれる理由</b>
+        <p>売電から自家消費への転換、価値の逆転が起きた背景、自己所有・PPA・リースの比較まで。導入方式の選び方を解説します。</p>
+        <span class="meta"><em>3トピック ／ 図解2点</em><span>その場で読む ＋</span></span>
+      </button>
+
+      <button class="gd" data-modal="g3">
+        <small>CHAPTER 03 ／ DESIGN</small>
+        <b>屋根・空調を含めた次世代システム設計</b>
+        <p>Ai-Gliesによる空調制御、ポリウレア一体施工による長寿命化、現場データに基づく設備設計の考え方を紹介します。</p>
+        <span class="meta"><em>5トピック ／ 図解4点</em><span>その場で読む ＋</span></span>
+      </button>
+
+      <button class="gd" data-modal="g4">
+        <small>CHAPTER 04 ／ FINANCE</small>
+        <b>投資負担を抑える財務支援メニュー</b>
+        <p>補助金、税制優遇、PPAモデル、J-クレジット。長期の収支をどう組み立てるか、同じ条件で比較して解説します。</p>
+        <span class="meta"><em>4トピック ／ 図解2点</em><span>その場で読む ＋</span></span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 14 最終CTA ============ -->
+<section id="contact" class="sec-tint">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div>
+        <p class="eyebrow">Free Simulation</p>
+        <h2 class="sec-title">制度に振り回されるか。<br>制度を、経営の味方にするか。</h2>
+        <p class="sec-lead" style="margin-bottom:0">まずは御社の屋根と電力データから、導入効果と活用できる支援策を整理します。簡単なご相談からでも構いません。</p>
+
+        <div class="promise">
+          <div class="pr"><i>¥0</i><div><b>ご相談・試算は無料</b><small>費用は一切かかりません</small></div></div>
+          <div class="pr"><i>✓</i><div><b>無理な営業はしません</b><small>情報提供が目的です</small></div></div>
+          <div class="pr"><i>⏱</i><div><b><span class="ph">◯営業日</span>以内にご連絡</b><small>メールまたはお電話でご連絡します</small></div></div>
+        </div>
+
+        <div class="tel-alt">
+          <small>お急ぎの方はお電話でも承ります</small>
+          <b class="ph">◯◯-◯◯◯◯-◯◯◯◯</b>
+        </div>
+      </div>
+
+      <form onsubmit="event.preventDefault();alert('※デザイン案のためフォームは動作しません。');">
+        <div class="fld">
+          <label>会社名 <span class="req">必須</span></label>
+          <input type="text" placeholder="株式会社◯◯◯◯" required>
+        </div>
+        <div class="fld">
+          <label>お名前 <span class="req">必須</span></label>
+          <input type="text" placeholder="山田 太郎" required>
+        </div>
+        <div class="fld">
+          <label>メールアドレス <span class="req">必須</span></label>
+          <input type="email" placeholder="example@company.co.jp" required>
+        </div>
+        <div class="fld">
+          <label>電話番号 <span class="opt">任意</span></label>
+          <input type="tel" placeholder="03-0000-0000">
+        </div>
+        <div class="fld">
+          <label>ご連絡希望の時間帯 <span class="opt">任意</span></label>
+          <select>
+            <option>指定なし</option>
+            <option>午前（9:00〜12:00）</option>
+            <option>午後（13:00〜17:00）</option>
+            <option>夕方（17:00〜19:00）</option>
+          </select>
+          <p class="hint">ご都合のよい時間帯をお知らせください。日程はご連絡時に調整いたします。</p>
+        </div>
+        <div class="fld">
+          <label>ご相談内容 <span class="opt">任意</span></label>
+          <textarea placeholder="例）工場の屋根に太陽光を検討しています。補助金が使えるか知りたいです。"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">無料で相談する</button>
+        <p class="form-foot">送信いただいた内容は、ご相談対応の目的以外には使用しません。<br><a href="#" style="color:var(--green-800)">プライバシーポリシー</a></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 15 フッター ============ -->
+<footer>
+  <div class="wrap ft">
+    <div>
+      <a href="#" class="logo">J<span>・system</span></a>
+      <p>企業のエネルギー転換を、設計から運用・収益化まで。<br>J・システム株式会社</p>
+    </div>
+    <nav>
+      <a href="#support">支援内容</a>
+      <a href="#technology">独自技術</a>
+      <a href="#works">導入事例</a>
+      <a href="#faq">よくある質問</a>
+      <a href="#company">会社情報</a>
+      <a href="#contact">お問い合わせ</a>
+    </nav>
+  </div>
+  <div class="wrap"><p class="copy">© J・SYSTEM CO., LTD. ／ 本ページはデザイン案です。</p></div>
+</footer>
+
+<!-- SP固定CTAバー -->
+<div class="spbar" id="spbar">
+  <a href="tel:0000000000" class="btn btn-ghost">☎ 電話</a>
+  <a href="#contact" class="btn btn-primary">無料で相談する</a>
+</div>
+
+
+<!-- ============================================================
+     モーダル：補足資料 全4章（LP内で完結）
+     ============================================================ -->
+
+<!-- ---------- CHAPTER 01 制度 ---------- -->
+<div class="mask" id="g1">
+  <div class="modal">
+    <div class="m-head">
+      <div><small>CHAPTER 01 ／ RULES</small><b>2026年、脱炭素ルールはどう変わるのか</b></div>
+      <button class="m-close" aria-label="閉じる">✕</button>
+    </div>
+    <div class="m-body">
+      <nav class="m-toc">
+        <b>目次</b>
+        <a href="#g1-overview">1. 環境部門だけのテーマではない</a>
+        <a href="#g1-gxets">2. GX-ETS（排出量取引制度）</a>
+        <a href="#g1-cbam">3. CBAM（炭素国境調整措置）</a>
+        <a href="#g1-ghg">4. GHGプロトコル Scope 2 改定</a>
+        <a href="#g1-data">5. データと記録の整理</a>
+      </nav>
+      <div class="m-main">
+
+        <div class="m-sec">
+          <p class="kicker">OVERVIEW</p>
+          <h3 id="g1-overview">脱炭素は、環境部門だけのテーマではありません。</h3>
+          <p class="desc">国内制度、国際取引、排出量算定の変化が、企業経営に直接関わり始めています。</p>
+          <figure>
+            <img src="assets/ref-p02.jpg" alt="国内・グローバル・国境の3つのリスクが2026年に集中することを示す図">
+            <figcaption>2026年に集中する3つのリスク（国内コスト／サプライチェーン／輸出）</figcaption>
+          </figure>
+          <div class="m-cards">
+            <div class="m-card"><b>国内制度｜GX-ETS</b><p>2026年度から本格稼働。対象企業には、排出目標や実績、排出枠の適切な管理が求められます。</p></div>
+            <div class="m-card"><b>国際取引｜CBAM</b><p>2026年1月から本格適用。対象品目をEUへ輸出する際、製品に含まれる排出量データが重要になります。</p></div>
+            <div class="m-card one"><b>排出量算定｜GHGプロトコル</b><p>Scope 2を含む基準の見直しが進んでおり、再エネ調達の証拠やデータの信頼性が重視されています。</p></div>
+          </div>
+          <p>影響は制度上の義務だけではありません。<strong>取引先からの情報要請や調達条件、投資判断にも及びます。</strong></p>
+          <p class="note">※ 適用対象・時期・最終要件は各制度の公式情報をご確認ください。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">GX-ETS</p>
+          <h3 id="g1-gxets">CO₂排出量が、経営コストに直結する。</h3>
+          <p class="desc">国内の排出量取引制度が本格稼働し、排出量データの把握・説明が求められます。</p>
+          <figure>
+            <img src="assets/ref-p03.jpg" alt="2026年排出量取引制度の開始とCBAMの影響を示す図">
+            <figcaption>CO₂がコストになる時代の幕開け（排出量取引制度／CBAM）</figcaption>
+          </figure>
+          <div class="m-cards">
+            <div class="m-card"><b>01 本格稼働の時期と対象</b><p>2026年度に本格稼働。3年度平均で年10万t-CO₂以上を排出する企業が対象です。</p></div>
+            <div class="m-card"><b>02 排出枠の管理</b><p>割当量と実績との差を管理し、不足する場合は排出枠の調達等が必要になります。</p></div>
+          </div>
+          <p>排出枠を超過した場合、その差分を埋めるためのコストが発生します。<strong>CO₂が直接的な財務コストになる</strong>という点が、これまでの環境対策との決定的な違いです。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">CBAM</p>
+          <h3 id="g1-cbam">輸出企業には、国境を越えた炭素コストが。</h3>
+          <p class="desc">EUの炭素国境調整措置（CBAM）は、対象品目の輸入に排出量データの申告を求めます。</p>
+          <div class="m-cards">
+            <div class="m-card"><b>03 EUのCBAM</b><p>2026年本格適用。年50t超の対象品目を輸入するEU事業者に、認可・申告等を求めます。</p></div>
+            <div class="m-card"><b>04 日本企業への影響</b><p>EU向け対象製品では、製品に含まれる排出量データの提示が必要になります。</p></div>
+          </div>
+          <p>直接の名宛人はEU側の輸入事業者ですが、<strong>データを提供するのは製造元である日本企業です。</strong>サプライチェーン全体で排出量を説明できる体制が求められます。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">GHG PROTOCOL / SCOPE 2</p>
+          <h3 id="g1-ghg">証書購入だけでは、説明しきれない時代へ。</h3>
+          <p class="desc">Scope 2の改定では、電力を「いつ・どこで」使い、どの電源と対応させるかが検討されています。</p>
+          <figure>
+            <img src="assets/ref-p04.jpg" alt="従来の年単位相殺から1時間単位のアワリーマッチングへの変化を示す図">
+            <figcaption>従来のScope 2（年単位の相殺）と、改定案（1時間単位の同時同量／24-7 CFE）の比較</figcaption>
+          </figure>
+          <div class="m-cards">
+            <div class="m-card"><b>これまで</b><p>「夜間に使った電力」を「昼間に発電した証書」で年単位で相殺できました。FIT証書を購入すれば「再エネ100%」と主張できた状態です。</p></div>
+            <div class="m-card"><b>改定案</b><p>1時間ごとに、使った電力と同時間帯のクリーン電力を対応させる方向へ（アワリーマッチング）。</p></div>
+          </div>
+          <p>この変化が意味するのは、<strong>「証書を買う」だけの脱炭素が通用しにくくなる</strong>ということです。発電と消費が同じ場所・同じ時間で結びつくオンサイト自家消費は、この観点で説明しやすい構成になります。</p>
+          <p class="note">※ Scope 2の改定内容は検討中です。最終基準の確定後、適用時期と要件をご確認ください。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">DATA &amp; RECORDS</p>
+          <h3 id="g1-data">制度が変わっても対応できるよう、データと記録を整理。</h3>
+          <p class="desc">再エネ設備は、導入するだけでは不十分です。発電・消費実績を説明できる運用体制まで整えます。</p>
+          <div class="m-flow">
+            <span>計測｜電力を測る</span><i>→</i>
+            <span>契約｜権利を整理する</span><i>→</i>
+            <span>記録｜記録を残す</span>
+          </div>
+          <div class="m-cards">
+            <div class="m-card"><b>計測</b><p>使用量、発電量、時間帯を把握し、削減効果を説明できるようにします。</p></div>
+            <div class="m-card"><b>契約</b><p>電力、環境価値、余剰電力が誰に帰属するのかを、契約時に明確にします。</p></div>
+            <div class="m-card one"><b>記録</b><p>申請や算定、監査に必要な計測データと書類を継続して管理します。</p></div>
+          </div>
+          <p>証書やクレジットの利用可否は、<strong>契約内容、算定ルール、二重計上の有無</strong>を確認して判断します。J・システムは、この運用体制の構築まで支援します。</p>
+          <p class="src">参照：経済産業省｜排出量取引制度／GHG Protocol｜Scope 2 Guidance・Update Process／European Commission｜CBAM<br>本内容は2026年8月時点で公開されている情報をもとに作成しています。</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="m-foot">
+      <p>御社の場合にどう影響するか、個別に整理してご説明します。</p>
+      <button class="m-print">🖨 印刷する</button>
+      <a href="#contact" class="btn btn-primary m-cta">この内容について相談する →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- CHAPTER 02 導入方法 ---------- -->
+<div class="mask" id="g2">
+  <div class="modal">
+    <div class="m-head">
+      <div><small>CHAPTER 02 ／ CHOICE</small><b>自家消費型太陽光が選ばれる理由</b></div>
+      <button class="m-close" aria-label="閉じる">✕</button>
+    </div>
+    <div class="m-body">
+      <nav class="m-toc">
+        <b>目次</b>
+        <a href="#g2-jikashohi">1. 自家消費の基本と4つの効果</a>
+        <a href="#g2-crossing">2. 売るより、自社で使う</a>
+        <a href="#g2-hikaku">3. 自己所有・PPA・リースの比較</a>
+      </nav>
+      <div class="m-main">
+
+        <div class="m-sec">
+          <p class="kicker">SELF-CONSUMPTION</p>
+          <h3 id="g2-jikashohi">発電した電気を自社で使い、購入する電力を減らします。</h3>
+          <p class="desc">まずは、自社の電力需要と発電する時間帯がどれだけ重なるかを確認します。</p>
+          <div class="m-flow">
+            <span>太陽光</span><i>→</i><span>自社設備</span><i>→</i><span>余剰の出口</span>
+          </div>
+          <p style="font-size:15px;color:var(--ink-soft);margin-top:-8px">発電 → 自家消費 → 蓄電・設備利用・売電</p>
+          <div class="m-cards">
+            <div class="m-card"><b>効果 1｜電気代</b><p>購入する電力量を減らし、電力価格の変動に備えます。</p></div>
+            <div class="m-card"><b>効果 2｜脱炭素</b><p>自社で再エネを利用し、排出量削減の実績につなげます。</p></div>
+            <div class="m-card"><b>効果 3｜事業継続</b><p>蓄電池と組み合わせ、停電時に必要な電力を確保する方法を検討できます。</p></div>
+            <div class="m-card"><b>効果 4｜活用の選択肢</b><p>余剰電力や環境価値を将来活用できる余地を残します。</p></div>
+          </div>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">VALUE REVERSAL</p>
+          <h3 id="g2-crossing">売るより、自社で使う価値が高まっています。</h3>
+          <p class="desc">売電単価だけでなく、購入電力の削減額を軸に、太陽光の投資効果を見直します。</p>
+          <figure>
+            <img src="assets/ref-p05.jpg" alt="FIT売電単価の低下と企業向け電気料金の上昇が交差するクロッシングチャート">
+            <figcaption>FIT売電単価（代表例）と企業向け電気料金（賦課金含む）の推移。両者が交差した以降は「自家消費メリット拡大ゾーン」に</figcaption>
+          </figure>
+          <p>システム価格が低下する一方で、電気料金は上昇トレンドにあります。現在すでに交差点（X-Point）を越えており、<strong>売電するより自社で消費した方が財務メリットが大きい</strong>局面に入っています。</p>
+          <p><strong>自家消費率が高いほど、電気代削減効果を得やすくなります。</strong>そのため設計段階では、屋根に載る最大容量ではなく「自社の需要とどれだけ重なるか」を基準に容量を決めることが重要です。</p>
+          <p class="note">※ FIT単価は代表例です。電気料金・経済性は契約、地域、時期、設備条件によって異なります。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">COMPARISON</p>
+          <h3 id="g2-hikaku">導入方法は、初期費用と運用負担のバランスで選びます。</h3>
+          <p class="desc">自己所有、オンサイトPPA、リースを、同じ条件で比較します。</p>
+          <div class="m-table-wrap">
+            <table class="m-table">
+              <thead><tr><th>評価軸</th><th>自己所有</th><th>オンサイトPPA</th><th>リース</th></tr></thead>
+              <tbody>
+                <tr><th>初期費用</th><td>必要</td><td>原則不要</td><td>月額で平準化</td></tr>
+                <tr><th>設備所有</th><td>自社</td><td>PPA事業者</td><td>契約先</td></tr>
+                <tr><th>運用・保守</th><td>自社または委託</td><td>事業者が担う</td><td>契約条件による</td></tr>
+                <tr><th>メリット</th><td>削減効果を自社で得やすい</td><td>初期投資を抑えやすい</td><td>資金計画を立てやすい</td></tr>
+                <tr><th>注意点</th><td>回収期間・保守体制</td><td>契約期間・屋根条件・信用力</td><td>会計処理・中途解約条件</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="note">※ PPA・リースの条件は事業者・設備・契約期間により異なります。</p>
+
+          <p style="margin-top:32px">また、調達手法という観点では、新しい算定ルールの下でどの方式が説明しやすいかも判断材料になります。</p>
+          <figure>
+            <img src="assets/ref-p06.jpg" alt="FIT非化石証書・オフサイトPPA・オンサイト自家消費・オンサイト自家消費＋蓄電池の比較表">
+            <figcaption>調達手法の比較。発電と消費が同一施設で完結する「オンサイト自家消費（＋蓄電池）」が、物理的な供給関係を最も説明しやすい構成</figcaption>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+    <div class="m-foot">
+      <p>御社の電力の使い方に合う方式を、データをもとにご提案します。</p>
+      <button class="m-print">🖨 印刷する</button>
+      <a href="#contact" class="btn btn-primary m-cta">この内容について相談する →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- CHAPTER 03 設備設計 ---------- -->
+<div class="mask" id="g3">
+  <div class="modal">
+    <div class="m-head">
+      <div><small>CHAPTER 03 ／ DESIGN</small><b>屋根・空調を含めた次世代システム設計</b></div>
+      <button class="m-close" aria-label="閉じる">✕</button>
+    </div>
+    <div class="m-body">
+      <nav class="m-toc">
+        <b>目次</b>
+        <a href="#g3-integrated">1. 設備と運用の両面から</a>
+        <a href="#g3-aiglies">2. Ai-Glies（独自技術）</a>
+        <a href="#g3-roof">3. 屋根と設備の更新時期</a>
+        <a href="#g3-polyurea">4. ポリウレア一体施工（独自施工）</a>
+        <a href="#g3-survey">5. 現場データに基づく設計</a>
+      </nav>
+      <div class="m-main">
+
+        <div class="m-sec">
+          <p class="kicker">INTEGRATED DESIGN</p>
+          <h3 id="g3-integrated">制度対応を、設備と運用の両面から。</h3>
+          <p class="desc">太陽光、蓄電池、空調、建物を一体で設計し、長く使えるエネルギー設備をつくります。</p>
+          <figure>
+            <img src="assets/ref-p07.jpg" alt="J-system次世代ソーラー・アーキテクチャ。物理的供給の優位性、長期稼働担保、アワリーマッチング対応、ダブル省エネの4要素">
+            <figcaption>J・システムの次世代ソーラー・アーキテクチャ。4つの要素を一体で設計する</figcaption>
+          </figure>
+          <div class="m-cards">
+            <div class="m-card"><b>エネルギー運用｜自家消費＋蓄電</b><p>発電量と電力需要を時間帯ごとに把握し、ピーク抑制と非常時の電力確保を考えます。蓄電池とEMSにより夜間の需要もカバーします。</p></div>
+            <div class="m-card"><b>長期利用｜屋根と設備の寿命</b><p>屋根と設備の更新時期を見通し、途中での移設や再施工をできるだけ避けます。</p></div>
+          </div>
+          <p>既存の工場屋根を最大限活用するオンサイト自家消費は、野立てのような環境改変を伴わない点でも説明しやすい構成です。</p>
+          <p class="note">空調制御は、発電量を増やすものではありません。電力のピークや使用量を抑えるための選択肢です。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">ORIGINAL TECHNOLOGY</p>
+          <h3 id="g3-aiglies">「つくる」と「減らす」を、同時に設計。<span class="own-inline">J・システム独自技術</span></h3>
+          <p class="desc">太陽光発電とJ・システム独自の空調制御技術「Ai-Glies（アイグリーズ）」を組み合わせ、購入電力とピーク需要を抑えます。</p>
+          <figure>
+            <img src="assets/ref-p09.jpg" alt="Ai-Glies導入前後の電力需要カーブ比較。ピークが抑えられ基本料金の壁を下回る">
+            <figcaption>Ai-Glies導入によるデマンドカーブの変化。ピーク時のデマンド制御で「基本料金」を、日常的な制御で「使用料金」を下げる</figcaption>
+          </figure>
+          <div class="m-flow">
+            <span>つくる｜太陽光で発電</span><i>→</i>
+            <span>減らす｜Ai-Glies</span><i>→</i>
+            <span>守る｜電力コスト</span>
+          </div>
+          <div class="m-cards">
+            <div class="m-card"><b>つくる</b><p>昼間に使う電力の一部を自社でつくり、購入電力を減らします。</p></div>
+            <div class="m-card"><b>独自技術｜Ai-Glies</b><p>空調に特化した節電・省エネシステム。使用量とピーク需要をきめ細かく抑えます。</p></div>
+            <div class="m-card one"><b>守る｜電力コスト</b><p>基本料金と使用料金の両面から、電力コストの負担抑制を目指します。</p></div>
+          </div>
+          <p><strong>Ai-Gliesは空調運転を最適化し、太陽光と組み合わせて購入電力の削減を目指すJ・システム独自の技術です。</strong>発電量を増やすアプローチとは異なり、消費電力そのものに働きかけるため、太陽光と組み合わせることで相乗効果が生まれます。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">LIFE CYCLE</p>
+          <h3 id="g3-roof">導入前に、屋根と設備それぞれの更新時期を見通します。</h3>
+          <p class="desc">運用期間中に屋根改修が必要になると、パネルの移設や再施工に追加費用がかかります。</p>
+          <div class="m-flow">
+            <span>導入前｜現地調査・屋根診断</span><i>→</i>
+            <span>運用期間｜発電・保守・運用データの管理</span><i>→</i>
+            <span>更新時期｜屋根・設備の更新判断</span>
+          </div>
+          <div class="m-card one" style="margin-bottom:26px">
+            <b>設計前に確認する項目</b>
+            <p>防水・耐荷重 ／ 既存設備の更新計画 ／ 将来の増設余地 ／ 施工・保守動線</p>
+          </div>
+          <p>パネルが20年稼働しても、土台となる屋根が10年で劣化・漏水すれば、<strong>投資回収計画（ROI）は成立しません。</strong>導入前の見通しが、長期の収支を左右します。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">ORIGINAL CONSTRUCTION</p>
+          <h3 id="g3-polyurea">パネルと屋根の寿命差を、施工前に埋める。<span class="own-inline">J・システム独自施工</span></h3>
+          <p class="desc">J・システム独自の施工設計で、屋根防水と太陽光架台を一体化し、長期運用を支えます。</p>
+          <figure>
+            <img src="assets/polyurea-photo.png" alt="ポリウレア樹脂により屋根防水と架台が一体化された施工面">
+            <figcaption>ポリウレア一体施工の施工面。架台の基礎部分まで樹脂で覆い、屋根と完全に一体化させる</figcaption>
+          </figure>
+          <div class="m-cards">
+            <div class="m-card"><b>課題｜屋根が先に劣化する</b><p>運用途中の屋根改修は、パネルの取り外し・再施工費につながります。</p></div>
+            <div class="m-card"><b>解決技術｜ポリウレア</b><p>イソシアネートとアミンの化学反応によって生成される樹脂化合物。高い防水・防食性、耐衝撃性、速乾性を持ちます。</p></div>
+          </div>
+          <p><strong>効果：</strong>架台と屋根を完全に一体化し、漏水リスクを極限まで排除。設備と屋根の「20年以上の長期共存」を実現します。</p>
+          <figure>
+            <img src="assets/ref-p08.jpg" alt="太陽光パネル20年、屋根10年の寿命ギャップとポリウレアによる解決を示す図と施工写真">
+            <figcaption>パネル20年・屋根10年の「寿命ギャップ」を埋める防衛線としてのポリウレア施工</figcaption>
+          </figure>
+          <p class="note">適用可否・耐用年数は、屋根の状態、下地、製品仕様、施工条件を確認して判断します。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">SITE SURVEY</p>
+          <h3 id="g3-survey">最適な設備構成は、現場のデータを見て決めます。</h3>
+          <p class="desc">発電量だけでなく、建物の状態、電力需要、今後の事業計画まで確認します。</p>
+          <div class="m-cards">
+            <div class="m-card"><b>電力需要</b><p>30分ごとの使用量・季節変動</p></div>
+            <div class="m-card"><b>電力契約</b><p>契約電力・単価</p></div>
+            <div class="m-card"><b>建物</b><p>屋根構造・築年数</p></div>
+            <div class="m-card"><b>設置環境</b><p>日陰・方位・利用可能面積</p></div>
+            <div class="m-card"><b>設備</b><p>空調・生産の稼働時間</p></div>
+            <div class="m-card"><b>事業計画</b><p>BCP・増設・拠点計画</p></div>
+          </div>
+          <p>これらの情報をもとに、<strong>設備容量、蓄電池、制御方法、投資回収をまとめてシミュレーション</strong>します。データの取得方法についても、ご相談後に個別にご案内します。</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="m-foot">
+      <p>御社の屋根と設備の状況に合わせて、構成をご提案します。</p>
+      <button class="m-print">🖨 印刷する</button>
+      <a href="#contact" class="btn btn-primary m-cta">この内容について相談する →</a>
+    </div>
+  </div>
+</div>
+
+<!-- ---------- CHAPTER 04 資金計画 ---------- -->
+<div class="mask" id="g4">
+  <div class="modal">
+    <div class="m-head">
+      <div><small>CHAPTER 04 ／ FINANCE</small><b>投資負担を抑える財務支援メニュー</b></div>
+      <button class="m-close" aria-label="閉じる">✕</button>
+    </div>
+    <div class="m-body">
+      <nav class="m-toc">
+        <b>目次</b>
+        <a href="#g4-shushi">1. 長期的な収支で判断する</a>
+        <a href="#g4-seido">2. 補助金・税制・PPAの比較</a>
+        <a href="#g4-credit">3. J-クレジットと余剰電力</a>
+        <a href="#g4-denryoku">4. 発電電力の有効活用</a>
+      </nav>
+      <div class="m-main">
+
+        <div class="m-sec">
+          <p class="kicker">LONG-TERM BALANCE</p>
+          <h3 id="g4-shushi">導入費用だけでなく、長期的な収支で判断します。</h3>
+          <p class="desc">得られる効果と将来かかる費用を、同じ期間・同じ前提で比べます。</p>
+          <div class="m-flow">
+            <span>電気代削減｜自家消費</span><i>＋</i>
+            <span>補助金・税制</span><i>＋</i>
+            <span>環境価値｜J-クレジット等</span><i>＋</i>
+            <span>余剰電力</span><i>−</i>
+            <span>導入・運用費用</span>
+          </div>
+          <div class="m-card one" style="margin-bottom:26px">
+            <b>比較する主な指標</b>
+            <p>年間キャッシュフロー ／ 回収期間 ／ 累積効果 ／ 契約終了後の資産・権利</p>
+          </div>
+          <p>導入・運用費用には、保守や将来の更新費用も含めて比較することが重要です。<strong>「初期費用がいくらか」ではなく「20年でいくら残るか」</strong>が判断軸になります。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">SUBSIDY / TAX / PPA</p>
+          <h3 id="g4-seido">補助金、税制、PPAを、同じ条件で比較します。</h3>
+          <p class="desc">制度ありきではなく、自社の事業計画に合う方法を組み合わせます。</p>
+          <figure>
+            <img src="assets/ref-p10.jpg" alt="投資回収の前倒し、税制優遇の獲得、初期費用ゼロのPPAモデルという3つの財務的メリット">
+            <figcaption>導入を加速する3つの財務的メリット（初期投資支援スキーム／税制優遇／PPAモデル）</figcaption>
+          </figure>
+          <div class="m-cards">
+            <div class="m-card"><b>補助金｜初期負担を下げる</b><p>対象設備、公募期間、着手可能な時期を確認します。公募期間に合わせた進行が必要なため、早めの検討が有利です。</p></div>
+            <div class="m-card"><b>税制優遇｜投資効果を高める</b><p>中小企業経営強化税制などを活用し、即時償却または税額控除の適用を検討。企業要件、計画認定、設備の取得時期を確認します。</p></div>
+            <div class="m-card"><b>自己資金／融資｜資産として保有</b><p>設備を自社資産として保有。回収期間、金利、保守費用を含めて判断します。</p></div>
+            <div class="m-card"><b>PPA／リース｜初期費用を抑える</b><p>資産保有を望まない企業向けの第三者所有モデル。契約期間、単価、屋根条件、中途解約条件を確認します。</p></div>
+          </div>
+          <p><strong>J・システムは、適用要件の調査から申請書類の作成まで代行します。</strong>「対象になるか分からない」段階からご相談いただけます。</p>
+          <p class="note">※ 適用できる制度や期限は、企業、設備、取得時期、認定手続きによって異なります。投資判断や申請、会計・税務処理にあたっては、最新の公募要領や専門家の確認をお願いします。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">J-CREDIT</p>
+          <h3 id="g4-credit">環境価値と余剰電力を、導入後も有効に活用します。</h3>
+          <p class="desc">自家消費を基本に、クレジット化、蓄電、設備利用、売電の可能性を確認します。</p>
+          <figure>
+            <img src="assets/ref-p11.jpg" alt="発電と自家消費、最適利用の支援、J-クレジット創出、高値での販売支援からなるエネルギー収益化サイクル">
+            <figcaption>屋根を、市場で売買可能な「環境価値の泉」に変えるエネルギー収益化サイクル</figcaption>
+          </figure>
+          <p><strong>J-クレジット｜CO₂削減量をクレジットに変える</strong></p>
+          <div class="m-flow">
+            <span>対象になるか確認</span><i>→</i>
+            <span>計測・記録</span><i>→</i>
+            <span>審査・認証</span><i>→</i>
+            <span>活用・販売</span>
+          </div>
+          <p>対象となる方法論、追加性、二重計上の防止などを確認する必要があります。J・システムは創出から市場での販売支援まで一貫して対応します。</p>
+        </div>
+
+        <div class="m-sec">
+          <p class="kicker">ENERGY OPTIMIZE</p>
+          <h3 id="g4-denryoku">余剰電力の使い道を選ぶ。</h3>
+          <p class="desc">自家消費でまかないきれない電力を、どう活かすかを設計します。</p>
+          <div class="m-cards">
+            <div class="m-card"><b>ためる｜蓄電池</b><p>昼間の余剰を蓄え、夜間や停電時に使用します。</p></div>
+            <div class="m-card"><b>つかう｜他設備・EV</b><p>特定施設への電力融通や社用EVの充電などに活用します。</p></div>
+            <div class="m-card one"><b>うる｜売電・集約</b><p>余剰電力の高値買取事業者とのマッチングを支援します。</p></div>
+          </div>
+          <p><strong>価格だけでなく、契約条件、時間帯、設備上の制約も比べて判断します。</strong></p>
+          <p class="src">参照：資源エネルギー庁｜再生可能エネルギー情報／環境省｜令和8年度 脱炭素化支援事業／中小企業庁｜中小企業経営強化税制・中小企業投資促進税制／経済産業省｜J-クレジット制度／J-クレジット制度 公式サイト<br>本内容は2026年8月時点で公開されている情報をもとに作成しています。</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="m-foot">
+      <p>御社が使える可能性のある制度を、調査してご案内します。</p>
+      <button class="m-print">🖨 印刷する</button>
+      <a href="#contact" class="btn btn-primary m-cta">この内容について相談する →</a>
+    </div>
+  </div>
+</div>
+
+
+<script>
+(function(){
+  'use strict';
+  var body = document.body;
+  var scrollY = 0;
+
+  /* ---------- モーダル ---------- */
+  function openModal(id, anchor){
+    var m = document.getElementById(id);
+    if(!m) return;
+    scrollY = window.scrollY;
+    m.classList.add('on');
+    body.style.position = 'fixed';
+    body.style.top = -scrollY + 'px';
+    body.style.width = '100%';
+
+    var main = m.querySelector('.m-main');
+    if(anchor){
+      var t = m.querySelector('#' + anchor);
+      if(t){
+        // スムーススクロールを一旦切って即座に位置づけ
+        main.style.scrollBehavior = 'auto';
+        main.scrollTop = t.closest('.m-sec').offsetTop - 20;
+        main.style.scrollBehavior = 'smooth';
+      }
+    } else {
+      main.scrollTop = 0;
+    }
+    syncToc(m);
+    m.querySelector('.m-close').focus();
+  }
+
+  function closeModal(m){
+    m.classList.remove('on');
+    body.style.position = '';
+    body.style.top = '';
+    body.style.width = '';
+    window.scrollTo(0, scrollY);
+  }
+
+  document.querySelectorAll('[data-modal]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      openModal(btn.getAttribute('data-modal'), btn.getAttribute('data-anchor'));
+    });
+  });
+
+  document.querySelectorAll('.mask').forEach(function(mask){
+    mask.querySelector('.m-close').addEventListener('click', function(){ closeModal(mask); });
+    mask.addEventListener('click', function(e){ if(e.target === mask) closeModal(mask); });
+
+    // 目次クリック
+    mask.querySelectorAll('.m-toc a').forEach(function(a){
+      a.addEventListener('click', function(e){
+        e.preventDefault();
+        var t = mask.querySelector(a.getAttribute('href'));
+        if(t) mask.querySelector('.m-main').scrollTo({top: t.closest('.m-sec').offsetTop - 20, behavior:'smooth'});
+      });
+    });
+
+    // スクロール連動で目次ハイライト
+    var main = mask.querySelector('.m-main');
+    main.addEventListener('scroll', function(){ syncToc(mask); });
+
+    // 印刷
+    var pb = mask.querySelector('.m-print');
+    if(pb) pb.addEventListener('click', function(){ window.print(); });
+
+    // モーダル内CTA → 閉じてフォームへ
+    var cta = mask.querySelector('.m-cta');
+    if(cta) cta.addEventListener('click', function(e){
+      e.preventDefault();
+      closeModal(mask);
+      setTimeout(function(){
+        document.getElementById('contact').scrollIntoView({behavior:'smooth'});
+      }, 80);
+    });
+  });
+
+  function syncToc(mask){
+    var main = mask.querySelector('.m-main');
+    var links = mask.querySelectorAll('.m-toc a');
+    var secs = mask.querySelectorAll('.m-sec');
+    var cur = 0;
+    secs.forEach(function(s, i){
+      if(s.offsetTop - 80 <= main.scrollTop) cur = i;
+    });
+    links.forEach(function(l, i){ l.classList.toggle('cur', i === cur); });
+  }
+
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){
+      var open = document.querySelector('.mask.on');
+      if(open) closeModal(open);
+    }
+  });
+
+  /* ---------- SP固定バー ---------- */
+  var spbar = document.getElementById('spbar');
+  window.addEventListener('scroll', function(){
+    spbar.classList.toggle('on', window.scrollY > 300);
+  }, {passive:true});
+
+  /* ---------- SPメニュー ---------- */
+  var burger = document.getElementById('burger');
+  var nav = document.getElementById('nav');
+  burger.addEventListener('click', function(){ nav.classList.toggle('open'); });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){ nav.classList.remove('open'); });
+  });
+
+  /* ---------- FAQ：1つ開いたら他を閉じる ---------- */
+  var faqs = document.querySelectorAll('.faq details');
+  faqs.forEach(function(d){
+    d.addEventListener('toggle', function(){
+      if(d.open) faqs.forEach(function(o){ if(o !== d) o.open = false; });
+    });
+  });
+})();
+</script>
+</body>
+</html>
