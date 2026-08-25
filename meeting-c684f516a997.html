@@ -18,6 +18,8 @@
 :root{
   --blue-900:#00406F; --blue-800:#0a4c80; --blue-700:#3659A2; --blue-600:#3A5CA4;
   --blue-500:#005CAC; --blue-300:#8FB0DC; --blue-100:#E3EDF9; --blue-50:#F1F7FF;
+  --cyan:#00CEE0;
+  --grad:linear-gradient(120deg,#3659A2 0%,#00CEE0 100%);
   --green-700:#16925A; --green-500:#2FB574; --green-300:#7FD8A6;
   --red:#EF4123; --amber:#B4600C; --amber-bg:#FFFBF2; --amber-bd:#F0D3A6;
   --white:#fff; --gray-50:#FAFAFA; --gray-100:#F7F5F5;
@@ -27,7 +29,7 @@
   --sidebar:270px;
   --radius:12px; --radius-lg:18px; --pill:40px;
   --shadow:0 16px 44px rgba(0,64,111,.12);
-  --font-sans:YuGothic,"Yu Gothic Medium","Yu Gothic","Hiragino Sans","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  --font-sans:YuGothic,"Yu Gothic medium","Hiragino Sans",Meiryo,sans-serif;
   --font-serif:YuMincho,"Yu Mincho","Hiragino Mincho ProN","Noto Serif JP",serif;
 }
 *,*::before,*::after{box-sizing:border-box}
@@ -38,16 +40,16 @@ button{font-family:inherit}
 
 /* ---------- パスワードゲート ---------- */
 .gate{position:fixed;inset:0;z-index:2000;display:grid;place-items:center;padding:24px;
-  background:linear-gradient(165deg,#00365e,var(--blue-900) 60%,#052f4f)}
+  background:linear-gradient(150deg,var(--blue-700) 0%,var(--blue-900) 55%,#00304F 100%)}
 .gate.off{display:none}
 .gate-box{width:100%;max-width:440px;background:#fff;border-radius:var(--radius-lg);padding:50px 42px;box-shadow:0 40px 90px rgba(0,0,0,.4);text-align:center}
-.gate-box .logo{font-family:Arial,Helvetica,sans-serif;font-style:italic;font-size:27px;font-weight:900;color:var(--blue-900);margin-bottom:10px}
-.gate-box .logo i{font-style:normal;color:var(--blue-500);font-size:20px}
+.gate-box .logo{margin:0 auto 16px;max-width:150px}
+.gate-box .logo img{width:100%}
 .gate-box h1{font-family:var(--font-serif);font-size:21px;font-weight:700;margin:0 0 8px;color:var(--blue-900)}
 .gate-box p{margin:0 0 28px;font-size:15px;color:var(--ink-soft);line-height:1.85}
 .gate-box input{width:100%;padding:17px;border:1.5px solid var(--border);border-radius:10px;font-size:18px;font-family:inherit;text-align:center;letter-spacing:.1em}
 .gate-box input:focus{outline:0;border-color:var(--blue-500);box-shadow:0 0 0 4px rgba(0,92,172,.14)}
-.gate-box button{width:100%;margin-top:15px;padding:18px;border:0;border-radius:var(--pill);background:var(--blue-700);color:#fff;font-size:17px;font-weight:900;cursor:pointer;transition:.2s}
+.gate-box button{width:100%;margin-top:15px;padding:18px;border:0;border-radius:var(--pill);background:var(--grad);color:#fff;font-size:17px;font-weight:900;cursor:pointer;transition:.2s}
 .gate-box button:hover{background:var(--blue-500)}
 .gate-err{margin-top:13px;color:var(--red);font-size:14.5px;font-weight:700;display:none}
 .gate-err.on{display:block}
@@ -57,14 +59,14 @@ button{font-family:inherit}
 .app{display:none;grid-template-columns:var(--sidebar) 1fr;min-height:100vh}
 .app.on{display:grid}
 aside{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--blue-900);color:#C6D8E9;padding:28px 20px}
-aside .logo{font-family:Arial,Helvetica,sans-serif;font-style:italic;font-size:22px;font-weight:900;color:#fff;margin-bottom:4px}
-aside .logo i{font-style:normal;color:var(--blue-300);font-size:16px}
+aside .logo{max-width:120px;margin-bottom:8px;background:#fff;padding:6px 10px;border-radius:6px}
+aside .logo img{width:100%}
 aside .sub{font-size:12px;color:var(--blue-300);margin:0 0 26px;letter-spacing:.08em}
 aside nav{display:grid;gap:2px}
 aside nav a{display:grid;grid-template-columns:28px 1fr;gap:9px;align-items:baseline;padding:12px 13px;border-radius:9px;text-decoration:none;color:#A9C3DC;font-size:14.5px;line-height:1.55;transition:.18s}
 aside nav a b{color:#6E93B5;font-weight:900;font-size:12.5px}
 aside nav a:hover{background:rgba(255,255,255,.08);color:#fff}
-aside nav a.cur{background:var(--blue-700);color:#fff;font-weight:700}
+aside nav a.cur{background:var(--grad);color:#fff;font-weight:700}
 aside nav a.cur b{color:var(--blue-300)}
 .aside-foot{margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.14);font-size:12.5px;color:#7FA0BC;line-height:1.85}
 
@@ -78,7 +80,7 @@ main{padding:0 0 120px}
 .bar .now b{color:var(--blue-700)}
 .tool{border:1.5px solid var(--border);background:#fff;border-radius:var(--pill);padding:12px 22px;font-size:15px;font-weight:700;cursor:pointer;color:var(--ink);transition:.2s;white-space:nowrap}
 .tool:hover{border-color:var(--blue-700);color:var(--blue-700)}
-.tool.main{background:var(--blue-700);border-color:var(--blue-700);color:#fff}
+.tool.main{background:var(--grad);border-color:transparent;color:#fff}
 .tool.main:hover{background:var(--blue-500);border-color:var(--blue-500);color:#fff}
 .tool.warn:hover{border-color:var(--red);color:var(--red)}
 .saved{font-size:13.5px;color:var(--green-700);font-weight:700;opacity:0;transition:opacity .3s;white-space:nowrap}
@@ -93,7 +95,7 @@ main{padding:0 0 120px}
 
 /* ---------- ブロック ---------- */
 .blk{background:#fff;border:1px solid var(--border-soft);border-radius:var(--radius-lg);padding:52px 52px 56px;margin:36px 0;box-shadow:var(--shadow);scroll-margin-top:150px}
-.blk-no{display:inline-block;font-size:12.5px;font-weight:900;letter-spacing:.16em;color:#fff;background:var(--blue-700);padding:6px 14px;border-radius:6px;margin-bottom:14px}
+.blk-no{display:inline-block;font-size:12.5px;font-weight:900;letter-spacing:.16em;color:#fff;background:var(--grad);padding:6px 14px;border-radius:6px;margin-bottom:14px}
 .blk h2{font-family:var(--font-serif);font-size:32px;font-weight:700;line-height:1.5;margin:0 0 14px;color:var(--blue-900)}
 .blk .lead{font-size:18px;line-height:2;color:var(--ink-soft);margin:0 0 34px}
 .blk h3{font-size:22px;font-weight:900;margin:42px 0 15px;padding-left:15px;border-left:5px solid var(--blue-700);color:var(--blue-900)}
@@ -101,12 +103,12 @@ main{padding:0 0 120px}
 .blk p{font-size:17px;line-height:2.05;margin:0 0 19px}
 
 /* 表紙 */
-.cover{background:linear-gradient(155deg,#00365e,var(--blue-900) 60%,#052f4f);color:#fff;border:0;padding:70px 58px;margin-top:30px}
-.cover .logo{font-family:Arial,Helvetica,sans-serif;font-style:italic;font-size:25px;font-weight:900;margin-bottom:38px}
-.cover .logo i{font-style:normal;color:var(--blue-300);font-size:19px}
+.cover{background:linear-gradient(140deg,var(--blue-700) 0%,var(--blue-900) 58%,#00304F 100%);color:#fff;border:0;padding:70px 58px;margin-top:30px}
+.cover .logo{max-width:130px;margin-bottom:38px;background:#fff;padding:6px 12px;border-radius:6px}
+.cover .logo img{width:100%}
 .cover .to{font-family:var(--font-serif);font-size:38px;font-weight:700;line-height:1.45;margin:0 0 8px}
 .cover .to small{display:block;font-family:var(--font-sans);font-size:18px;color:#A9C3DC;font-weight:500;margin-top:12px}
-.cover h1{font-family:var(--font-serif);font-size:25px;font-weight:700;color:var(--green-300);margin:30px 0 0;line-height:1.6}
+.cover h1{font-family:var(--font-serif);font-size:25px;font-weight:700;color:#8FE9F2;margin:30px 0 0;line-height:1.6}
 .cover dl{margin:42px 0 0;padding-top:28px;border-top:1px solid rgba(255,255,255,.22);display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .cover dt{font-size:12px;letter-spacing:.14em;color:#A9C3DC;font-weight:700;margin-bottom:6px}
 .cover dd{margin:0;font-size:18px;font-weight:700}
@@ -142,7 +144,7 @@ main{padding:0 0 120px}
 .card ul{margin:9px 0 0;padding-left:21px;font-size:16px;line-height:1.95;color:var(--ink-soft)}
 .tbl-scroll{overflow-x:auto;margin:0 0 24px}
 .tbl{width:100%;border-collapse:collapse;font-size:16px;min-width:660px}
-.tbl thead th{background:var(--blue-700);color:#fff;padding:15px 17px;text-align:left;font-weight:700;font-size:15.5px}
+.tbl thead th{background:var(--grad);color:#fff;padding:15px 17px;text-align:left;font-weight:700;font-size:15.5px}
 .tbl th,.tbl td{border:1px solid var(--border-soft);padding:15px 17px;vertical-align:top}
 .tbl tbody th{background:var(--gray-50);font-weight:700;text-align:left;width:20%}
 .tbl td{background:#fff}
@@ -171,7 +173,7 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 .doc .alt{margin-top:13px;padding:13px 17px;background:var(--gray-50);border-radius:8px;font-size:15px;color:var(--ink-soft);line-height:1.85}
 .doc .alt b{color:var(--green-700);font-weight:700}
 .tmpl{margin-top:16px;border:1px solid var(--border-soft);border-radius:10px;overflow:hidden}
-.tmpl-h{display:flex;align-items:center;gap:13px;padding:13px 19px;background:var(--blue-700);color:#fff;font-size:14.5px;font-weight:700}
+.tmpl-h{display:flex;align-items:center;gap:13px;padding:13px 19px;background:var(--grad);color:#fff;font-size:14.5px;font-weight:700}
 .tmpl-h button{margin-left:auto;background:#fff;color:var(--blue-700);border:0;border-radius:var(--pill);padding:9px 19px;font-size:13.5px;font-weight:900;cursor:pointer;transition:.2s;white-space:nowrap}
 .tmpl-h button:hover{background:var(--blue-50)}
 .tmpl-h button.done{background:var(--green-500);color:#fff}
@@ -183,14 +185,14 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 /* スケジュール */
 .sch{width:100%;border-collapse:collapse;font-size:16.5px}
 .sch th,.sch td{border:1px solid var(--border-soft);padding:16px;text-align:left;vertical-align:middle}
-.sch thead th{background:var(--blue-700);color:#fff;font-size:15.5px}
+.sch thead th{background:var(--grad);color:#fff;font-size:15.5px}
 .sch tbody th{background:var(--gray-50);width:26%;font-weight:700}
 .sch td.date{background:var(--amber-bg);width:24%;padding:8px}
 .sch td.date input{width:100%;padding:11px 12px;border:1.5px solid var(--amber-bd);border-radius:7px;font-size:16px;font-family:inherit}
 .sch td.date input:focus{outline:0;border-color:var(--blue-500)}
 
 /* 連絡先 */
-.contact-card{background:linear-gradient(155deg,#00365e,var(--blue-900) 60%,#052f4f);color:#fff;border:0;padding:52px}
+.contact-card{background:linear-gradient(140deg,var(--blue-700) 0%,var(--blue-900) 58%,#00304F 100%);color:#fff;border:0;padding:52px}
 .contact-card h2{color:#fff}
 .contact-card .lead{color:#A9C3DC}
 .cc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px}
@@ -202,6 +204,22 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 .pager{display:flex;gap:12px;justify-content:space-between;margin:26px 0 0}
 .pager button{flex:1;padding:20px;border:1.5px solid var(--border);background:#fff;border-radius:var(--radius);font-size:17px;font-weight:700;cursor:pointer;color:var(--blue-900);transition:.2s}
 .pager button:hover{border-color:var(--blue-700);background:var(--blue-50)}
+
+
+/* ---------- 動き（LP・実テーマと同じ 800ms / 50px） ---------- */
+.gate{opacity:1;transition:opacity .45s ease,visibility .45s ease}
+.gate.off{opacity:0;visibility:hidden;display:grid;pointer-events:none}
+.gate-box{transform:translateY(0);transition:transform .45s cubic-bezier(.16,1,.3,1)}
+.gate.off .gate-box{transform:translateY(-18px)}
+.blk{opacity:0;transform:translateY(50px);transition:opacity 800ms ease,transform 800ms ease}
+.blk.in{opacity:1;transform:translateY(0)}
+.ag,.doc,.card,.tool{transition:.2s ease-in-out}
+.saved{transform:translateY(4px);transition:opacity .3s,transform .3s}
+.saved.on{transform:translateY(0)}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .blk{opacity:1!important;transform:none!important;transition:none!important}
+}
 
 @media(max-width:1080px){
   .app.on{grid-template-columns:1fr}
@@ -224,6 +242,7 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
   .sheet{max-width:100%;padding:0}
   .frow input,.frow textarea,.sch td.date input{border:0;border-bottom:1px solid #bbb;border-radius:0;padding:2px 0;background:transparent}
   .fillin{background:#fff;border:1px solid #ddd}
+  .blk{opacity:1!important;transform:none!important}
 }
 </style>
 </head>
@@ -232,7 +251,7 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 <!-- ============ パスワードゲート ============ -->
 <div class="gate" id="gate">
   <div class="gate-box">
-    <div class="logo">J<i>・</i>system</div>
+    <div class="logo"><img src="assets/logo.png" alt="J・SYSTEM｜Jシステム株式会社"></div>
     <h1>ご提案資料</h1>
     <p>担当者よりお伝えしたパスワードを<br>ご入力ください。</p>
     <input type="password" id="pw" placeholder="パスワード" autocomplete="off">
@@ -246,7 +265,7 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 <div class="app" id="app">
 
   <aside>
-    <div class="logo">J<i>・</i>system</div>
+    <div class="logo"><img src="assets/logo.png" alt="J・SYSTEM｜Jシステム株式会社"></div>
     <p class="sub">ご提案資料 ／ 商談用</p>
     <nav id="toc">
       <a href="#s0"><b>00</b><span>本日のアジェンダ</span></a>
@@ -289,7 +308,7 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 
       <!-- ===== 表紙 ===== -->
       <section class="blk cover" id="cover">
-        <div class="logo">J<i>・</i>system</div>
+        <div class="logo"><img src="assets/logo.png" alt="J・SYSTEM｜Jシステム株式会社"></div>
         <p class="to"><span id="coName">◯◯◯◯</span> 御中<small>産業用太陽光発電システム ご提案資料</small></p>
         <h1>2026年、太陽光を<br>利益に変える経営戦略。</h1>
         <dl>
@@ -611,7 +630,7 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 
       <!-- ===== 08 連絡先 ===== -->
       <section class="blk contact-card" id="s8">
-        <span class="blk-no" style="background:var(--green-500)">08</span>
+        <span class="blk-no" style="background:#fff;color:var(--blue-700)">08</span>
         <h2>ご連絡先</h2>
         <p class="lead">ご不明な点は、いつでもご連絡ください。資料の追加や、社内説明用の補足も承ります。</p>
         <dl class="cc-grid">
@@ -641,12 +660,28 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
   function unlock(){
     if(pw.value.trim().toLowerCase()===PW){
       gate.classList.add('off'); app.classList.add('on');
-      window.scrollTo(0,0); restore();
+      window.scrollTo(0,0); restore(); initFade();
     } else { err.classList.add('on'); pw.value=''; pw.focus(); }
   }
   document.getElementById('enter').addEventListener('click',unlock);
   pw.addEventListener('keydown',function(e){ if(e.key==='Enter') unlock(); });
   pw.focus();
+
+
+  /* ---------- スクロールフェード ---------- */
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function initFade(){
+    var blks=app.querySelectorAll('.blk');
+    if(reduce||!('IntersectionObserver' in window)){
+      blks.forEach(function(b){ b.classList.add('in'); }); return;
+    }
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+      });
+    },{rootMargin:'0px 0px -100px 0px',threshold:0});
+    blks.forEach(function(b){ io.observe(b); });
+  }
 
   /* ---------- 入力の保存・復元 ---------- */
   var fields=function(){ return app.querySelectorAll('input[id],textarea[id],select[id]'); };
