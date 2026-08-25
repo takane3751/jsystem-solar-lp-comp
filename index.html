@@ -421,11 +421,10 @@ body.open{overflow:hidden}
 .faq details[open]{border-color:var(--blue)}
 .faq summary{padding:20px 26px;cursor:pointer;font-weight:700;font-size:16px;line-height:1.65;display:grid;grid-template-columns:26px 1fr 22px;gap:14px;align-items:start;list-style:none}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"＋";color:var(--blue);font-weight:700;font-size:18px;text-align:center;transition:transform .3s}
-.faq details[open] summary::after{content:"－"}
+.faq summary::after{content:"＋";color:var(--blue);font-weight:700;font-size:20px;line-height:1.4;text-align:center;transition:transform .34s cubic-bezier(.16,1,.3,1)}
+.faq details[open] summary::after{transform:rotate(45deg)}
 .faq summary i{font-style:normal;color:var(--blue);font-weight:700;font-size:17px;font-family:var(--font)}
-.faq .ans{padding:0 26px 24px 66px;font-size:15px;line-height:2;color:var(--ink-soft);animation:ansIn .35s ease}
-@keyframes ansIn{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+.faq .ans{padding:0 26px 24px 66px;font-size:15px;line-height:2;color:var(--ink-soft);overflow:hidden}
 
 /* ============ 会社情報 ============ */
 .company-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:start}
@@ -1528,8 +1527,13 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
   }
   function closeModal(m){
     m.classList.remove('on');
+    // html{scroll-behavior:smooth} が効いていると復帰がアニメーションしてしまうため
+    // 復帰の瞬間だけ auto に切り替える
+    var root=document.documentElement, prev=root.style.scrollBehavior;
+    root.style.scrollBehavior='auto';
     body.style.position=''; body.style.top=''; body.style.width='';
     window.scrollTo(0,scrollY);
+    root.style.scrollBehavior=prev;
   }
   document.querySelectorAll('[data-modal]').forEach(function(b){
     b.addEventListener('click',function(){ openModal(b.getAttribute('data-modal'),b.getAttribute('data-anchor')); });
@@ -1550,7 +1554,7 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
     var cta=mask.querySelector('.m-cta');
     if(cta) cta.addEventListener('click',function(e){
       e.preventDefault(); closeModal(mask);
-      setTimeout(function(){ document.getElementById('contact').scrollIntoView({behavior:'smooth'}); },120);
+      setTimeout(function(){ document.getElementById('contact').scrollIntoView({behavior:'smooth'}); },60);
     });
   });
   function syncToc(mask){
@@ -1581,10 +1585,55 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
     if(spbar) spbar.classList.toggle('on',y>300);
   },{passive:true});
 
-  /* ---------- FAQ：1つ開いたら他を閉じる ---------- */
-  var faqs=document.querySelectorAll('.faq details');
+  /* ---------- FAQ：滑らかに開閉（1つ開いたら他を閉じる） ---------- */
+  var faqs=Array.prototype.slice.call(document.querySelectorAll('.faq details'));
+  var EASE_OPEN='height .36s cubic-bezier(.16,1,.3,1),opacity .28s ease .06s';
+  var EASE_CLOSE='height .28s cubic-bezier(.4,0,.6,1),opacity .18s ease';
+
+  function clearInline(el){ el.style.transition=''; el.style.height=''; el.style.opacity=''; }
+
+  function expand(d){
+    var el=d.querySelector('.ans');
+    if(el._anim){ el._anim(); }
+    d.open=true;
+    if(reduce){ clearInline(el); return; }
+    var h=el.scrollHeight;
+    el.style.transition='none'; el.style.height='0px'; el.style.opacity='0';
+    void el.offsetHeight;                                  // 強制リフロー
+    el.style.transition=EASE_OPEN; el.style.height=h+'px'; el.style.opacity='1';
+    var done=function(e){
+      if(e && e.propertyName!=='height') return;
+      el.removeEventListener('transitionend',done); el._anim=null; clearInline(el);
+    };
+    el._anim=done;
+    el.addEventListener('transitionend',done);
+  }
+
+  function collapse(d){
+    var el=d.querySelector('.ans');
+    if(el._anim){ el._anim(); }
+    if(reduce){ d.open=false; clearInline(el); return; }
+    var h=el.scrollHeight;
+    el.style.transition='none'; el.style.height=h+'px'; el.style.opacity='1';
+    void el.offsetHeight;
+    el.style.transition=EASE_CLOSE; el.style.height='0px'; el.style.opacity='0';
+    var done=function(e){
+      if(e && e.propertyName!=='height') return;
+      el.removeEventListener('transitionend',done); el._anim=null;
+      d.open=false; clearInline(el);
+    };
+    el._anim=done;
+    el.addEventListener('transitionend',done);
+  }
+
   faqs.forEach(function(d){
-    d.addEventListener('toggle',function(){ if(d.open) faqs.forEach(function(o){ if(o!==d) o.open=false; }); });
+    var sum=d.querySelector('summary');
+    sum.addEventListener('click',function(e){
+      e.preventDefault();                                  // 既定の瞬間開閉を止める
+      if(d.open){ collapse(d); return; }
+      faqs.forEach(function(o){ if(o!==d && o.open) collapse(o); });
+      expand(d);
+    });
   });
 })();
 </script>
