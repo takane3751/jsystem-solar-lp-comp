@@ -389,6 +389,22 @@ body.open{overflow:hidden}
 .tech p{margin:0 0 20px;font-size:14.5px;line-height:1.95;color:var(--ink-soft);flex:1}
 
 /* ============ 施工実績 ============ */
+.sum-note{margin:12px 0 30px;font-size:13px;line-height:1.85;color:var(--ink-soft)}
+.mid-title{font-size:22px;margin:44px 0 18px;padding-left:14px;border-left:5px solid var(--blue);line-height:1.5}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:8px}
+.stat{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px}
+.stat dt{font-size:13px;letter-spacing:.06em;color:var(--ink-soft);font-weight:700;margin-bottom:6px}
+.stat dd{margin:0 0 12px;font-size:38px;font-weight:700;line-height:1;color:var(--blue);font-family:var(--font)}
+.stat dd small{font-size:16px;margin-left:3px}
+.stat p{margin:0;font-size:13.5px;line-height:1.85;color:var(--ink-soft)}
+.tbl-wrap{overflow-x:auto}
+.works-tbl{width:100%;border-collapse:collapse;font-size:15px;min-width:560px;background:#fff}
+.works-tbl thead th{background:var(--grad);color:#fff;padding:13px 16px;text-align:left;font-weight:700;font-size:14px}
+.works-tbl th,.works-tbl td{border:1px solid var(--border-soft);padding:13px 16px}
+.works-tbl tbody tr:nth-child(even) td{background:var(--gray-50)}
+.works-tbl td:last-child{font-weight:700;white-space:nowrap}
+.chk{display:block;font-size:12.5px;color:#B4600C;margin-top:3px}
+.chk-note{margin:16px 0 0;font-size:12.5px;line-height:1.8;color:var(--ink-soft)}
 .works-sum{display:grid;grid-template-columns:repeat(3,1fr);background:var(--grad);color:#fff;border-radius:var(--radius);overflow:hidden;margin-bottom:28px}
 .works-sum div{padding:26px 22px;text-align:center;border-right:1px solid rgba(255,255,255,.3)}
 .works-sum div:last-child{border-right:0}
@@ -697,7 +713,7 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
         <a href="#contact" class="btn btn-white">無料シミュレーションを相談する →</a>
         <a href="#support" class="btn btn-line" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.7)">包括支援の内容を見る ↓</a>
       </div>
-      <p class="fv-note sf">専門知識は不要です。<strong>電気料金の検針票だけでも、おおよその試算ができます。</strong><span class="ph">※要確認</span></p>
+      <p class="fv-note sf">難しいデータは不要です。<strong>直近1年分の電気料金請求書があれば、おおよその試算ができます。</strong></p>
     </div>
   </div>
 </section>
@@ -705,10 +721,10 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
 <!-- 信頼バー -->
 <div class="trust">
   <dl>
-    <div><dt>創業</dt><dd class="ph">◯◯</dd></div>
-    <div><dt>累計施工実績</dt><dd><span class="ph">◯◯</span><small>件</small></dd></div>
-    <div><dt>累計設置容量</dt><dd><span class="ph">◯◯</span><small>MW</small></dd></div>
-    <div><dt>対応エリア</dt><dd class="ph">◯◯</dd></div>
+    <div><dt>創業</dt><dd>37<small>年</small></dd></div>
+    <div><dt>産業用施工実績</dt><dd>133<small>件</small></dd></div>
+    <div><dt>累計設置容量</dt><dd>36,307<small>kW</small></dd></div>
+    <div><dt>対応エリア</dt><dd>全国20<small>都道府県</small></dd></div>
   </dl>
 </div>
 
@@ -968,17 +984,42 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
       <p class="lead">まとまったスペースがあればどこでも設置ができて、騒音や排出ガスなどの公害も発生しません。屋根の形状に合わせた設計・施工を行っています。</p>
     </div>
     <dl class="works-sum sf">
-      <div><dt>累計施工件数</dt><dd class="ph">◯◯件</dd></div>
-      <div><dt>累計設置容量</dt><dd class="ph">◯◯MW</dd></div>
-      <div><dt>対応エリア</dt><dd class="ph">◯◯</dd></div>
+      <div><dt>産業用 施工実績</dt><dd>133<small>件</small></dd></div>
+      <div><dt>累計設置容量</dt><dd>36,307<small>kW</small></dd></div>
+      <div><dt>施工実績エリア</dt><dd>20<small>都道府県</small></dd></div>
     </dl>
+    <p class="sum-note sf">産業用133件は2012年6月〜2023年7月の集計。累計設置容量は産業用に住宅用（2003年〜 約4,000件／約16,000kW）を含めた合計です。</p>
     <div class="works-grid sf-row">
       <div class="work"><div class="img"><img src="assets/roof-01.jpg" alt="傾斜屋根への設置例"></div><div class="chip">傾斜屋根</div></div>
       <div class="work"><div class="img"><img src="assets/roof-02.jpg" alt="地上への設置例"></div><div class="chip">地上</div></div>
       <div class="work"><div class="img"><img src="assets/roof-03.jpg" alt="折板屋根への設置例"></div><div class="chip">折板屋根</div></div>
       <div class="work"><div class="img"><img src="assets/roof-04.jpg" alt="陸屋根への設置例"></div><div class="chip">陸屋根</div></div>
     </div>
-    <p class="disclaim sf"><span class="memo">【制作メモ】</span>上記は既存サイト `/industry/` の設置例写真を流用しています。導入事例（企業名・規模・コメント）の写真とデータをご提供いただければ、事例カードに差し替えます。本セクションは今後のCMS（施工実績の自社更新機能）の出力先として設計しています。</p>
+
+    <h3 class="mid-title sf">施工体制の実績</h3>
+    <div class="stat-grid sf-row">
+      <div class="stat"><dt>元請としての施工比率</dt><dd>45.9<small>%</small></dd><p>全61件。発注者との直接契約により、企画・設計・保安受任・申請・施工までを一括で統括します（EPC）。</p></div>
+      <div class="stat"><dt>高圧（50kW〜）の比率</dt><dd>60.2<small>%</small></dd><p>全80件。キュービクル設置、電力会社協議、高圧保安管理のノウハウを保持しています。</p></div>
+      <div class="stat"><dt>500kW以上の大型工事</dt><dd>11<small>件</small></dd><p>最大1.8MW（元請6件・下請5件）。広大な敷地や受変電管理を伴う案件にも対応します。</p></div>
+    </div>
+
+    <h3 class="mid-title sf">自家消費型・大型案件の施工実績（抜粋）</h3>
+    <div class="tbl-wrap sf">
+      <table class="works-tbl">
+        <thead><tr><th>所在地</th><th>施設</th><th>方式</th><th>容量</th></tr></thead>
+        <tbody>
+          <tr><td>山梨県笛吹市</td><td>物流倉庫</td><td>オフサイトPPA</td><td>2,545 kW</td></tr>
+          <tr><td>埼玉県加須市</td><td>半導体機器工場</td><td>自家消費</td><td>1,158 kW</td></tr>
+          <tr><td>滋賀県</td><td>メガソーラー（野立）</td><td>元請</td><td>1.8 MW</td></tr>
+          <tr><td>神奈川県平塚市</td><td>工場</td><td>自家消費</td><td>110 kW</td></tr>
+          <tr><td>神奈川県平塚市</td><td>幼稚園</td><td>自家消費＋蓄電池</td><td>35 kW＋蓄電池16.4</td></tr>
+          <tr><td>神奈川県平塚市</td><td>介護施設</td><td>自家消費＋蓄電池</td><td>30 kW＋蓄電池16.4</td></tr>
+          <tr><td>山梨県山梨市</td><td>物流倉庫・事務所</td><td>自家消費＋蓄電池</td><td>15 kW＋蓄電池16.4</td></tr>
+          <tr><td>茨城県八千代町</td><td>産業廃棄物処理工場</td><td>自家消費</td><td>25 kW</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="disclaim sf"><span class="memo">【制作メモ】</span>設置例の写真は既存サイト `/industry/` からの流用です（流用可否は確認中）。実績データは2026-08-30ご回答の資料（施工実績リスト／産業用太陽光発電所 施工実績サマリー）に基づきます。蓄電池の「16.4」は単位（kWh想定）を確認中。導入事例（企業名・規模・お客様コメント・写真）は引き続きご提供待ちです。本セクションは今後のCMS（施工実績の自社更新機能）の出力先として設計しています。</p>
   </div>
 </section>
 
@@ -1057,7 +1098,7 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
       <details><summary><i>Q</i><span>相談したら、しつこく営業されませんか？</span></summary>
         <div class="ans">情報提供を目的としたご相談窓口です。ご検討の状況に合わせて対応いたしますので、「まず情報だけ知りたい」「社内で検討する材料が欲しい」といった段階でもご遠慮なくお声がけください。ご希望があれば、以降のご連絡を控えることも可能です。</div></details>
       <details><summary><i>Q</i><span>まだ何も資料が揃っていません。それでも相談できますか？</span></summary>
-        <div class="ans">問題ありません。<span class="ph">電気料金の検針票程度</span>があれば、おおよその規模感はご案内できます。詳しい試算に必要な資料（電力使用量データ、図面など）は、ご相談後にこちらから個別にご案内し、取得方法もサポートいたします。<span class="memo">※文言は要確認</span></div></details>
+        <div class="ans">問題ありません。<strong>直近1年分の電気料金請求書</strong>をご用意いただければ、おおよその試算をご案内できます。より詳しい試算に必要な資料（30分値の電力使用量データ、図面など）は、ご相談後にこちらから個別にご案内し、取得方法もサポートいたします。</div></details>
       <details><summary><i>Q</i><span>初期費用はどのくらいかかりますか？</span></summary>
         <div class="ans">設置規模や設備構成により大きく異なります。初期費用ゼロのPPAモデル、リース、補助金・税制の組み合わせなど、初期負担を抑える方法が複数あります。<button class="more-link" data-modal="g4" data-anchor="g4-seido" style="font-size:14px">資金計画の選択肢を見る ＋</button></div></details>
       <details><summary><i>Q</i><span>屋根に穴を開けたり、傷んだりしませんか？</span></summary>
@@ -1069,7 +1110,7 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
       <details><summary><i>Q</i><span>導入までどのくらいの期間がかかりますか？</span></summary>
         <div class="ans">規模や制度申請の有無により変動しますが、目安として<span class="ph">◯〜◯ヶ月</span>程度です。補助金を活用する場合は公募期間に合わせた進行が必要になるため、早めのご相談をおすすめしています。</div></details>
       <details><summary><i>Q</i><span>対応エリアはどこまでですか？</span></summary>
-        <div class="ans"><span class="ph">◯◯</span>を中心に対応しております。エリア外の場合もご相談ください。<span class="memo">※要確認</span></div></details>
+        <div class="ans"><strong>沖縄県を除く日本全国</strong>に対応しております。静岡県・神奈川県を基盤に、これまで全国20都道府県で施工実績があります。海外はベトナム・タイでの対応も可能です。</div></details>
       <details><summary><i>Q</i><span>制度が今後変わったらどうなりますか？</span></summary>
         <div class="ans">導入して終わりではなく、発電・消費実績の計測と記録の管理まで伴走します。制度変更時にも説明できるデータを整えておくことで、対応の選択肢を確保します。<button class="more-link" data-modal="g1" data-anchor="g1-data" style="font-size:14px">データと記録の整理について ＋</button></div></details>
       <details><summary><i>Q</i><span>見積もりだけでもお願いできますか？</span></summary>
@@ -1088,25 +1129,29 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
     <div class="company-grid sf-row">
       <div class="company">
         <table>
-          <tr><th>会社名</th><td>J・システム株式会社</td></tr>
-          <tr><th>所在地</th><td class="ph">◯◯◯◯◯◯</td></tr>
-          <tr><th>創業</th><td class="ph">◯◯◯◯年</td></tr>
-          <tr><th>代表者</th><td class="ph">◯◯ ◯◯</td></tr>
+          <tr><th>商号</th><td>Ｊ・システム株式会社</td></tr>
+          <tr><th>創業</th><td>37年<span class="chk">※設立は平成6年8月23日</span></td></tr>
+          <tr><th>資本金</th><td>2,000万円</td></tr>
+          <tr><th>代表者</th><td>代表取締役社長　沖 紀和</td></tr>
+          <tr><th>所在地</th><td>〒250-0862　神奈川県小田原市成田481-1<span class="chk">※年末に群馬支店を開設予定</span></td></tr>
+          <tr><th>電話番号</th><td>0465-39-5202 ／ 0120-79-5202</td></tr>
+          <tr><th>従業員数</th><td>74名（派遣送り出し社員を含む）</td></tr>
           <tr><th>事業内容</th><td>産業用・住宅用太陽光発電システムの設計・施工／小水力発電／蓄電池・EMS導入／空調制御システム「Ai-Glies」／屋根防水・ポリウレア施工／人財サービス事業</td></tr>
-          <tr><th>従業員数</th><td class="ph">◯◯名</td></tr>
-          <tr><th>対応エリア</th><td class="ph">◯◯</td></tr>
+          <tr><th>対応エリア</th><td>沖縄県を除く日本全国（施工実績20都道府県）／海外はベトナム・タイ</td></tr>
         </table>
+        <p class="chk-note">※ 商号・代表者・所在地・電話番号・許認可は現行サイトの会社概要ページに基づく記載です。変更の有無を確認中。</p>
       </div>
       <div class="cert">
-        <b>LICENSE &amp; CAPABILITY</b>
+        <b>LICENSE &amp; MEMBERSHIP</b>
         <ul>
-          <li><span class="ph">電気工事業登録 ◯◯◯◯</span></li>
-          <li><span class="ph">建設業許可 ◯◯◯◯</span></li>
-          <li><span class="ph">保有資格・認定 ◯◯◯◯</span></li>
-          <li>自社施工体制による一貫対応</li>
-          <li>導入後の運用・記録管理まで継続支援</li>
+          <li>建設業許可　神奈川県知事許可（特-27）第70714号</li>
+          <li>電気工事業　一般用電気工作物および自家用電気工作物　第227002号</li>
+          <li>労働者派遣事業　派 14-302901</li>
+          <li>全日本電気工事業工業組合連合会　加盟</li>
+          <li>神奈川県電気工事工業組合　加盟</li>
+          <li>元請としての一括施工管理（EPC）体制</li>
         </ul>
-        <p style="margin:20px 0 0;font-size:12.5px;opacity:.85;line-height:1.8">※ 記載事項はJ・システム様よりご提供いただき確定します。</p>
+        <p style="margin:20px 0 0;font-size:12.5px;opacity:.85;line-height:1.8">※ 許認可番号は現行サイトの会社概要ページに基づく記載です。最新の内容を確認中。</p>
       </div>
     </div>
   </div>

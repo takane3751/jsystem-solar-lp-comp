@@ -165,6 +165,9 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 .doc-h{display:flex;flex-wrap:wrap;align-items:center;gap:11px;margin-bottom:7px}
 .doc-h b{font-size:19px;font-weight:900;color:var(--blue-900)}
 .lv{font-size:12px;font-weight:900;padding:4px 11px;border-radius:5px;letter-spacing:.05em}
+.lv0{background:var(--grad);color:#fff;border:1px solid transparent}
+.lv3{background:var(--gray-50);color:var(--muted);border:1px solid var(--border)}
+.doc-first{border:2px solid var(--blue-700);box-shadow:0 6px 20px rgba(54,89,162,.12)}
 .lv1{background:var(--blue-50);color:var(--blue-700);border:1px solid var(--blue-100)}
 .lv2{background:#FFF3E4;color:var(--amber);border:1px solid var(--amber-bd)}
 .doc dl{margin:11px 0 0;display:grid;grid-template-columns:auto 1fr;gap:7px 15px;font-size:15.5px}
@@ -517,12 +520,22 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
       <section class="blk" id="s6">
         <span class="blk-no">06</span>
         <h2>ご準備いただく資料</h2>
-        <p class="lead">正確な試算とお見積りのために、以下の資料をお願いしています。<strong>すべて揃わなくても、あるものから進められます。</strong>取得が難しいものは、代替手段をご用意しています。</p>
+        <p class="lead"><strong>概算の試算は、直近1年分の電気料金請求書だけで可能です。</strong>より正確な試算とお見積りのために、以下の資料をお願いしています。すべて揃わなくても、あるものから進められます。取得が難しいものは代替手段をご用意しています。</p>
+
+        <div class="doc doc-first">
+          <input type="checkbox" id="d0">
+          <div>
+            <div class="doc-h"><b>電気料金請求書（直近1年分）</b><span class="lv lv0">これだけで概算試算が可能</span></div>
+            <p style="margin:0;font-size:16px;color:var(--ink-soft)">契約種別、契約電力、基本料金、単価、燃料費調整額、再エネ賦課金を確認し、<strong>まずはおおよその削減額と規模感を試算します。</strong>この1点があれば概算のご提示が可能です。</p>
+            <dl><dt>取得先</dt><dd>経理部門、または電力会社のWeb明細</dd><dt>枚数</dt><dd>12ヶ月分（季節変動を見るため通年が必要）</dd></dl>
+            <div class="alt"><b>取得が難しい場合：</b>直近数ヶ月分だけでも、暫定の試算は可能です。まずはお手元にある分をお送りください。</div>
+          </div>
+        </div>
 
         <div class="doc">
           <input type="checkbox" id="d1">
           <div>
-            <div class="doc-h"><b>電力使用量データ（30分値・1年分）</b><span class="lv lv2">要・電力会社への依頼</span></div>
+            <div class="doc-h"><b>電力使用量データ（30分値・1年分）</b><span class="lv lv2">要・電力会社への依頼</span><span class="lv lv3">詳細試算用</span></div>
             <p style="margin:0;font-size:16px;color:var(--ink-soft)">時間帯別の電力需要を把握し、自家消費率と最適な設備容量を算出するために使用します。<strong>最も重要なデータです。</strong></p>
             <dl><dt>取得先</dt><dd>ご契約中の電力会社</dd><dt>取得期間</dt><dd>依頼から数日〜2週間程度</dd></dl>
             <div class="tmpl">
@@ -545,16 +558,6 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
 よろしくお願いいたします。</pre>
             </div>
             <div class="alt"><b>取得が難しい場合：</b>電力会社のWeb会員サービス（各社の「使用量照会」ページ）からダウンロードできる場合があります。それも難しい場合は、電気料金明細12ヶ月分からの推計で暫定試算を行います。</div>
-          </div>
-        </div>
-
-        <div class="doc">
-          <input type="checkbox" id="d2">
-          <div>
-            <div class="doc-h"><b>電気料金明細（直近12ヶ月分）</b><span class="lv lv1">社内保管</span></div>
-            <p style="margin:0;font-size:16px;color:var(--ink-soft)">契約種別、基本料金、単価、燃料費調整額、再エネ賦課金を確認し、削減額を算出します。</p>
-            <dl><dt>取得先</dt><dd>経理部門または電力会社のWeb明細</dd></dl>
-            <div class="alt"><b>取得が難しい場合：</b>直近1ヶ月分だけでも、概算の試算は可能です。</div>
           </div>
         </div>
 
@@ -596,7 +599,7 @@ figcaption{padding:14px 19px;font-size:14.5px;color:var(--ink-soft);background:#
         <div class="fillin" style="margin-top:24px">
           <b>✏️ 提出予定日の確認</b>
           <div class="frow"><label for="f_p1">電力使用量データ</label><input type="text" id="f_p1" placeholder="◯月◯日頃"></div>
-          <div class="frow"><label for="f_p2">電気料金明細</label><input type="text" id="f_p2" placeholder="◯月◯日頃"></div>
+          <div class="frow"><label for="f_p2">電気料金請求書（1年分）</label><input type="text" id="f_p2" placeholder="◯月◯日頃"></div>
           <div class="frow"><label for="f_p3">図面</label><input type="text" id="f_p3" placeholder="◯月◯日頃／現地実測で対応"></div>
           <div class="frow"><label for="f_p4">ご送付方法</label><input type="text" id="f_p4" placeholder="メール／ファイル共有 など"></div>
         </div>
