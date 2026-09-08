@@ -335,6 +335,13 @@ body.open{overflow:hidden}
 .case dd.hl{color:var(--blue);font-size:20px}
 .ph{color:#B4600C;background:rgba(239,65,35,.08);padding:1px 7px;border-radius:4px;font-size:.95em}
 .on-grad .ph,.trust .ph,.fv .ph,.cert .ph{color:#fff;background:rgba(255,255,255,.25)}
+.assump{margin:22px 0 0;background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+.assump summary{list-style:none;cursor:pointer;padding:15px 22px;font-weight:700;font-size:15px;color:var(--blue);display:flex;align-items:center;gap:10px}
+.assump summary::-webkit-details-marker{display:none}
+.assump summary::before{content:"＋";font-weight:700;transition:transform .3s}
+.assump[open] summary::before{transform:rotate(45deg)}
+.assump-in{padding:0 22px 18px}
+.assump ul{margin:0;padding-left:20px;font-size:14px;line-height:1.95;color:var(--ink-soft)}
 .disclaim{margin-top:22px;padding:18px 22px;border-radius:var(--radius);background:var(--gray-200);font-size:13px;line-height:1.85;color:var(--ink-soft)}
 .memo{color:var(--red-deep);font-weight:700}
 
@@ -427,6 +434,7 @@ body.open{overflow:hidden}
 .fl dl>div{display:grid;grid-template-columns:auto 1fr;gap:9px;font-size:12.5px;align-items:baseline}
 .fl dt{color:var(--blue);font-weight:700;white-space:nowrap}
 .fl dd{margin:0;color:var(--ink-soft)}
+.flow-note{margin:22px 0 0;font-size:14px;line-height:1.9;color:var(--ink-soft)}
 .no-prep{margin-top:26px;padding:24px 28px;border-radius:var(--radius);background:#fff;border:2px solid var(--blue);font-size:16px;font-weight:700;display:flex;align-items:center;gap:15px}
 .no-prep span{font-size:25px}
 .no-prep em{display:block;font-style:normal;font-weight:400;color:var(--ink-soft);font-size:14.5px;margin-top:3px}
@@ -860,44 +868,60 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
     </div>
     <div class="case-grid sf-row">
       <div class="case">
-        <div class="chip"><small>CASE A</small>製造工場</div>
+        <div class="chip"><small>CASE A ／ 試算例</small>製造工場</div>
         <dl>
-          <div><dt>屋根面積</dt><dd><span class="ph">◯,◯◯◯</span>㎡</dd></div>
-          <div><dt>設置容量</dt><dd><span class="ph">◯◯◯</span>kW</dd></div>
-          <div><dt>導入前の年間電気代</dt><dd><span class="ph">◯,◯◯◯</span>万円</dd></div>
-          <div><dt>年間削減額の目安</dt><dd class="hl"><span class="ph">◯◯◯</span>万円</dd></div>
-          <div><dt>自家消費率</dt><dd><span class="ph">◯◯</span>%</dd></div>
-          <div><dt>投資回収の目安</dt><dd class="hl"><span class="ph">◯〜◯</span>年</dd></div>
-          <div><dt>CO₂削減量</dt><dd><span class="ph">◯◯◯</span>t/年</dd></div>
+          <div><dt>屋根面積</dt><dd>約3,000㎡</dd></div>
+          <div><dt>設置容量</dt><dd>300 kW</dd></div>
+          <div><dt>導入前の年間電気代</dt><dd>約4,000万円</dd></div>
+          <div><dt>年間削減額の目安</dt><dd class="hl">約660万円</dd></div>
+          <div><dt>自家消費率</dt><dd>85%</dd></div>
+          <div><dt>投資回収の目安</dt><dd class="hl">約9年</dd></div>
+          <div><dt>CO₂削減量</dt><dd>約120 t/年</dd></div>
         </dl>
       </div>
       <div class="case">
-        <div class="chip"><small>CASE B</small>物流倉庫</div>
+        <div class="chip"><small>CASE B ／ 試算例</small>物流倉庫</div>
         <dl>
-          <div><dt>屋根面積</dt><dd><span class="ph">◯,◯◯◯</span>㎡</dd></div>
-          <div><dt>設置容量</dt><dd><span class="ph">◯◯◯</span>kW</dd></div>
-          <div><dt>導入前の年間電気代</dt><dd><span class="ph">◯,◯◯◯</span>万円</dd></div>
-          <div><dt>年間削減額の目安</dt><dd class="hl"><span class="ph">◯◯◯</span>万円</dd></div>
-          <div><dt>自家消費率</dt><dd><span class="ph">◯◯</span>%</dd></div>
-          <div><dt>投資回収の目安</dt><dd class="hl"><span class="ph">◯〜◯</span>年</dd></div>
-          <div><dt>CO₂削減量</dt><dd><span class="ph">◯◯◯</span>t/年</dd></div>
+          <div><dt>屋根面積</dt><dd>約5,000㎡</dd></div>
+          <div><dt>設置容量</dt><dd>500 kW</dd></div>
+          <div><dt>導入前の年間電気代</dt><dd>約3,100万円</dd></div>
+          <div><dt>年間削減額の目安</dt><dd class="hl">約990万円</dd></div>
+          <div><dt>自家消費率</dt><dd>70%</dd></div>
+          <div><dt>投資回収の目安</dt><dd class="hl">約10年</dd></div>
+          <div><dt>CO₂削減量</dt><dd>約170 t/年</dd></div>
         </dl>
       </div>
       <div class="case">
-        <div class="chip"><small>CASE C</small>事業所・社屋</div>
+        <div class="chip"><small>CASE C ／ 試算例</small>事業所・社屋</div>
         <dl>
-          <div><dt>屋根面積</dt><dd><span class="ph">◯◯◯</span>㎡</dd></div>
-          <div><dt>設置容量</dt><dd><span class="ph">◯◯</span>kW</dd></div>
-          <div><dt>導入前の年間電気代</dt><dd><span class="ph">◯◯◯</span>万円</dd></div>
-          <div><dt>年間削減額の目安</dt><dd class="hl"><span class="ph">◯◯</span>万円</dd></div>
-          <div><dt>自家消費率</dt><dd><span class="ph">◯◯</span>%</dd></div>
-          <div><dt>投資回収の目安</dt><dd class="hl"><span class="ph">◯〜◯</span>年</dd></div>
-          <div><dt>CO₂削減量</dt><dd><span class="ph">◯◯</span>t/年</dd></div>
+          <div><dt>屋根面積</dt><dd>約800㎡</dd></div>
+          <div><dt>設置容量</dt><dd>80 kW</dd></div>
+          <div><dt>導入前の年間電気代</dt><dd>約880万円</dd></div>
+          <div><dt>年間削減額の目安</dt><dd class="hl">約180万円</dd></div>
+          <div><dt>自家消費率</dt><dd>90%</dd></div>
+          <div><dt>投資回収の目安</dt><dd class="hl">約10年</dd></div>
+          <div><dt>CO₂削減量</dt><dd>約35 t/年</dd></div>
         </dl>
       </div>
     </div>
-    <p class="disclaim sf">※ 上記は一定の前提条件に基づく試算例です。実際の効果は屋根条件、電力契約、稼働状況、適用制度により異なります。<br>
-    <span class="memo">【制作メモ】数値はJ・システム様よりご提供ください。実案件ベース／標準前提の試算例のいずれかを選択いただきます。</span></p>
+
+    <details class="assump sf">
+      <summary>試算の前提条件を見る</summary>
+      <div class="assump-in">
+        <ul>
+          <li>設置密度：屋根面積 10㎡あたり 1kW</li>
+          <li>年間発電量：1,100 kWh／kW（関東・東海の一般的な水準）</li>
+          <li>購入電力の削減単価：22円／kWh（基本料金相当を含む概算）</li>
+          <li>余剰電力の売電単価：8.5円／kWh</li>
+          <li>システム費用：20万円／kW（CASE Cは小規模のため22万円／kW）</li>
+          <li>CO₂排出係数：0.44 kg-CO₂／kWh（自家消費分で算定）</li>
+          <li>投資回収は補助金・税制優遇を反映しない単純回収。<strong>制度を活用した場合、回収期間はさらに短くなります</strong></li>
+          <li>蓄電池・屋根防水工事は含みません</li>
+        </ul>
+      </div>
+    </details>
+    <p class="disclaim sf">※ 上記は標準的な前提条件に基づく試算例です。実際の効果は屋根条件、電力契約、稼働状況、適用制度により異なります。御社の実データをもとに個別に試算いたします。</p>
+
     <div class="mini-cta sf">
       <p>御社の場合はどうなるか、実データをもとに試算します。</p>
       <a href="#contact" class="btn btn-fill btn-sm">無料シミュレーションを依頼する →</a>
@@ -1012,14 +1036,14 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
           <tr><td>埼玉県加須市</td><td>半導体機器工場</td><td>自家消費</td><td>1,158 kW</td></tr>
           <tr><td>滋賀県</td><td>メガソーラー（野立）</td><td>元請</td><td>1.8 MW</td></tr>
           <tr><td>神奈川県平塚市</td><td>工場</td><td>自家消費</td><td>110 kW</td></tr>
-          <tr><td>神奈川県平塚市</td><td>幼稚園</td><td>自家消費＋蓄電池</td><td>35 kW＋蓄電池16.4</td></tr>
-          <tr><td>神奈川県平塚市</td><td>介護施設</td><td>自家消費＋蓄電池</td><td>30 kW＋蓄電池16.4</td></tr>
-          <tr><td>山梨県山梨市</td><td>物流倉庫・事務所</td><td>自家消費＋蓄電池</td><td>15 kW＋蓄電池16.4</td></tr>
+          <tr><td>神奈川県平塚市</td><td>幼稚園</td><td>自家消費＋蓄電池</td><td>35 kW＋蓄電池16.4 kWh</td></tr>
+          <tr><td>神奈川県平塚市</td><td>介護施設</td><td>自家消費＋蓄電池</td><td>30 kW＋蓄電池16.4 kWh</td></tr>
+          <tr><td>山梨県山梨市</td><td>物流倉庫・事務所</td><td>自家消費＋蓄電池</td><td>15 kW＋蓄電池16.4 kWh</td></tr>
           <tr><td>茨城県八千代町</td><td>産業廃棄物処理工場</td><td>自家消費</td><td>25 kW</td></tr>
         </tbody>
       </table>
     </div>
-    <p class="disclaim sf"><span class="memo">【制作メモ】</span>設置例の写真は既存サイト `/industry/` からの流用です（流用可否は確認中）。実績データは2026-08-30ご回答の資料（施工実績リスト／産業用太陽光発電所 施工実績サマリー）に基づきます。蓄電池の「16.4」は単位（kWh想定）を確認中。導入事例（企業名・規模・お客様コメント・写真）は引き続きご提供待ちです。本セクションは今後のCMS（施工実績の自社更新機能）の出力先として設計しています。</p>
+    <p class="disclaim sf">実績は2012年6月〜2023年7月の集計に基づきます。<span class="memo">【制作メモ】本セクションは今後のCMS（施工実績の自社更新機能）の出力先として設計しています。</span></p>
   </div>
 </section>
 
@@ -1033,14 +1057,15 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
     </div>
     <div class="flow-grid sf-row">
       <div class="fl"><i>01</i><b>調べる</b><p>現場・デマンド調査。屋根形状、設備状況、時間帯別の電力データを確認します。</p>
-        <dl><div><dt>目安</dt><dd><span class="ph">約◯週間</span></dd></div><div><dt>お願い</dt><dd>現地確認のお立ち会い</dd></div></dl></div>
+        <dl><div><dt>お願い</dt><dd>現地確認のお立ち会い</dd></div></dl></div>
       <div class="fl"><i>02</i><b>描く</b><p>最適システム提案。自家消費率や設備構成を設計し、投資効果を試算します。</p>
-        <dl><div><dt>目安</dt><dd><span class="ph">約◯週間</span></dd></div><div><dt>お願い</dt><dd>ご要望のヒアリング</dd></div></dl></div>
+        <dl><div><dt>お願い</dt><dd>ご要望のヒアリング</dd></div></dl></div>
       <div class="fl"><i>03</i><b>整える</b><p>財務計画・制度適用。補助金、税制、PPAを含めた導入計画を具体化します。</p>
-        <dl><div><dt>目安</dt><dd><span class="ph">約◯週間</span></dd></div><div><dt>お願い</dt><dd>社内でのご検討・ご判断</dd></div></dl></div>
+        <dl><div><dt>お願い</dt><dd>社内でのご検討・ご判断</dd></div></dl></div>
       <div class="fl"><i>04</i><b>育てる</b><p>運用・収益化支援。余剰電力と環境価値を活かし、導入後も伴走します。</p>
-        <dl><div><dt>目安</dt><dd>導入後も継続</dd></div><div><dt>お願い</dt><dd>—</dd></div></dl></div>
+        <dl><div><dt>お願い</dt><dd>—</dd></div></dl></div>
     </div>
+    <p class="flow-note sf">各工程の期間は、設置規模・屋根の状態・制度申請の有無により案件ごとに異なります。ご相談時に想定スケジュールをご提示します。</p>
     <div class="no-prep sf">
       <span>📋</span>
       <div>詳しい試算に必要な資料は、ご相談後にこちらから個別にご案内します。
@@ -1108,9 +1133,9 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
       <details><summary><i>Q</i><span>補助金や税制は、うちも対象になりますか？</span></summary>
         <div class="ans">対象可否の調査から代行いたします。中小企業経営強化税制などは、企業要件・計画認定・設備の取得時期によって適用可否が変わるため、事前の確認が重要です。適用要件の確認から申請書類の作成まで支援します。</div></details>
       <details><summary><i>Q</i><span>導入までどのくらいの期間がかかりますか？</span></summary>
-        <div class="ans">規模や制度申請の有無により変動しますが、目安として<span class="ph">◯〜◯ヶ月</span>程度です。補助金を活用する場合は公募期間に合わせた進行が必要になるため、早めのご相談をおすすめしています。</div></details>
+        <div class="ans">設置規模、屋根の状態、補助金・税制など制度申請の有無によって、案件ごとに異なります。ご相談の際に、御社の条件に合わせた想定スケジュールをご提示します。補助金を活用する場合は公募期間に合わせた進行が必要になるため、早めのご相談をおすすめしています。</div></details>
       <details><summary><i>Q</i><span>対応エリアはどこまでですか？</span></summary>
-        <div class="ans"><strong>沖縄県を除く日本全国</strong>に対応しております。静岡県・神奈川県を基盤に、これまで全国20都道府県で施工実績があります。海外はベトナム・タイでの対応も可能です。</div></details>
+        <div class="ans"><strong>沖縄県を除く日本全国</strong>に対応しております。静岡県・神奈川県を基盤に、これまで全国20都道府県で施工実績があります。ベトナム・タイも対応可能です。</div></details>
       <details><summary><i>Q</i><span>制度が今後変わったらどうなりますか？</span></summary>
         <div class="ans">導入して終わりではなく、発電・消費実績の計測と記録の管理まで伴走します。制度変更時にも説明できるデータを整えておくことで、対応の選択肢を確保します。<button class="more-link" data-modal="g1" data-anchor="g1-data" style="font-size:14px">データと記録の整理について ＋</button></div></details>
       <details><summary><i>Q</i><span>見積もりだけでもお願いできますか？</span></summary>
@@ -1137,9 +1162,8 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
           <tr><th>電話番号</th><td>0465-39-5202 ／ 0120-79-5202</td></tr>
           <tr><th>従業員数</th><td>74名（派遣送り出し社員を含む）</td></tr>
           <tr><th>事業内容</th><td>産業用・住宅用太陽光発電システムの設計・施工／小水力発電／蓄電池・EMS導入／空調制御システム「Ai-Glies」／屋根防水・ポリウレア施工／人財サービス事業</td></tr>
-          <tr><th>対応エリア</th><td>沖縄県を除く日本全国（施工実績20都道府県）／海外はベトナム・タイ</td></tr>
+          <tr><th>対応エリア</th><td>沖縄県を除く日本全国（施工実績20都道府県）。ベトナム・タイも対応可能</td></tr>
         </table>
-        <p class="chk-note">※ 商号・代表者・所在地・電話番号・許認可は現行サイトの会社概要ページに基づく記載です。変更の有無を確認中。</p>
       </div>
       <div class="cert">
         <b>LICENSE &amp; MEMBERSHIP</b>
@@ -1151,7 +1175,6 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
           <li>神奈川県電気工事工業組合　加盟</li>
           <li>元請としての一括施工管理（EPC）体制</li>
         </ul>
-        <p style="margin:20px 0 0;font-size:12.5px;opacity:.85;line-height:1.8">※ 許認可番号は現行サイトの会社概要ページに基づく記載です。最新の内容を確認中。</p>
       </div>
     </div>
   </div>
@@ -1168,22 +1191,23 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
         <div class="promise">
           <div class="pr"><i>¥0</i><div><b>ご相談・試算は無料</b><small>費用は一切かかりません</small></div></div>
           <div class="pr"><i>✓</i><div><b>無理な営業はしません</b><small>情報提供が目的です</small></div></div>
-          <div class="pr"><i>⏱</i><div><b><span class="ph">◯営業日</span>以内にご連絡</b><small>メールまたはお電話でご連絡します</small></div></div>
+          <div class="pr"><i>⏱</i><div><b>担当より順次ご連絡</b><small>メールまたはお電話でご連絡します</small></div></div>
         </div>
-        <div class="tel-alt"><small>お急ぎの方はお電話でも承ります</small><b class="ph">◯◯-◯◯◯◯-◯◯◯◯</b></div>
+        <div class="tel-alt"><small>お急ぎの方はお電話でも承ります</small><b><a href="tel:0120795202" style="color:inherit">0120-79-5202</a></b><small style="margin-top:6px">固定電話 0465-39-5202</small></div>
       </div>
       <form class="sf" onsubmit="event.preventDefault();alert('※デザイン案のためフォームは動作しません。');">
         <div class="fld"><label>会社名 <span class="req">必須</span></label><input type="text" placeholder="株式会社◯◯◯◯" required></div>
-        <div class="fld"><label>お名前 <span class="req">必須</span></label><input type="text" placeholder="山田 太郎" required></div>
+        <div class="fld"><label>担当者名 <span class="req">必須</span></label><input type="text" placeholder="山田 太郎" required></div>
+        <div class="fld"><label>担当者名（カナ） <span class="req">必須</span></label><input type="text" placeholder="ヤマダ タロウ" required></div>
         <div class="fld"><label>メールアドレス <span class="req">必須</span></label><input type="email" placeholder="example@company.co.jp" required></div>
         <div class="fld"><label>電話番号 <span class="opt">任意</span></label><input type="tel" placeholder="0000-00-0000"></div>
         <div class="fld"><label>ご連絡希望の時間帯 <span class="opt">任意</span></label>
           <select><option>指定なし</option><option>午前（9:00〜12:00）</option><option>午後（13:00〜17:00）</option><option>夕方（17:00〜19:00）</option></select>
-          <p class="hint">ご都合のよい時間帯をお知らせください。日程はご連絡時に調整いたします。</p></div>
+          <p class="hint">ご都合のよい時間帯をお知らせください。日程はご連絡時に調整いたします。<span class="memo">【制作メモ】既存フォームに無い項目。追加可否は要判断</span></p></div>
         <div class="fld"><label>ご相談内容 <span class="opt">任意</span></label>
           <textarea placeholder="例）工場の屋根に太陽光を検討しています。補助金が使えるか知りたいです。"></textarea></div>
         <button type="submit" class="submit">送信する</button>
-        <p class="form-foot">送信いただいた内容は、ご相談対応の目的以外には使用しません。<br><a href="#" style="color:var(--blue)">プライバシーポリシー</a></p>
+        <p class="form-foot">送信いただいた内容は、ご相談対応の目的以外には使用しません。<br><span class="memo">【制作メモ】実装時は既存のお問い合わせフォーム（Contact Form 7）に接続します。</span><br><a href="#" style="color:var(--blue)">プライバシーポリシー</a></p>
       </form>
     </div>
   </div>
@@ -1226,7 +1250,7 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
 </footer>
 
 <div class="spbar" id="spbar">
-  <a href="tel:0000000000" class="btn btn-line">☎ 電話</a>
+  <a href="tel:0120795202" class="btn btn-line">☎ 電話</a>
   <a href="#contact" class="btn btn-fill">無料で相談する</a>
 </div>
 
