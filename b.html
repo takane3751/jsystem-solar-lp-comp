@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>産業用太陽光 包括支援 ｜ J・システム株式会社</title>
-<meta name="description" content="太陽光導入を「環境対策」から「利益を生む経営戦略」へ。補助金・税制・J-クレジット・余剰電力活用まで、設計から運用・収益化までJ・システムが一気通貫で伴走します。">
+<title>太陽光 × Ai-Glies × ポリウレア ｜ J・システム株式会社</title>
+<meta name="description" content="太陽光発電に、空調を減らすAi-Gliesと屋根を守るポリウレア一体施工を掛け合わせる。電気代の使用量と基本料金、そして屋根の寿命まで同時に守るJ・システムの産業用太陽光。">
 <style>
 /* ============================================================
    J・システム 産業用太陽光LP — デザイン案 v3
@@ -649,6 +649,138 @@ figcaption{padding:11px 16px;font-size:12.5px;color:var(--ink-soft);background:#
   .sf,.sf-row,.sf-row>*{opacity:1!important;transform:none!important}
 }
 
+/* ================= B案：技術の掛け合わせ訴求 ================= */
+:root{--c-pv:#00B4C6;--c-ai:#3659A2;--c-ai2:#8FA9DA;--c-pu:#16925A}
+.b-fv{height:auto;min-height:600px;padding:64px 0 56px}
+.b-fv .fv{height:auto}
+.b-fv h1{font-size:clamp(28px,4vw,46px)}
+.eq{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:10px;margin:30px 0 26px;max-width:820px}
+.eq>i{font-style:normal;align-self:center;font-family:var(--mincho);font-size:34px;color:#fff;line-height:1;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.eq-t{background:rgba(255,255,255,.95);border-radius:10px;padding:16px 16px 14px;border-top:5px solid var(--tc);box-shadow:0 10px 30px rgba(0,30,60,.25)}
+.eq-t small{display:block;font-size:11.5px;letter-spacing:.14em;font-weight:700;color:var(--tc);margin-bottom:4px}
+.eq-t b{display:block;font-family:var(--mincho);font-weight:400;font-size:20px;line-height:1.35;color:#000}
+.eq-t span{display:block;font-size:12.5px;color:var(--ink-soft);margin-top:4px;line-height:1.6}
+.t-pv{--tc:var(--c-pv)} .t-ai{--tc:var(--c-ai)} .t-pu{--tc:var(--c-pu)}
+.b-fv .fv-lead{font-size:16px;line-height:1.95;color:rgba(255,255,255,.94);margin:0 0 24px;max-width:56ch}
+
+.tag{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:.08em;color:#fff;background:var(--tc);padding:6px 14px;border-radius:40px;margin-bottom:14px}
+.tag.dual{background:linear-gradient(120deg,var(--c-pv) 0%,var(--tc2) 100%)}
+
+/* 課題 */
+.limit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.limit{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:26px 24px 22px;display:flex;flex-direction:column}
+.limit .lk{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--ink-soft);margin-bottom:10px}
+.limit h3{font-size:19px;line-height:1.55;margin:0 0 10px}
+.limit p{margin:0 0 18px;font-size:14.5px;line-height:1.9;color:var(--ink-soft);flex:1}
+.limit .ans{display:flex;align-items:center;gap:10px;padding-top:14px;border-top:1px solid var(--border-soft);font-size:14px;font-weight:700;color:var(--tc)}
+.limit .ans::before{content:"→";font-size:16px}
+
+/* 解決セクション */
+.sol-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:34px}
+.sol-head h2.t{margin-top:2px}
+.badge-role{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.06em;padding:6px 14px;border-radius:40px;border:1.5px solid var(--tc);color:var(--tc);background:#fff;white-space:nowrap}
+.sol-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:start}
+.figbox{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px 22px 16px}
+.figbox h4{margin:0 0 4px;font-size:15.5px;font-weight:700;font-family:var(--font)}
+.figbox .fsub{margin:0 0 10px;font-size:12.5px;color:var(--ink-soft)}
+.figbox .fnote{margin:10px 0 0;font-size:12.5px;line-height:1.8;color:var(--ink-soft)}
+.chart{width:100%;height:auto;display:block;font-family:var(--font)}
+.chart .gl{stroke:#E6EAEF;stroke-width:1}
+.chart .ax{fill:#6B7885;font-size:11.5px;font-variant-numeric:tabular-nums}
+.chart .rl{fill:#1E2A38;font-size:13px;font-weight:700}
+.chart .vl{fill:#1E2A38;font-size:13px;font-weight:700;font-variant-numeric:tabular-nums}
+.chart .vb{fill:var(--c-ai);font-size:15px}
+.chart .up{fill:var(--c-ai);font-size:13px;font-weight:700}
+.chart .annb{fill:#1E2A38;font-size:12px;font-weight:700}
+.chart .warn{fill:#C2381B;font-size:12px;font-weight:700}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;margin:8px 0 0;padding:0;list-style:none;font-size:12.5px;color:var(--ink-soft)}
+.legend li{display:flex;align-items:center;gap:6px}
+.legend li::before{content:"";width:14px;height:4px;border-radius:2px;background:var(--lc)}
+.legend.sq li::before{height:12px;width:12px;border-radius:2px}
+.fn-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.fn-list li{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;align-items:baseline;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:14px 16px}
+.fn-list b{font-size:15.5px;grid-column:2}
+.fn-list em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.06em;color:#fff;background:var(--lc);padding:3px 9px;border-radius:40px;grid-row:1 / span 2;align-self:start;margin-top:2px}
+.fn-list span{grid-column:2;font-size:13.5px;color:var(--ink-soft);line-height:1.75}
+.sol-bar{margin-top:22px}
+.kpi-row{display:flex;flex-wrap:wrap;gap:10px 28px;margin:14px 0 0}
+.kpi-row div{font-size:13px;color:var(--ink-soft)}
+.kpi-row b{display:block;font-size:22px;color:var(--c-ai);font-variant-numeric:tabular-nums;line-height:1.3}
+.pu-photo{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/3;background:var(--gray-100)}
+.pu-photo img{width:100%;height:100%;object-fit:cover}
+.pu-points{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:22px}
+.pu-points div{background:#fff;border:1px solid var(--border);border-top:4px solid var(--c-pu);border-radius:var(--radius);padding:18px 18px 16px}
+.pu-points b{display:block;font-size:15.5px;margin-bottom:6px}
+.pu-points p{margin:0;font-size:13.5px;line-height:1.8;color:var(--ink-soft)}
+
+/* 比較表 */
+.cmp-wrap{overflow-x:auto;border-radius:var(--radius);box-shadow:var(--shadow)}
+.cmp{width:100%;border-collapse:separate;border-spacing:0;min-width:680px;background:#fff;font-size:14.5px}
+.cmp th,.cmp td{padding:16px 18px;border-bottom:1px solid var(--border-soft);text-align:left;vertical-align:top;line-height:1.75}
+.cmp thead th{font-size:14px;font-weight:700;background:#F3F5F8;color:var(--ink-soft)}
+.cmp thead th.js{background:var(--grad);color:#fff;font-size:15px}
+.cmp tbody th{width:22%;font-weight:700;color:#1E2A38;background:#FBFCFD}
+.cmp td.js{background:rgba(0,206,224,.05);border-left:3px solid var(--c-pv)}
+.cmp tr:last-child th,.cmp tr:last-child td{border-bottom:0}
+.mk{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:50%;font-weight:700;font-size:14px;margin-right:8px;vertical-align:-2px}
+.mk.g{background:#E3F4EC;color:var(--c-pu)} .mk.m{background:#EEF2F6;color:#6B7885} .mk.n{background:#F3F4F6;color:#9AA5B1}
+.via{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--tc);padding:2px 8px;border-radius:40px;margin-left:6px;vertical-align:1px}
+
+/* モデルケース */
+.mc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:26px;align-items:start}
+.mc-cond{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:22px 24px}
+.mc-cond h4{margin:0 0 12px;font-size:15px;font-family:var(--font)}
+.mc-cond dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:0}
+.mc-cond dl>div{display:contents}
+.mc-cond dt,.mc-cond dd{padding:10px 0;border-bottom:1px dashed var(--border);font-size:14px}
+.mc-cond dt{color:var(--ink-soft)}
+.mc-cond dd{margin:0;text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+.mc-res{background:#fff;border:2px solid var(--c-ai);border-radius:var(--radius);padding:24px 26px}
+.mc-res .big{display:flex;align-items:baseline;gap:8px;margin:4px 0 14px}
+.mc-res .big b{font-size:44px;line-height:1;color:var(--c-ai);font-variant-numeric:tabular-nums}
+.mc-res .big span{font-size:15px;font-weight:700}
+.mc-break{list-style:none;margin:0 0 16px;padding:0;display:grid;gap:8px}
+.mc-break li{display:grid;grid-template-columns:14px 1fr auto;gap:10px;align-items:center;font-size:14px}
+.mc-break li::before{content:"";width:12px;height:12px;border-radius:2px;background:var(--lc)}
+.mc-break b{font-variant-numeric:tabular-nums}
+.scn{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border);border-radius:8px;overflow:hidden;margin-top:6px}
+.scn div{padding:12px 10px;text-align:center;border-right:1px solid var(--border);font-size:12.5px;color:var(--ink-soft)}
+.scn div:last-child{border-right:0}
+.scn div.on{background:rgba(54,89,162,.07)}
+.scn b{display:block;font-size:19px;color:#1E2A38;font-variant-numeric:tabular-nums;margin:2px 0}
+.scn div.on b{color:var(--c-ai)}
+.fit{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.fit span{background:#fff;border:1px solid var(--border);border-radius:40px;padding:7px 15px;font-size:13.5px;font-weight:700}
+
+/* 補助的な支援 */
+.sup-mini{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.sup-mini button{text-align:left;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:18px 18px 16px;cursor:pointer;font-family:inherit;transition:.2s}
+.sup-mini button:hover{border-color:var(--blue);box-shadow:var(--shadow-soft);transform:translateY(-2px)}
+.sup-mini b{display:block;font-size:15px;margin-bottom:6px;color:#1E2A38}
+.sup-mini span{display:block;font-size:13px;line-height:1.75;color:var(--ink-soft)}
+.sup-mini i{font-style:normal;display:block;margin-top:10px;font-size:13px;font-weight:700;color:var(--blue)}
+
+/* 流れ（提案資料の4ステップ） */
+.flow4{display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:st;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;background:#fff}
+.flow4 li{list-style:none;padding:22px 20px;border-right:1px solid var(--border);position:relative}
+.flow4 li:last-child{border-right:0}
+.flow4 li::before{counter-increment:st;content:"STEP " counter(st);display:block;font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--blue);margin-bottom:6px}
+.flow4 b{display:block;font-family:var(--mincho);font-weight:400;font-size:19px;margin-bottom:8px}
+.flow4 span{display:block;font-size:13.5px;line-height:1.8;color:var(--ink-soft)}
+
+@media(max-width:1000px){
+  .eq{grid-template-columns:1fr;gap:6px} .eq>i{justify-self:center;font-size:24px}
+  .limit-grid,.sol-grid,.mc-grid,.pu-points{grid-template-columns:1fr}
+  .sup-mini,.flow4{grid-template-columns:repeat(2,1fr)}
+  .flow4 li:nth-child(2){border-right:0} .flow4 li:nth-child(-n+2){border-bottom:1px solid var(--border)}
+}
+@media(max-width:768px){
+  .b-fv{min-height:0;padding:40px 0 36px}
+  .sup-mini,.flow4{grid-template-columns:1fr}
+  .flow4 li{border-right:0;border-bottom:1px solid var(--border)} .flow4 li:last-child{border-bottom:0}
+  .mc-res .big b{font-size:36px}
+}
+
 /* ---- A/B比較用の切替バー（カンプ専用・本番には含めない） ---- */
 .abbar{position:fixed;top:0;left:0;right:0;height:34px;z-index:1150;background:#0F1B2A;color:#C9D6E4;display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-family:YuGothic,"Yu Gothic medium","Hiragino Sans",Meiryo,sans-serif}
 .abbar span{margin-right:6px;letter-spacing:.08em;opacity:.8}
@@ -664,7 +796,7 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
 </style>
 </head>
 <body class="has-ab">
-<nav class="abbar" aria-label="デザイン案の切替"><span>比較用</span><a aria-current="page" href="index.html">A案　一貫サポート訴求</a><a href="b.html">B案　技術の掛け合わせ訴求</a></nav>
+<nav class="abbar" aria-label="デザイン案の切替"><span>比較用</span><a href="index.html">A案　一貫サポート訴求</a><a aria-current="page" href="b.html">B案　技術の掛け合わせ訴求</a></nav>
 
 
 <!-- ============ ヘッダー（実テーマ構造） ============ -->
@@ -725,23 +857,29 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
 
 <main id="top">
 
-<!-- ============ FV ============ -->
-<section class="header-bg">
+<!-- ============ FV：3つの技術の掛け合わせ ============ -->
+<section class="header-bg b-fv">
   <div class="fv">
     <div class="wrap">
-      <p class="kicker sf">2026 SOLAR PROFIT STRATEGY</p>
-      <h1 class="sf">太陽光導入を、「環境対策」から<br><em>「利益を生む経営戦略」</em>へ。</h1>
-      <p class="fv-lead sf">補助金・税制・J-クレジット・余剰電力活用まで。<br>J・システムが、設計から運用・収益化まで一気通貫で伴走します。</p>
+      <p class="kicker sf">SOLAR ＋ Ai-Glies ＋ POLYUREA</p>
+      <h1 class="sf">「つくる」だけの太陽光で、<br>終わらせない。</h1>
+      <div class="eq sf" aria-label="太陽光発電とAi-Gliesとポリウレア一体施工の組み合わせ">
+        <div class="eq-t t-pv"><small>つくる</small><b>太陽光発電</b><span>昼の電力を自家消費</span></div>
+        <i aria-hidden="true">＋</i>
+        <div class="eq-t t-ai"><small>減らす</small><b>Ai-Glies</b><span>空調の使用量とピークを制御</span></div>
+        <i aria-hidden="true">＋</i>
+        <div class="eq-t t-pu"><small>守る</small><b>ポリウレア一体施工</b><span>屋根と架台を一体化</span></div>
+      </div>
+      <p class="fv-lead sf">太陽光だけでは下がりにくい基本料金と空調の電力、そして先に傷む屋根。J・システムは、太陽光に2つの技術を掛け合わせ、電気代と設備の寿命を同時に守ります。</p>
       <div class="fv-cta sf">
-        <a href="#contact" class="btn btn-white">無料シミュレーションを相談する →</a>
-        <a href="#support" class="btn btn-line" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.7)">包括支援の内容を見る ↓</a>
+        <a href="#contact" class="btn btn-white">「太陽光のみ」との比較試算を依頼する →</a>
+        <a href="#limits" class="btn btn-line" style="background:transparent;color:#fff;border-color:rgba(255,255,255,.7)">何が違うのかを見る ↓</a>
       </div>
       <p class="fv-note sf">難しいデータは不要です。<strong>直近1年分の電気料金請求書があれば、おおよその試算ができます。</strong></p>
     </div>
   </div>
 </section>
 
-<!-- 信頼バー -->
 <div class="trust">
   <dl>
     <div><dt>創業</dt><dd>37<small>年</small></dd></div>
@@ -751,275 +889,229 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
   </dl>
 </div>
 
-<!-- ============ ワンストップ支援 ============ -->
-<section>
+<!-- ============ 太陽光だけの提案に残る課題 ============ -->
+<section id="limits">
   <div class="sec-wrap">
-    <div class="onestop">
-      <div class="sf">
-        <p class="kicker">ONE STOP SUPPORT</p>
-        <h2 class="t blue">導入から収益化まで、<br>ひとつの窓口で。</h2>
-        <p class="lead" style="margin-left:0">制度の検討、設備の設計、導入後の運用と収益化。フェーズごとに窓口が変わることなく、J・システムが一貫して伴走します。</p>
-        <div class="badges">
-          <span class="badge"><b>01</b>初期費用を最小化</span>
-          <span class="badge"><b>02</b>専門手続きも支援</span>
-          <span class="badge"><b>03</b>導入後も収益化</span>
-        </div>
+    <div class="sec-head sf">
+      <p class="kicker">WHY NOT SOLAR ONLY</p>
+      <h2 class="t">太陽光だけの提案に残る、<br>3つの課題。</h2>
+      <p class="lead">太陽光は昼の電気を「つくる」設備です。けれど電気代と設備の寿命を左右するのは、発電量だけではありません。</p>
+    </div>
+    <div class="limit-grid sf-row">
+      <div class="limit t-ai">
+        <p class="lk">基本料金</p>
+        <h3>曇りの日のピークで、<br>契約電力が決まってしまう</h3>
+        <p>基本料金は、1年のうち最も電気を使った30分の値で決まります。晴れた日に下がっても、曇りの日のピークが残れば基本料金は下がりにくいままです。</p>
+        <span class="ans">Ai-Gliesのピークカットで解決</span>
       </div>
-      <div class="journey sf" aria-label="導入準備から収益化までの一気通貫支援">
-        <div class="journey-orbit" aria-hidden="true"><i></i><i></i><i></i></div>
-        <div class="journey-core"><small>ONE STOP SUPPORT</small><strong>導入から<br>収益化まで</strong><span>伴走支援</span></div>
-        <div class="jstage st-plan"><small>PLAN</small><b>導入準備</b><span>制度・投資計画</span></div>
-        <div class="jstage st-build"><small>BUILD</small><b>設計・導入</b><span>設備の最適化</span></div>
-        <div class="jstage st-grow"><small>GROW</small><b>運用・収益化</b><span>価値を最大化</span></div>
+      <div class="limit t-ai">
+        <p class="lk">空調の電力</p>
+        <h3>電気代の大きな割合を占める<br>空調が、手つかずのまま</h3>
+        <p>店舗や事業所では、使用電力の4割前後を空調が占めることもあります。太陽光で「つくる」量を増やしても、空調が「使う」量はそのまま残ります。</p>
+        <span class="ans">Ai-Gliesの空調制御で解決</span>
+      </div>
+      <div class="limit t-pu">
+        <p class="lk">屋根</p>
+        <h3>パネルより先に、<br>屋根が寿命を迎える</h3>
+        <p>パネルは20年以上稼働しますが、屋根の防水は10年前後で改修時期を迎えます。そのときパネルを一度外して載せ直す費用が発生します。</p>
+        <span class="ans">ポリウレア一体施工で解決</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ チェックリスト ============ -->
-<section class="bg-gray" id="check">
+<!-- ============ 太陽光 × Ai-Glies ============ -->
+<section class="bg-gray" id="aiglies">
+  <div class="sec-wrap">
+    <div class="sol-head sf">
+      <div>
+        <span class="tag dual t-ai" style="--tc2:var(--c-ai)">太陽光 × Ai-Glies</span>
+        <h2 class="t">減らして、つくる。<br>需要と供給の両側から、電気代を下げる。</h2>
+      </div>
+      <span class="badge-role t-ai">Ai-Glies メーカー指定工事店</span>
+    </div>
+    <div class="sol-grid">
+      <div class="figbox sf">
+        <h4>曇りの日の電力需要（30分値のイメージ）</h4>
+        <p class="fsub">太陽光だけでは、曇天時のピークがほとんど下がりません</p>
+        <svg viewBox="0 0 560 290" role="img" aria-labelledby="lcT lcD" class="chart">
+<title id="lcT">曇天日の30分デマンドのイメージ</title>
+<desc id="lcD">導入前の需要ピーク約195kWに対し、太陽光のみでは曇天時のピークは約184kWまでしか下がらない。Ai-Gliesを組み合わせると空調の使用量削減とデマンド制御によりピークを約164kWに抑えられる。</desc>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1E2A38"/></marker></defs>
+<text x="44" y="18" class="ax" text-anchor="end">kW</text>
+<line x1="52" x2="544" y1="262.0" y2="262.0" class="gl"/><text x="44" y="266.0" class="ax" text-anchor="end">0</text><line x1="52" x2="544" y1="209.3" y2="209.3" class="gl"/><text x="44" y="213.3" class="ax" text-anchor="end">50</text><line x1="52" x2="544" y1="156.5" y2="156.5" class="gl"/><text x="44" y="160.5" class="ax" text-anchor="end">100</text><line x1="52" x2="544" y1="103.8" y2="103.8" class="gl"/><text x="44" y="107.8" class="ax" text-anchor="end">150</text><line x1="52" x2="544" y1="51.1" y2="51.1" class="gl"/><text x="44" y="55.1" class="ax" text-anchor="end">200</text><text x="52.0" y="282" class="ax" text-anchor="middle">6時</text><text x="157.4" y="282" class="ax" text-anchor="middle">9時</text><text x="262.9" y="282" class="ax" text-anchor="middle">12時</text><text x="368.3" y="282" class="ax" text-anchor="middle">15時</text><text x="473.7" y="282" class="ax" text-anchor="middle">18時</text>
+<line x1="52" x2="544" y1="67.4" y2="67.4" stroke="#00B4C6" stroke-dasharray="4 4" stroke-width="1.2"/><line x1="52" x2="544" y1="89.1" y2="89.1" stroke="#3659A2" stroke-dasharray="4 4" stroke-width="1.2"/><line x1="459.7" x2="459.7" y1="67.4" y2="89.1" stroke="#1E2A38" stroke-width="1.4" marker-start="url(#ar)" marker-end="url(#ar)"/><rect x="466.7" y="66.2" width="88" height="24" rx="4" fill="#fff" stroke="#1E2A38" stroke-width="1"/><text x="510.7" y="83.2" text-anchor="middle" class="annb">約20kW 低下</text>
+<polyline points="52.0,196.6 87.1,182.9 122.3,146.0 157.4,103.8 192.6,82.7 227.7,70.1 262.9,63.7 298.0,61.6 333.1,59.5 368.3,56.4 403.4,59.5 438.6,72.2 473.7,103.8 508.9,146.0 544.0,172.4" fill="none" stroke="#9AA5B1" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="52.0,196.6 87.1,184.5 122.3,150.2 157.4,111.7 192.6,94.3 227.7,84.3 262.9,79.6 298.0,77.2 333.1,73.8 368.3,68.0 403.4,67.4 438.6,76.4 473.7,105.1 508.9,146.0 544.0,172.4" fill="none" stroke="#00B4C6" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="52.0,196.6 87.1,184.5 122.3,155.4 157.4,118.8 192.6,102.4 227.7,92.9 262.9,89.1 298.0,89.1 333.1,89.1 368.3,89.1 403.4,89.1 438.6,89.1 473.7,112.2 508.9,151.2 544.0,172.4" fill="none" stroke="#3659A2" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>
+        <ul class="legend">
+          <li style="--lc:#9AA5B1">導入前</li>
+          <li style="--lc:#00B4C6">太陽光のみ</li>
+          <li style="--lc:#3659A2">太陽光＋Ai-Glies</li>
+        </ul>
+        <p class="fnote">契約電力（基本料金）は、1年で最も高い30分の需要で決まります。Ai-Gliesは設定したデマンドを超えないよう空調を制御し、天候に左右されずピークを抑えます。※需要カーブはイメージです。</p>
+      </div>
+      <ul class="fn-list sf-row">
+        <li style="--lc:#3659A2"><em>減らす</em><b>省エネ制御</b><span>外気の不快指数に連動して室外機を自動制御し、空調の使用量料金を削減します。</span></li>
+        <li style="--lc:#3659A2"><em>減らす</em><b>ピークカット</b><span>設定デマンドを超えないよう空調を制御し、基本料金の削減を狙います。</span></li>
+        <li style="--lc:#00B4C6"><em>つくる</em><b>自家消費</b><span>ショールームや事務所、工場の昼間の需要へ、太陽光の電気を優先して供給します。</span></li>
+        <li style="--lc:#6B7885"><em>見る</em><b>見える化</b><span>発電量に加え、空調の削減量やデマンドを確認。運用改善と社外への発信に活かせます。</span></li>
+      </ul>
+    </div>
+    <div class="figbox sol-bar sf">
+      <h4>年間の電気料金削減額（モデル店舗・標準ケースの試算例）</h4>
+      <p class="fsub">太陽光に加えて、空調の使用量と基本料金が下がる分が上乗せされます</p>
+      <svg viewBox="0 0 560 172" role="img" aria-labelledby="sbT sbD" class="chart">
+<title id="sbT">年間の電気料金削減額の比較（モデル店舗・標準ケース）</title>
+<desc id="sbD">太陽光のみは年間495.0万円。Ai-Gliesを組み合わせると空調使用量の削減56.3万円と基本料金の削減43.2万円が加わり、年間594.5万円。</desc>
+<line x1="150.0" x2="150.0" y1="18" y2="142" class="gl"/><text x="150.0" y="160" class="ax" text-anchor="middle">0</text><line x1="254.6" x2="254.6" y1="18" y2="142" class="gl"/><text x="254.6" y="160" class="ax" text-anchor="middle">200</text><line x1="359.2" x2="359.2" y1="18" y2="142" class="gl"/><text x="359.2" y="160" class="ax" text-anchor="middle">400</text><line x1="463.8" x2="463.8" y1="18" y2="142" class="gl"/><text x="463.8" y="160" class="ax" text-anchor="middle">600</text><rect x="150" y="30" width="258.9" height="34" rx="3" fill="#00B4C6"/><rect x="150" y="96" width="258.9" height="34" fill="#00B4C6"/><rect x="408.9" y="96" width="29.4" height="34" fill="#3659A2"/><rect x="438.4" y="96" width="22.6" height="34" fill="#8FA9DA"/><text x="138" y="52" text-anchor="end" class="rl">太陽光のみ</text><text x="138" y="112" text-anchor="end" class="rl">太陽光</text><text x="138" y="128" text-anchor="end" class="rl">＋ Ai-Glies</text><text x="416.9" y="52" class="vl">495.0万円</text><text x="469.0" y="118" class="vl vb">594.5万円</text><path d="M408.9,88 L408.9,82 L461.0,82 L461.0,88" fill="none" stroke="#3659A2" stroke-width="1.4"/><text x="434.9" y="76" text-anchor="middle" class="up">＋99.5万円</text>
+<text x="556" y="160" class="ax" text-anchor="end">万円/年</text>
+</svg>
+      <ul class="legend sq">
+        <li style="--lc:#00B4C6">太陽光の自家消費</li>
+        <li style="--lc:#3659A2">Ai-Glies 空調使用量の削減</li>
+        <li style="--lc:#8FA9DA">Ai-Glies デマンド削減（基本料金）</li>
+      </ul>
+      <div class="kpi-row">
+        <div>上乗せされる削減額<b>＋約100万円／年</b></div>
+        <div>削減額の伸び<b>約1.2倍</b></div>
+        <div>CO₂削減量<b>79t → 88t／年</b></div>
+      </div>
+      <p class="fnote">年間使用電力量500MWh、空調比率45%、太陽光200kW（自家消費率90%）、Ai-Gliesによる空調削減10%・デマンド削減20kWの場合。前提条件は下の「モデルケース」をご覧ください。</p>
+    </div>
+    <p class="sf" style="margin:20px 0 0"><button class="more-link" data-modal="g3" data-anchor="g3-aiglies">Ai-Gliesの仕組みを詳しく見る ＋</button></p>
+  </div>
+</section>
+
+<!-- ============ 太陽光 × ポリウレア ============ -->
+<section id="polyurea">
+  <div class="sec-wrap">
+    <div class="sol-head sf">
+      <div>
+        <span class="tag dual t-pu" style="--tc2:var(--c-pu)">太陽光 × ポリウレア</span>
+        <h2 class="t">つくって、守る。<br>屋根とパネルの寿命を、揃える。</h2>
+      </div>
+      <span class="badge-role t-pu">J・システム独自施工</span>
+    </div>
+    <div class="sol-grid">
+      <div class="figbox sf">
+        <h4>パネルと屋根の寿命ギャップ</h4>
+        <p class="fsub">屋根の改修時期に、パネルの脱着・再設置が発生します</p>
+        <svg viewBox="0 0 560 204" role="img" aria-labelledby="lsT lsD" class="chart">
+<title id="lsT">太陽光パネルと屋根の寿命の比較</title>
+<desc id="lsD">太陽光パネルは20年以上稼働する一方、一般的な屋根防水は約10年で改修が必要になり、その際にパネルの脱着が発生する。ポリウレア一体施工は屋根と架台を一体化し、パネルと同じ期間の運用を目指す。</desc>
+<defs><pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="7" height="7" fill="#F1F3F5"/><line x1="0" y1="0" x2="0" y2="7" stroke="#9AA5B1" stroke-width="2"/></pattern></defs>
+<line x1="176.0" x2="176.0" y1="14" y2="176" class="gl"/><text x="176.0" y="194" class="ax" text-anchor="middle">0年</text><line x1="248.8" x2="248.8" y1="14" y2="176" class="gl"/><text x="248.8" y="194" class="ax" text-anchor="middle">5年</text><line x1="321.6" x2="321.6" y1="14" y2="176" class="gl"/><text x="321.6" y="194" class="ax" text-anchor="middle">10年</text><line x1="394.4" x2="394.4" y1="14" y2="176" class="gl"/><text x="394.4" y="194" class="ax" text-anchor="middle">15年</text><line x1="467.2" x2="467.2" y1="14" y2="176" class="gl"/><text x="467.2" y="194" class="ax" text-anchor="middle">20年</text><line x1="540.0" x2="540.0" y1="14" y2="176" class="gl"/><text x="540.0" y="194" class="ax" text-anchor="middle">25年</text><text x="164" y="41" text-anchor="end" class="rl">太陽光パネル</text><rect x="176" y="24" width="291.2" height="26" rx="3" fill="#00B4C6"/><text x="475.2" y="42" class="vl">20年〜</text><text x="164" y="96" text-anchor="end" class="rl">一般的な屋根防水</text><rect x="176" y="79" width="145.6" height="26" rx="3" fill="#9AA5B1"/><rect x="325.6" y="79" width="141.6" height="26" rx="3" fill="url(#hatch)" stroke="#9AA5B1" stroke-width="1"/><circle cx="323.6" cy="92" r="9" fill="#EF4123"/><text x="323.6" y="96.5" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">!</text><text x="394.4" y="71" class="warn" text-anchor="middle">屋根改修 → パネル脱着・再設置</text><text x="164" y="151" text-anchor="end" class="rl">ポリウレア一体施工</text><rect x="176" y="134" width="291.2" height="26" rx="3" fill="#16925A"/><text x="475.2" y="152" class="vl" fill="#16925A">パネルと揃える</text>
+</svg>
+        <p class="fnote">適用可否・耐用年数は、屋根の状態、下地、製品仕様、施工条件を確認して判断します。</p>
+      </div>
+      <div class="sf">
+        <div class="pu-photo"><img src="assets/polyurea-photo.png" alt="ポリウレア樹脂で屋根防水と太陽光架台を一体化した施工面"></div>
+        <p style="margin:16px 0 0;font-size:15px;line-height:1.95;color:var(--ink-soft)">ポリウレアは、イソシアネートとアミンの化学反応で生成される樹脂。高い防水・防食性、耐衝撃性、速乾性を持ちます。J・システムはこれを太陽光の設置に活用し、架台の基礎まで屋根と一体化させます。</p>
+      </div>
+    </div>
+    <div class="pu-points sf-row">
+      <div><b>脱着・再設置の費用を避ける</b><p>屋根と架台を一体で施工するため、運用途中の屋根改修に伴うパネルの取り外しを避けられます。</p></div>
+      <div><b>漏水リスクを抑える</b><p>架台の固定部まで樹脂で覆い、雨水の侵入経路をなくします。防水と設置を同時に仕上げます。</p></div>
+      <div><b>設置が難しかった屋根にも</b><p>これまで設置が難しかった工場屋根への設置を可能にし、防水性と耐久性を高めます。</p></div>
+    </div>
+    <p class="sf" style="margin:20px 0 0"><button class="more-link" data-modal="g3" data-anchor="g3-polyurea">ポリウレア一体施工を詳しく見る ＋</button></p>
+  </div>
+</section>
+
+<!-- ============ 比較 ============ -->
+<section class="bg-tint" id="compare">
   <div class="sec-wrap">
     <div class="sec-head sf">
-      <p class="kicker">CHECK LIST</p>
-      <h2 class="t">ひとつでも当てはまれば、<br>検討を始めるタイミングです。</h2>
-      <p class="lead">必要な情報がまだ揃っていなくても、現状の確認からご相談いただけます。</p>
+      <p class="kicker">COMPARISON</p>
+      <h2 class="t">太陽光だけの提案と、<br>ここが違います。</h2>
+      <p class="lead">同じ屋根、同じ電力契約でも、組み合わせる技術によって下がる電気代の項目が変わります。</p>
     </div>
-    <div class="check-grid sf-row">
-      <div class="check-item"><i>✓</i><span>電気代の上昇や契約電力の見直しが経営課題になっている</span></div>
-      <div class="check-item"><i>✓</i><span>工場・倉庫・事業所に活用できる屋根がある</span></div>
-      <div class="check-item"><i>✓</i><span>補助金や税制の対象になるか分からない</span></div>
-      <div class="check-item"><i>✓</i><span>太陽光だけでなく蓄電池・空調も検討したい</span></div>
-      <div class="check-item"><i>✓</i><span>取引先から排出量や再エネ利用の説明を求められている</span></div>
-      <div class="check-item"><i>✓</i><span>J-クレジットや余剰電力の活用まで考えたい</span></div>
+    <div class="cmp-wrap sf">
+      <table class="cmp">
+        <thead><tr><th scope="col"></th><th scope="col">一般的な太陽光の提案</th><th scope="col" class="js">J・システムの提案</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">電気の使用量</th><td><span class="mk m">○</span>昼の発電分を削減</td><td class="js"><span class="mk g">◎</span>発電分に加え、空調の使用量も削減<span class="via" style="--tc:var(--c-ai)">Ai-Glies</span></td></tr>
+          <tr><th scope="row">基本料金</th><td><span class="mk m">△</span>曇天日のピークが残り、下がりにくい</td><td class="js"><span class="mk g">◎</span>デマンド制御でピークを直接抑える<span class="via" style="--tc:var(--c-ai)">Ai-Glies</span></td></tr>
+          <tr><th scope="row">空調の電力</th><td><span class="mk n">−</span>対象外</td><td class="js"><span class="mk g">◎</span>室外機を外気に合わせて自動制御<span class="via" style="--tc:var(--c-ai)">Ai-Glies</span></td></tr>
+          <tr><th scope="row">屋根の寿命</th><td><span class="mk m">△</span>既存の屋根のまま設置。改修時に脱着費</td><td class="js"><span class="mk g">◎</span>屋根と架台を一体化し、寿命を揃える<span class="via" style="--tc:var(--c-pu)">ポリウレア</span></td></tr>
+          <tr><th scope="row">設置できる屋根</th><td><span class="mk m">△</span>条件の悪い屋根は見送りになることも</td><td class="js"><span class="mk g">○</span>設置が難しかった工場屋根にも対応<span class="via" style="--tc:var(--c-pu)">ポリウレア</span></td></tr>
+          <tr><th scope="row">効果の確認</th><td><span class="mk m">○</span>発電量</td><td class="js"><span class="mk g">◎</span>発電量に加え、空調の削減量・デマンドも確認</td></tr>
+        </tbody>
+      </table>
     </div>
     <div class="mini-cta sf">
-      <p>1つでも当てはまる方は、まず現状の整理からご相談ください。</p>
-      <a href="#contact" class="btn btn-fill btn-sm">無料で相談する →</a>
+      <p>御社の電力データで、「太陽光のみ」と「組み合わせ」を同じ条件で比べます。</p>
+      <a href="#contact" class="btn btn-fill btn-sm">比較試算を依頼する →</a>
     </div>
   </div>
 </section>
 
-<!-- ============ 2026年の変化 ============ -->
-<section class="bg-grad on-grad" id="why2026">
+<!-- ============ モデルケース ============ -->
+<section id="case">
   <div class="sec-wrap">
-    <div class="sec-head sf">
-      <p class="kicker">WHY NOW / 2026</p>
-      <h2 class="t">「設備を入れる」だけでは、<br>変化する制度に対応できません。</h2>
-      <p class="lead">排出量取引制度の本格始動、GHGプロトコルの改訂、CBAMなど、CO₂は環境課題から財務課題へ。これからは、つくった電気と環境価値をどう運用するかが、企業競争力を左右します。</p>
-    </div>
-    <div class="risk-grid sf-row">
-      <button class="risk" data-modal="g1" data-anchor="g1-gxets">
-        <small>DOMESTIC / COST RISK</small><b>排出量取引制度</b>
-        <p>2026年度から本格稼働。対象企業には、排出目標や実績、排出枠の適切な管理が求められます。</p>
-        <span class="more">詳しく見る ＋</span>
-      </button>
-      <button class="risk" data-modal="g1" data-anchor="g1-ghg">
-        <small>GLOBAL / SUPPLY CHAIN RISK</small><b>GHGプロトコル改訂</b>
-        <p>Scope 2を含む基準の見直しが進行中。再エネ調達の証拠やデータの信頼性が重視されています。</p>
-        <span class="more">詳しく見る ＋</span>
-      </button>
-      <button class="risk" data-modal="g1" data-anchor="g1-cbam">
-        <small>BORDER / EXPORT RISK</small><b>炭素コストへの備え</b>
-        <p>CBAMが2026年から本格適用。EU向け対象製品では、排出量データの提示が必要になります。</p>
-        <span class="more">詳しく見る ＋</span>
-      </button>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 4つの支援 ============ -->
-<section id="support">
-  <div class="sec-wrap">
-    <div class="sec-head sf">
-      <p class="kicker">TOTAL SUPPORT</p>
-      <h2 class="t">面倒な手続きも、導入後の運用も。<br>4つの支援を、ひとつの窓口で。</h2>
-      <p class="lead">J・システムは、設備販売だけで終わりません。企業ごとの状況に合わせ、導入ハードルを下げ、太陽光の価値を最大限に引き出します。</p>
-    </div>
-    <div class="support-grid sf-row">
-      <div class="sup">
-        <div class="sup-top"><b>01</b><small>INITIAL COST</small></div>
-        <div class="mark m1" aria-hidden="true"><span></span></div>
-        <h3>設備導入・補助金申請</h3>
-        <p>複雑な補助金制度や、初期投資ゼロのPPAモデルを調査。書類作成まで支援し、導入時の負担を最小限に抑えます。</p>
-        <button class="more-link" data-modal="g4" data-anchor="g4-seido">相談内容を見る ↗</button>
-      </div>
-      <div class="sup">
-        <div class="sup-top"><b>02</b><small>TAX SUPPORT</small></div>
-        <div class="mark m2" aria-hidden="true"><span></span></div>
-        <h3>税優遇の獲得</h3>
-        <p>中小企業経営強化税制などの適用要件を確認し、申請書類の作成まで支援。税務手続きの負担を軽減します。</p>
-        <button class="more-link" data-modal="g4" data-anchor="g4-seido">相談内容を見る ↗</button>
-      </div>
-      <div class="sup">
-        <div class="sup-top"><b>03</b><small>CREDIT VALUE</small></div>
-        <div class="mark m3" aria-hidden="true"><span></span></div>
-        <h3>J-クレジット創出・販売</h3>
-        <p>削減したCO₂をJ-クレジットとして価値化。創出から市場での販売まで一貫支援し、新たな収益につなげます。</p>
-        <button class="more-link" data-modal="g4" data-anchor="g4-credit">相談内容を見る ↗</button>
-      </div>
-      <div class="sup">
-        <div class="sup-top"><b>04</b><small>ENERGY OPTIMIZE</small></div>
-        <div class="mark m4" aria-hidden="true"><span></span></div>
-        <h3>発電電力の最適利用</h3>
-        <p>余剰電力の高値買取事業者とのマッチングや、特定施設への電力融通など、最適な運用プランを提案します。</p>
-        <button class="more-link" data-modal="g4" data-anchor="g4-denryoku">相談内容を見る ↗</button>
-      </div>
-    </div>
-    <div class="statement sf">
-      <span>J・SYSTEM TOTAL SUPPORT</span>
-      <p>専門知識は不要です。</p>
-      <strong>コンサルティングから設計・運用・収益化まで、<br>企業のエネルギー転換に伴走します。</strong>
-    </div>
-  </div>
-</section>
-
-<!-- ============ モデルケース（実テーマの .block） ============ -->
-<section class="bg-gray" id="case">
-  <div class="sec-wrap" style="padding-bottom:30px">
     <div class="sec-head sf">
       <p class="kicker">MODEL CASE</p>
-      <h2 class="t">たとえば、このくらいの規模から。</h2>
-      <p class="lead">屋根の面積、電力の使い方、業種によって効果は変わります。代表的なケースで、どの程度の規模感になるかをご覧ください。</p>
+      <h2 class="t">モデルケース：自動車ディーラー</h2>
+      <p class="lead">ショールームの照明と空調、整備工場の設備。昼間の需要が大きく、屋根も広い店舗は、太陽光とAi-Gliesの効果が出やすい施設です。</p>
     </div>
-    <div class="case-grid sf-row">
-      <div class="case">
-        <div class="chip"><small>CASE A ／ 試算例</small>製造工場</div>
+    <div class="mc-grid">
+      <div class="mc-cond sf">
+        <h4>試算の条件（モデル店舗）</h4>
         <dl>
-          <div><dt>屋根面積</dt><dd>約3,000㎡</dd></div>
-          <div><dt>設置容量</dt><dd>300 kW</dd></div>
-          <div><dt>導入前の年間電気代</dt><dd>約4,000万円</dd></div>
-          <div><dt>年間削減額の目安</dt><dd class="hl">約660万円</dd></div>
-          <div><dt>自家消費率</dt><dd>85%</dd></div>
-          <div><dt>投資回収の目安</dt><dd class="hl">約9年</dd></div>
-          <div><dt>CO₂削減量</dt><dd>約120 t/年</dd></div>
+          <div><dt>年間使用電力量</dt><dd>500 MWh</dd></div>
+          <div><dt>空調の比率</dt><dd>45 %</dd></div>
+          <div><dt>太陽光の容量</dt><dd>200 kW</dd></div>
+          <div><dt>太陽光の自家消費率</dt><dd>90 %</dd></div>
+          <div><dt>有効な屋根面積</dt><dd>約1,500 ㎡</dd></div>
+          <div><dt>Ai-Glies 空調削減率</dt><dd>10 %</dd></div>
+          <div><dt>Ai-Glies デマンド削減</dt><dd>20 kW</dd></div>
         </dl>
       </div>
-      <div class="case">
-        <div class="chip"><small>CASE B ／ 試算例</small>物流倉庫</div>
-        <dl>
-          <div><dt>屋根面積</dt><dd>約5,000㎡</dd></div>
-          <div><dt>設置容量</dt><dd>500 kW</dd></div>
-          <div><dt>導入前の年間電気代</dt><dd>約3,100万円</dd></div>
-          <div><dt>年間削減額の目安</dt><dd class="hl">約990万円</dd></div>
-          <div><dt>自家消費率</dt><dd>70%</dd></div>
-          <div><dt>投資回収の目安</dt><dd class="hl">約10年</dd></div>
-          <div><dt>CO₂削減量</dt><dd>約170 t/年</dd></div>
-        </dl>
-      </div>
-      <div class="case">
-        <div class="chip"><small>CASE C ／ 試算例</small>事業所・社屋</div>
-        <dl>
-          <div><dt>屋根面積</dt><dd>約800㎡</dd></div>
-          <div><dt>設置容量</dt><dd>80 kW</dd></div>
-          <div><dt>導入前の年間電気代</dt><dd>約880万円</dd></div>
-          <div><dt>年間削減額の目安</dt><dd class="hl">約180万円</dd></div>
-          <div><dt>自家消費率</dt><dd>90%</dd></div>
-          <div><dt>投資回収の目安</dt><dd class="hl">約10年</dd></div>
-          <div><dt>CO₂削減量</dt><dd>約35 t/年</dd></div>
-        </dl>
+      <div class="mc-res sf">
+        <p style="margin:0;font-size:13px;font-weight:700;color:var(--ink-soft)">年間の電気料金削減（標準ケース）</p>
+        <div class="big"><b>約594.5</b><span>万円／年</span></div>
+        <ul class="mc-break">
+          <li style="--lc:#00B4C6">太陽光の自家消費（198MWh）<b>495.0万円</b></li>
+          <li style="--lc:#3659A2">Ai-Glies 空調使用量の削減（22.5MWh）<b>56.3万円</b></li>
+          <li style="--lc:#8FA9DA">Ai-Glies デマンド削減（20kW）<b>43.2万円</b></li>
+        </ul>
+        <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:var(--ink-soft)">条件による幅</p>
+        <div class="scn">
+          <div>保守<b>約490万円</b>CO₂ 70t</div>
+          <div class="on">標準<b>約590万円</b>CO₂ 88t</div>
+          <div>高効果<b>約700万円</b>CO₂ 106t</div>
+        </div>
+        <p style="margin:10px 0 0;font-size:12.5px;line-height:1.8;color:var(--ink-soft)">保守：Ai-Glies 5%・デマンド10kW ／ 標準：10%・20kW ／ 高効果：15%・30kW。電力単価や空調比率によっても変動します。</p>
       </div>
     </div>
-
     <details class="assump sf">
       <summary>試算の前提条件を見る</summary>
       <div class="assump-in">
         <ul>
-          <li>設置密度：屋根面積 10㎡あたり 1kW</li>
-          <li>年間発電量：1,100 kWh／kW（関東・東海の一般的な水準）</li>
-          <li>購入電力の削減単価：22円／kWh（基本料金相当を含む概算）</li>
-          <li>余剰電力の売電単価：8.5円／kWh</li>
-          <li>システム費用：20万円／kW（CASE Cは小規模のため22万円／kW）</li>
-          <li>CO₂排出係数：0.44 kg-CO₂／kWh（自家消費分で算定）</li>
-          <li>投資回収は補助金・税制優遇を反映しない単純回収。<strong>制度を活用した場合、回収期間はさらに短くなります</strong></li>
-          <li>蓄電池・屋根防水工事は含みません</li>
+          <li>太陽光の発電量：1,100 kWh／kW・年</li>
+          <li>購入電力量の単価：25円／kWh</li>
+          <li>基本料金の単価：1,800円／kW・月</li>
+          <li>CO₂排出係数：0.40 kg-CO₂／kWh（CO₂削減＝（太陽光の自家消費＋空調の削減）×係数）</li>
+          <li>余剰電力の売電、補助金、保守費、税、設備の劣化は反映していません</li>
+          <li>実際の効果は、店舗の電力明細・30分デマンド値・空調の構成・屋根条件をもとに試算します</li>
         </ul>
       </div>
     </details>
-    <p class="disclaim sf">※ 上記は標準的な前提条件に基づく試算例です。実際の効果は屋根条件、電力契約、稼働状況、適用制度により異なります。御社の実データをもとに個別に試算いたします。</p>
-
-    <div class="mini-cta sf">
-      <p>御社の場合はどうなるか、実データをもとに試算します。</p>
-      <a href="#contact" class="btn btn-fill btn-sm">無料シミュレーションを依頼する →</a>
+    <p class="sf" style="margin:26px 0 0;font-size:14.5px;font-weight:700">ほかにも、このような施設に向いています</p>
+    <div class="fit sf">
+      <span>工場</span><span>物流倉庫</span><span>事業所・社屋</span><span>商業店舗</span><span>介護施設</span><span>学校・幼稚園</span>
     </div>
+    <p class="disclaim sf">※ 上記は標準的な前提条件に基づく試算例です。実際の効果は屋根条件、電力契約、空調の構成、稼働状況により異なります。</p>
   </div>
 </section>
 
-<!-- ============ 収益化サイクル ============ -->
-<section class="bg-grad on-grad" id="cycle">
-  <div class="sec-wrap">
-    <div class="cycle-wrap">
-      <div class="sf">
-        <p class="kicker">FROM COST TO PROFIT</p>
-        <h2 class="t">屋根を、電気代を減らす設備から<br>利益を循環させる資産へ。</h2>
-        <p class="lead" style="margin-left:0">つくる、最適に使う、環境価値に変える、収益化する。導入後まで見据えた運用設計で、太陽光の価値を一度きりのコスト削減で終わらせません。</p>
-        <div class="mini-cta" style="justify-content:flex-start">
-          <p>自社での収益化まで含めて、運用設計をご提案します。</p>
-          <a href="#contact" class="btn btn-white btn-sm">収益化を相談する →</a>
-        </div>
-      </div>
-      <div class="cycle sf" aria-label="エネルギー収益化サイクル">
-        <div class="cycle-ring" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
-        <div class="cycle-center"><small>ROOF AS AN ASSET</small><strong>環境価値を<br>利益に変える</strong></div>
-        <div class="cy-item cy-1"><b>つくる</b><span>発電・自家消費</span><small>購入電力を直接削減</small></div>
-        <div class="cy-item cy-2"><b>活かす</b><span>最適利用</span><small>余剰電力を有効活用</small></div>
-        <div class="cy-item cy-3"><b>変える</b><span>J-クレジット創出</span><small>削減CO₂を資産化</small></div>
-        <div class="cy-item cy-4"><b>稼ぐ</b><span>高値での販売</span><small>環境価値を収益化</small></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 設備設計・技術 ============ -->
-<section id="technology">
-  <div class="sec-wrap">
-    <div class="sec-head sf">
-      <p class="kicker">INTEGRATED SYSTEM DESIGN</p>
-      <h2 class="t">太陽光を「載せる」だけの会社とは、<br>設計が違います。</h2>
-      <p class="lead">太陽光だけを導入して終わらせない。蓄電・建物保全・空調制御までを一体で考え、長く価値を生むエネルギー基盤をつくります。</p>
-    </div>
-    <div class="arch sf">
-      <img src="assets/jsystem-architecture.png" alt="発電・蓄電・空調制御・建物保全を一体で設計するJ・システムのエネルギーシステム構成図">
-      <div class="arch-tags"><span>オンサイト自家消費</span><span>蓄電池＋EMS</span><span>Ai-Glies 空調制御</span><span>ポリウレア一体施工</span></div>
-      <div class="arch-cap"><b>INTEGRATED ENERGY SYSTEM</b><p>発電・蓄電・省エネ・建物保全を、ひとつの設計に。</p></div>
-    </div>
-    <div class="tech-grid sf-row">
-      <div class="tech">
-        <div class="tech-body">
-          <h3>オンサイト自家消費＋蓄電池</h3>
-          <p class="sub2">ENERGY CONTROL</p>
-          <p>発電と消費の物理的な関係を明確に。時間単位の電力運用にも対応しやすい構成へ。夜間の需要は蓄電池とEMSでカバーします。</p>
-          <button class="more-link" data-modal="g3" data-anchor="g3-integrated">仕組みを詳しく見る ＋</button>
-        </div>
-      </div>
-      <div class="tech">
-        <div class="tech-body">
-          <span class="own">メーカー指定工事店</span>
-          <h3>Ai-Glies</h3>
-          <p class="sub2">アイグリーズ ／ 空調制御によるダブル省エネ</p>
-          <p>発電量を増やすのではなく、空調のピーク電力と使用電力量の両方を抑える省エネシステム。J・システムは<strong>メーカー指定工事店</strong>として、モデル選定から施工・運用までを担当します。</p>
-          <button class="more-link" data-modal="g3" data-anchor="g3-aiglies">仕組みを詳しく見る ＋</button>
-        </div>
-      </div>
-      <div class="tech">
-        <div class="tech-img"><img src="assets/polyurea-photo.png" alt="ポリウレア樹脂で屋根防水と太陽光架台を一体化した施工の様子"></div>
-        <div class="tech-body">
-          <span class="own">J・システム独自施工</span>
-          <h3>ポリウレア一体施工</h3>
-          <p class="sub2">屋根と設備の「寿命ギャップ」を埋める</p>
-          <p>パネルは20年、屋根は10年。運用途中の屋根改修はパネル脱着の追加費用に直結します。ポリウレア樹脂で屋根防水と架台を一体化し、漏水リスクを抑えます。</p>
-          <button class="more-link" data-modal="g3" data-anchor="g3-polyurea">仕組みを詳しく見る ＋</button>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 設置例・実績 ============ -->
 <section class="bg-gray" id="works">
   <div class="sec-wrap">
     <div class="sec-head sf">
       <p class="kicker">WORKS</p>
-      <h2 class="t">公共・産業用設置例</h2>
+      <h2 class="t">その提案を支える、<br>施工の実績。</h2>
       <p class="lead">まとまったスペースがあればどこでも設置ができて、騒音や排出ガスなどの公害も発生しません。屋根の形状に合わせた設計・施工を行っています。</p>
     </div>
     <dl class="works-sum sf">
@@ -1062,24 +1154,37 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
   </div>
 </section>
 
+<!-- ============ 導入を後押しする支援 ============ -->
+<section id="support">
+  <div class="sec-wrap">
+    <div class="sec-head sf">
+      <p class="kicker">TOTAL SUPPORT</p>
+      <h2 class="t">導入のハードルも、<br>ひとつの窓口で下げる。</h2>
+      <p class="lead">制度の調査や申請、導入後の環境価値の活用まで。技術の提案だけで終わらせず、導入を後押しします。</p>
+    </div>
+    <div class="sup-mini sf-row">
+      <button data-modal="g4" data-anchor="g4-seido"><b>補助金・PPA</b><span>対象になる制度の調査から、初期費用ゼロのPPAまで比較します。</span><i>詳しく ＋</i></button>
+      <button data-modal="g4" data-anchor="g4-seido"><b>税制優遇</b><span>中小企業経営強化税制などの要件確認から申請書類まで支援します。</span><i>詳しく ＋</i></button>
+      <button data-modal="g4" data-anchor="g4-credit"><b>J-クレジット</b><span>削減したCO₂をクレジット化し、創出から販売まで支援します。</span><i>詳しく ＋</i></button>
+      <button data-modal="g1" data-anchor="g1-overview"><b>2026年の制度対応</b><span>排出量取引制度・GHGプロトコル改定・CBAMへの備えを整理します。</span><i>詳しく ＋</i></button>
+    </div>
+  </div>
+</section>
+
 <!-- ============ 導入の流れ ============ -->
-<section id="flow">
+<section class="bg-gray" id="flow">
   <div class="sec-wrap">
     <div class="sec-head sf">
       <p class="kicker">SUPPORT FLOW</p>
-      <h2 class="t">状況を知り、最適解を描き、<br>数字で判断できる状態へ。</h2>
-      <p class="lead">まずは現状を整理する無料シミュレーションから。専門的な判断や手続きは、J・システムが伴走します。</p>
+      <h2 class="t">まず1拠点で、<br>組み合わせの効果を確かめる。</h2>
+      <p class="lead">太陽光とAi-Gliesの効果を同じ条件で試算し、投資判断できる資料に仕上げます。</p>
     </div>
-    <div class="flow-grid sf-row">
-      <div class="fl"><i>01</i><b>調べる</b><p>現場・デマンド調査。屋根形状、設備状況、時間帯別の電力データを確認します。</p>
-        <dl><div><dt>お願い</dt><dd>現地確認のお立ち会い</dd></div></dl></div>
-      <div class="fl"><i>02</i><b>描く</b><p>最適システム提案。自家消費率や設備構成を設計し、投資効果を試算します。</p>
-        <dl><div><dt>お願い</dt><dd>ご要望のヒアリング</dd></div></dl></div>
-      <div class="fl"><i>03</i><b>整える</b><p>財務計画・制度適用。補助金、税制、PPAを含めた導入計画を具体化します。</p>
-        <dl><div><dt>お願い</dt><dd>社内でのご検討・ご判断</dd></div></dl></div>
-      <div class="fl"><i>04</i><b>育てる</b><p>運用・収益化支援。余剰電力と環境価値を活かし、導入後も伴走します。</p>
-        <dl><div><dt>お願い</dt><dd>—</dd></div></dl></div>
-    </div>
+    <ol class="flow4 sf" style="margin:0;padding:0">
+      <li><b>データの確認</b><span>電気料金の請求書から、使用量と契約電力を確認します。詳しい資料はご相談後にご案内します。</span></li>
+      <li><b>現地調査</b><span>屋根と受変電設備、空調室外機の型式・台数、営業時間を確認します。</span></li>
+      <li><b>統合試算</b><span>太陽光の発電量と自家消費率、Ai-Gliesの削減効果を合わせて試算します。</span></li>
+      <li><b>導入・見える化</b><span>施工計画と運用設定。導入後は効果を定期的に確認し、改善につなげます。</span></li>
+    </ol>
     <p class="flow-note sf">各工程の期間は、設置規模・屋根の状態・制度申請の有無により案件ごとに異なります。ご相談時に想定スケジュールをご提示します。</p>
     <div class="no-prep sf">
       <span>📋</span>
@@ -1089,7 +1194,6 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
   </div>
 </section>
 
-<!-- ============ 補足資料 ============ -->
 <section class="bg-tint" id="guide">
   <div class="sec-wrap">
     <div class="sec-head sf">
@@ -1126,7 +1230,6 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
   </div>
 </section>
 
-<!-- ============ FAQ ============ -->
 <section id="faq">
   <div class="sec-wrap">
     <div class="sec-head sf">
@@ -1135,6 +1238,12 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
       <p class="lead">ご相談前に多くいただく質問をまとめました。ここにない内容も、お気軽にお問い合わせください。</p>
     </div>
     <div class="faq faq-list sf">
+      <details><summary><i>Q</i><span>太陽光だけ、Ai-Gliesだけの導入もできますか？</span></summary>
+        <div class="ans">はい、それぞれ単独でも導入いただけます。ご相談の際は「太陽光のみ」「Ai-Gliesのみ」「組み合わせ」を同じ条件で試算し、効果と費用を比べたうえで最適な構成をご提案します。</div></details>
+      <details><summary><i>Q</i><span>すでに太陽光を設置しています。Ai-Gliesを後から追加できますか？</span></summary>
+        <div class="ans">追加いただけます。空調室外機のメーカー・型式・台数を確認し、室外機の数に合わせて3つのモデルから最適なものをご提案します。J・システムはAi-Gliesのメーカー指定工事店として、施工から運用まで担当します。</div></details>
+      <details><summary><i>Q</i><span>既存の屋根や、すでに設置済みの架台にもポリウレアを施工できますか？</span></summary>
+        <div class="ans">屋根の状態や下地を確認したうえで判断します。新規の設置に加え、既存設備へのポリウレア加工もご相談いただけます。<button class="more-link" data-modal="g3" data-anchor="g3-polyurea" style="font-size:14px">ポリウレア一体施工を見る ＋</button></div></details>
       <details><summary><i>Q</i><span>相談したら、しつこく営業されませんか？</span></summary>
         <div class="ans">情報提供を目的としたご相談窓口です。ご検討の状況に合わせて対応いたしますので、「まず情報だけ知りたい」「社内で検討する材料が欲しい」といった段階でもご遠慮なくお声がけください。ご希望があれば、以降のご連絡を控えることも可能です。</div></details>
       <details><summary><i>Q</i><span>まだ何も資料が揃っていません。それでも相談できますか？</span></summary>
@@ -1159,7 +1268,6 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
   </div>
 </section>
 
-<!-- ============ 会社情報 ============ -->
 <section class="bg-gray" id="company">
   <div class="sec-wrap">
     <div class="sec-head sf">
@@ -1195,14 +1303,13 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
   </div>
 </section>
 
-<!-- ============ 最終CTA（実テーマ section.form と同じグラデ背景） ============ -->
 <section class="bg-grad on-grad" id="contact">
   <div class="sec-wrap">
     <div class="contact-grid">
       <div class="sf">
         <p class="kicker">FREE SIMULATION</p>
-        <h2 class="t">制度に振り回されるか。<br>制度を、経営の味方にするか。</h2>
-        <p class="lead" style="margin-left:0">まずは御社の屋根と電力データから、導入効果と活用できる支援策を整理します。簡単なご相談からでも構いません。</p>
+        <h2 class="t">「太陽光のみ」と「組み合わせ」。<br>同じ条件で、比べてみませんか。</h2>
+        <p class="lead" style="margin-left:0">御社の電力データをもとに、太陽光だけの場合と、Ai-Glies・ポリウレア一体施工を組み合わせた場合の効果を並べてお出しします。簡単なご相談からでも構いません。</p>
         <div class="promise">
           <div class="pr"><i>¥0</i><div><b>ご相談・試算は無料</b><small>費用は一切かかりません</small></div></div>
           <div class="pr"><i>✓</i><div><b>無理な営業はしません</b><small>情報提供が目的です</small></div></div>
@@ -1227,7 +1334,6 @@ html:has(body.has-ab){scroll-padding-top:calc(var(--hd) + 50px)}
     </div>
   </div>
 </section>
-
 </main>
 
 <!-- ============ フッター（実テーマ再現） ============ -->
